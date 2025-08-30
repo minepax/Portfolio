@@ -3,11 +3,16 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 function showSideBar() {
-  document.querySelector('.side__Bar').style.left = '0px'
+  document.getElementById('sidebar').style.left = '0px'
   document.getElementById('overlay').style.display = 'block'
 }
 
 function hideSideBar() {
-  document.querySelector('.side__Bar').style.left = '-200px'
+  document.getElementById('sidebar').style.left = '-30vw'
   document.getElementById('overlay').style.display = 'none'
+}
+
+function toggleSubMenu(button) {
+  button.nextElementSibling.classList.toggle('show')
+  button.classList.toggle('rotate')
 }
