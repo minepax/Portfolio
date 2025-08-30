@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+* {
+	box-sizing: border-box;
+  	background-color: #100114;
+  	font-family: "Inter", sans-serif;
+	font-weight: 200;
+	color: #e4e3ce;
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	padding: 0rem 15rem;
+	overflow: overlay;
+}
+
+.about__Myself__Divs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	padding: 5rem 0rem;
+}
+
+@media(max-width: 1700px) {
+    .about__Myself__Divs {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background: #100114;
+}
+
+::-webkit-scrollbar-track {
+	background: #100114;
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #100114;
+}
+
+::-webkit-scrollbar-thumb {
+  	background-color: #e4e3ce;
+  	border-radius: 1rem;
+}
+
+h1 {
+	font-family: "Inter", sans-serif;
+	font-weight: 800;
+	font-size: 50px;
+	text-decoration: none;
+}
+
+h2 {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 30px;
+	text-decoration: none;
+}

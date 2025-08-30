@@ -1,0 +1,91 @@
+<html>
+<title>My Class Photos</title>
+
+<head>
+<script src="script.js"></script>
+<link rel="stylesheet" href="content.css"/>
+<style>
+
+body {
+    padding: 5rem 10rem;
+}
+
+.container {
+    padding: 0px;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 78%;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 1rem;
+    scroll-snap-stop: always;
+}
+
+.slider img {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    object-fit: fill;
+    min-width: 100%;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: transparent;
+}
+
+.slider-nav a {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 50%;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="container">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img id="slide-1" src=".\Maheshwar KG 1.jpg">
+            <img id="slide-2" src=".\Maheshwar KG 2.jpg">
+            <img id="slide-3" src=".\Maheshwar 1st.jpg">
+            <img id="slide-4" src=".\Maheshwar 2nd.jpg">
+            <img id="slide-5" src=".\Maheshwar 3rd.jpg">
+            <img id="slide-6" src=".\Maheshwar 4th.jpg">
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+            <a href="#slide-5"></a>
+            <a href="#slide-6"></a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

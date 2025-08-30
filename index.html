@@ -1,0 +1,135 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="script.js" defer></script>
+<title>Maheshwar's Portfolio</title>
+</head>
+
+<body>
+
+<nav class="nav__Bar">
+  <ul>
+    <li class="menu__Button" onclick=showSideBar()>
+      <div style="display: flex; align-items: center; height: 100%;">
+        <a href="#"><img src=".\Icons\Nav Icons\Menu Icon.png" width="30px"></a>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\Home Icon.png" style="width: 20px;">
+        <a href='.\About Myself.html' target="mainframe">HOME</a>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\Badminton Icon.png" style="width: 20px;">
+        <a href='#'>BADMINTON</a>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\Rubiks Cube Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>CUBING</a>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\PC Gaming Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>PC GAMING</a>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\Minecraft Icon.png" style="width: 20px; vertical-align: bottom; background-color: transparent;">
+        <a href='#'>MINECRAFT</a>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\Other Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>OTHER</a>
+      </div>
+      <div class="sub__Menu__Nav__1">
+        <ul>
+          <li><a href='.\About Myself.html' target="mainframe">About Myself</a></li>
+          <li><a href='.\My Class Photos.html' target="mainframe">My Class Photos</a></li>
+          <li><a href='.\My Other Family Members.html' target="mainframe">Other Family Members</a></li>
+          <li><a href='.\Documents.html' target="mainframe">Documents</a></li>
+          <li><a href='.\Cube Stopwatch.html' target="mainframe">Cube Stopwatch</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="hideOnMobile">
+      <div class="list__Item__Nav">
+        <img src=".\Icons\Nav Icons\Contact Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>CONTACT</a>
+      </div>
+    </li>
+  </ul>
+  <p style="font-family: 'Montserrat', sans-serif; font-size: 30px; color: #cdb5d1;">PORTFOLIO</p>
+</nav>
+
+<nav class="side__Bar">
+  <ul>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\Home Icon.png" style="width: 20px;">
+        <a href='.\About Myself.html' target="mainframe">HOME</a>
+      </div>
+    </li>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\Badminton Icon.png" style="width: 20px;">
+        <a href='#'>BADMINTON</a>
+      </div>
+    </li>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\Rubiks Cube Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>CUBING</a>
+      </div>
+    </li>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\PC Gaming Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>PC GAMING</a>
+      </div>
+    </li>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\Minecraft Icon.png" style="width: 20px; vertical-align: bottom; background-color: transparent;">
+        <a href='#'>MINECRAFT</a>
+      </div>
+    </li>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\Other Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>OTHER</a>
+      </div>
+      <div class="sub__Menu__Side__1">
+        <ul>
+          <li><a href='.\About Myself.html' target="mainframe">About Myself</a></li>
+          <li><a href='.\My Class Photos.html' target="mainframe">My Class Photos</a></li>
+          <li><a href='.\My Other Family Members.html' target="mainframe">Other Family Members</a></li>
+          <li><a href='.\Documents.html' target="mainframe">Documents</a></li>
+          <li><a href='.\Cube Stopwatch.html' target="mainframe">Cube Stopwatch</a></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="list__Item__Side">
+        <img src=".\Icons\Nav Icons\Contact Icon.png" style="width: 20px; vertical-align: bottom;">
+        <a href='#'>CONTACT</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<div id="overlay" onclick="hideSideBar()"></div>
+
+<iframe src="./About Myself.html" class= "myframe" name="mainframe" frameborder="0"></iframe>
+
+</body>
+
+</html>
