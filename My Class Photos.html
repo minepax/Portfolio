@@ -2,7 +2,7 @@
 <title>My Class Photos</title>
 
 <head>
-<script src="script.js"></script>
+<script src="disable-right-click.js"></script>
 <link rel="stylesheet" href="content.css"/>
 <style>
 
@@ -16,8 +16,12 @@ body {
 
 .slider-wrapper {
     position: relative;
+    max-height: 100%;
     max-width: 78%;
     margin: 0 auto;
+    border: 3px solid #3f064e;
+    border-radius: 1.5rem;
+    box-shadow: 10px 10px 0px #3f064e;
 }
 
 .slider {
@@ -26,7 +30,7 @@ body {
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     scroll-snap-stop: always;
 }
 
@@ -41,7 +45,7 @@ body {
     display: flex;
     column-gap: 1rem;
     position: absolute;
-    bottom: -2rem;
+    bottom: -3rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
