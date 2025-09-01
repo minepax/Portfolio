@@ -17,25 +17,23 @@
 	margin-bottom: 5rem;
 }
 
-.wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	row-gap: 1rem;
-	padding: 2rem;
-	background-color: #3f064e;
-    border: 3px solid #100014;
-    border-radius: 1.5rem;
-    box-shadow: 5px 5px 5px #100014;
+.gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1rem;
+    background-color: transparent;
+
 }
 
-.row {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	column-gap: 2rem;
-	background-color: transparent;
+.gallery img {
+    aspect-ratio: 5/6;
+    width: 100%;
+	border-bottom: 3px solid #100014;
+	border-top-left-radius: 1.5rem;
+	border-top-right-radius: 1.5rem;
+	border-bottom-left-radius: 0rem;
+	border-bottom-right-radius: 0rem;
 }
 
 .Frame {
@@ -43,33 +41,27 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 10px;
-	padding: 0;
+	padding: 0px;
 	margin: 0;
+	border: 2px solid #100014;
+	border-radius: 1.5rem;
+	box-shadow: 3px 3px 5px #100014;
 	background-color: transparent;
-}
-
-.Frame img {
-  width: 120px;
-  height: 155px;
-  padding: 0;
-  margin: 0;
-  border: 2px solid #100014;
-  border-radius: 1.5rem;
-  box-shadow: 3px 3px 3px #100014;
+	width: fit-content;
 }
 
 .Frame p {
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
-  color: #fcf9c6;
-  text-decoration: none;
-  font-size: 0.8rem;
-  background-color: transparent;
-  margin: 0;
+	font-family: 'Inter', sans-serif;
+	font-weight: 200;
+	color: #fcf9c6;
+	text-decoration: none;
+	font-size: 0.8rem;
+	background-color: transparent;
+	margin: 0;
+	padding: 10px;
 }
 
-@media(max-width: 1700px) {
+@media(max-width: 1600px) {
     .about__Myself__Divs {
 		flex-direction: column;
 		align-items: center;
