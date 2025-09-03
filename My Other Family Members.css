@@ -1,14 +1,15 @@
 .family__Members__Divs {
     display: flex;
     align-items: center;
-    justify-content: space-between;;
+    justify-content: space-between;
+    flex-direction: column;
     padding: 5rem;
 	margin-top: 5rem;
     background-color: #290333;
     border: 3px solid #100014;
     border-radius: 1.5rem;
     box-shadow: 10px 10px 10px #100014;
-    gap: 20rem;
+    gap: 2rem;
 }
 
 .family__Members__Divs:last-of-type {
@@ -29,13 +30,4 @@
     border: 3px solid #100014;
     border-radius: 1.5rem;
     box-shadow: 5px 5px 5px #100014;
-}
-
-@media(max-width: 1600px) {
-    .family__Members__Divs {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-        gap: 2rem;
-	}
 }

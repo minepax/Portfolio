@@ -11,6 +11,7 @@
     border: 3px solid #100014;
     border-radius: 1.5rem;
     box-shadow: 10px 10px 10px #100014;
+    gap: 2rem;
 }
 
 .about__Myself__Divs:last-of-type {

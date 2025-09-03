@@ -42,6 +42,7 @@ body {
 	font-size: 1rem;
 	max-width: 35rem;
 	background-color: transparent;
+	margin: 0;
 }
 
 ::-webkit-scrollbar {
