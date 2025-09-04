@@ -24,10 +24,38 @@
     background-color: transparent;
 }
 
-.gallery img {
+.Frame {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0px;
+	margin: 0;
+	border: 2px solid #100014;
+	border-radius: 1.5rem;
+	box-shadow: 3px 3px 5px #100014;
+	background-color: #6e1586;
+	width: 100%;
+}
+
+.Frame p {
+	font-family: 'Inter', sans-serif;
+	font-weight: 200;
+	color: #fcf9c6;
+	text-decoration: none;
+	font-size: 0.8rem;
+	background-color: transparent;
+	margin: 0;
+	padding: 10px;
+}
+
+.Frame img {
     aspect-ratio: 5/6;
+	object-fit: cover;
     width: 100%;
-    border: 3px solid #100014;
-    border-radius: 1.5rem;
-    box-shadow: 5px 5px 5px #100014;
+	border-bottom: 3px solid #100014;
+	border-top-left-radius: 1.5rem;
+	border-top-right-radius: 1.5rem;
+	border-bottom-left-radius: 0rem;
+	border-bottom-right-radius: 0rem;
 }

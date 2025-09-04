@@ -24,17 +24,6 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 1rem;
     background-color: transparent;
-
-}
-
-.gallery img {
-    aspect-ratio: 5/6;
-    width: 100%;
-	border-bottom: 3px solid #100014;
-	border-top-left-radius: 1.5rem;
-	border-top-right-radius: 1.5rem;
-	border-bottom-left-radius: 0rem;
-	border-bottom-right-radius: 0rem;
 }
 
 .Frame {
@@ -47,8 +36,8 @@
 	border: 2px solid #100014;
 	border-radius: 1.5rem;
 	box-shadow: 3px 3px 5px #100014;
-	background-color: transparent;
-	width: fit-content;
+	background-color: #6e1586;
+	width: 100%;
 }
 
 .Frame p {
@@ -60,6 +49,17 @@
 	background-color: transparent;
 	margin: 0;
 	padding: 10px;
+}
+
+.Frame img {
+    aspect-ratio: 5/6;
+	object-fit: cover;
+    width: 100%;
+	border-bottom: 3px solid #100014;
+	border-top-left-radius: 1.5rem;
+	border-top-right-radius: 1.5rem;
+	border-bottom-left-radius: 0rem;
+	border-bottom-right-radius: 0rem;
 }
 
 @media(max-width: 1600px) {
