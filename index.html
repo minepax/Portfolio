@@ -9,6 +9,8 @@
 
 <body>
 
+<div class="preloader"></div>
+
 <nav id="navbar">
   <a href=".\Home.html" target="mainframe"><p id="heading">PORTFOLIO</p></a>
   <ul>
@@ -64,6 +66,19 @@
 <div id="overlay" onclick="hideSideBar()"></div>
 
 <iframe src="./Home.html" class= "myframe" name="mainframe" frameborder="0"></iframe>
+
+<script>
+    window.addEventListener("load", () => {
+    const loader = document.querySelector(".preloader");
+    const hloader = document.querySelector(".preloader--hidden");
+    
+    loader.classList.add("preloader--hidden");
+    
+    loader.addEventListener("transitionend", () => {
+      document.body.removeChild(loader);
+    });
+  });
+</script>
 
 </body>
 

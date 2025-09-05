@@ -1,6 +1,6 @@
 .Home-Div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 	padding: 5rem;
 	margin-top: 5rem;
@@ -27,12 +27,14 @@
     margin-top: 0;
 }
 
-.Home-Div:first-of-type img {
-    width: 30%;
-    aspect-ratio: 5/6;
-    object-fit: cover;
-	border: 3px solid #6e1586;
-	border-radius: 50%;
+#Home-Main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: transparent;
+    gap: 2rem;
 }
 
 #Home-Heading {
@@ -58,6 +60,14 @@
 	margin: 0;
 }
 
+#Home-Profile {
+    width: 30%;
+    aspect-ratio: 5/6;
+    object-fit: cover;
+	border: 3px solid #6e1586;
+	border-radius: 50%;
+}
+
 @media screen and (max-width: 1600px) {
     .Home-Div {
 		flex-direction: column;
@@ -69,13 +79,16 @@
         align-items: center;
         gap: 5rem;
     }
-    .Home-Div:first-of-type img {
+    #Home-Profile {
         min-width: 60%;
+    }
+    #Home-Main {
+        align-items: center;
     }
 }
 
 @media screen and (orientation: portrait) {
-    .Home-Div:first-of-type img {
+    #Home-Profile {
         min-width: 80%;
     }
 }

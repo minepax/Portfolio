@@ -296,3 +296,17 @@ html {
     height: calc(100vh - 6dvh);
     }
 }
+
+.preloader {
+    background: #100014 url(./Loading-Gear.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+.preloader--hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.75s, visibility 0.75s;
+}
