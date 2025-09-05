@@ -1,8 +1,8 @@
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 
-const prevBtn = document.querySelector('#prevBtn');
-const nextBtn = document.querySelector('#nextBtn');
+const prevBtn = document.querySelector('#prev');
+const nextBtn = document.querySelector('#next');
 
 let counter = 1;
 let size = carouselImages[0].clientWidth;

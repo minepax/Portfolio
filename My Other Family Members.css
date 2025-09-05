@@ -1,4 +1,4 @@
-.family__Members__Divs {
+.Family-Members-Div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,13 +6,13 @@
     padding: 5rem;
 	margin-top: 5rem;
     background-color: #290333;
-    border: 3px solid #100014;
+    border: 2px solid #6e1586;
     border-radius: 1.5rem;
-    box-shadow: 10px 10px 10px #100014;
+    box-shadow: 5px 5px 10px #6e1586;
     gap: 2rem;
 }
 
-.family__Members__Divs:last-of-type {
+.Family-Members-Div:last-of-type {
     margin-bottom: 5rem;
 }
 
@@ -31,9 +31,9 @@
 	flex-direction: column;
 	padding: 0px;
 	margin: 0;
-	border: 2px solid #100014;
+	border: 2px solid #6e1586;
 	border-radius: 1.5rem;
-	box-shadow: 3px 3px 5px #100014;
+	box-shadow: 2px 2px 5px #6e1586;
 	background-color: #6e1586;
 	width: 100%;
 }
@@ -53,7 +53,7 @@
     aspect-ratio: 5/6;
 	object-fit: cover;
     width: 100%;
-	border-bottom: 3px solid #100014;
+	border-bottom: 2px solid #6e1586;
 	border-top-left-radius: 1.5rem;
 	border-top-right-radius: 1.5rem;
 	border-bottom-left-radius: 0rem;

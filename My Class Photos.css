@@ -1,25 +1,27 @@
-.class__Photos__Div {
+.Class-Photos-Div {
     display: flex;
     align-items: center;
-    justify-content: center;
-	padding: 2rem;
+    justify-content: space-between;
+    flex-direction: column;
+	padding: 5rem;
 	margin-top: 5rem;
     margin-bottom: 5rem;
 	background-color: #290333;
-    border: 3px solid #100014;
+    border: 2px solid #6e1586;
     border-radius: 1.5rem;
-    box-shadow: 10px 10px 10px #100014;
-    gap: 0.5rem;
+    box-shadow: 5px 5px 10px #6e1586;
+    gap: 2rem;
 }
 
 .carousel-container {
+    position: relative;
     width: 70%;
-    margin: 0;
+    margin: auto;
     overflow: hidden;
-    border: 2px solid #100014;
-	border-radius: 1.5rem;
-	box-shadow: 3px 3px 5px #100014;
-	background-color: transparent;
+    background-color: transparent;
+    border: 2px solid #6e1586;
+    border-radius: 1.5rem;
+    box-shadow: 5px 5px 10px #6e1586;
 }
 
 .carousel-slide {
@@ -33,22 +35,51 @@
     object-fit: fill;
 }
 
-#prevBtn {
-    z-index: 10;
-    width: 2rem;
-    background-color: #6e1586;
-    cursor: pointer;
-    border: 2px solid #100014;
-	border-radius: 0.5rem;
-	box-shadow: 3px 3px 5px #100014;
+.paras {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #6e1586;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 5px #6e1586;
 }
 
-#nextBtn {
+#prev {
+    position: absolute;
     z-index: 10;
-    width: 2rem;
-    background-color: #6e1586;
+    left: 0;
+    width: 10%;
+    height: 100%;
     cursor: pointer;
-    border: 2px solid #100014;
-	border-radius: 0.5rem;
-	box-shadow: 3px 3px 5px #100014;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#next {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#prev img, #next img{
+    display: none;
+    width: 30%;
+    background-color: transparent;
+}
+
+#prev:hover, #next:hover {
+    background-color: #290333b9;
+    backdrop-filter: blur(10px);
+}
+
+#prev:hover img, #next:hover img {
+    display: block;
 }

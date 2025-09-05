@@ -10,18 +10,13 @@
 <body>
 
 <nav id="navbar">
-  <p style="font-family: 'Montserrat', sans-serif; font-size: 2rem ; color: #cdb5d1;">PORTFOLIO</p>
+  <a href=".\Home.html" target="mainframe"><p style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 20vw, 1.8rem) ; color: #cdb5d1;">PORTFOLIO</p></a>
   <ul>
     <li class="hamburger-menu">
-      <div style="display: flex; align-items: center; height: 100%;">
-        <a href="#" onclick=showSideBar()><img src=".\Icons\Nav Icons\Menu Icon.png" width="50rem"></a>
-      </div>
+      <a href="#" onclick=showSideBar()><img src=".\Icons\Nav Icons\Menu Icon.png" style="width: clamp(2.5rem, 1vw, 3rem); aspect-ratio: 6/4;"></a>
     </li>
     <li class="hideOnMobile">
-      <div class="nav-item-div">
-        <img src=".\Icons\Nav Icons\Home Icon.png" style="width: 20px">
-        <a href='.\About Myself.html' target="mainframe">HOME</a>
-      </div>
+      <a href='.\Home.html' target="mainframe" class="nav-item-div"><img src=".\Icons\Nav Icons\Home Icon.png" style="width: 20px">HOME</a>
     </li>
     <li class="hideOnMobile">
       <div class="nav-item-div">
@@ -54,9 +49,9 @@
       </div>
       <div class="nav-bar-sub">
         <ul>
-          <li><a href='.\About Myself.html' target="mainframe">About Myself</a></li>
-          <li><a href='.\My Class Photos.html' target="mainframe">My Class Photos</a></li>
-          <li><a href='.\My Other Family Members.html' target="mainframe">Other Family Members</a></li>
+          <li><a href='.\About Myself.html' target="mainframe">ABOUT MYSELF</a></li>
+          <li><a href='.\My Class Photos.html' target="mainframe">CLASS PHOTOS</a></li>
+          <li><a href='.\My Other Family Members.html' target="mainframe">OTHER FAMILY MEMBERS</a></li>
         </ul>
       </div>
     </li>
@@ -72,7 +67,7 @@
 <nav id="sidebar">
   <ul>
     <li>
-      <a href=".\About Myself.html" target="mainframe">
+      <a href=".\Home.html" target="mainframe">
         <img src=".\Icons\Nav Icons\Home Icon.png" width="20px">
         <span>HOME</span>
       </a>
@@ -109,11 +104,9 @@
       </button>
       <ul class="sub-menu">
         <div>
-          <li><a href='.\About Myself.html' target="mainframe">About Myself</a></li>
-          <li><a href='.\My Class Photos.html' target="mainframe">My Class Photos</a></li>
-          <li><a href='.\My Other Family Members.html' target="mainframe">Other Family Members</a></li>
-          <li><a href='.\Documents.html' target="mainframe">Documents</a></li>
-          <li><a href='.\Cube Stopwatch.html' target="mainframe">Cube Stopwatch</a></li>
+          <li><a href='.\About Myself.html' target="mainframe">ABOUT MYSELF</a></li>
+          <li><a href='.\My Class Photos.html' target="mainframe">CLASS PHOTOS</a></li>
+          <li><a href='.\My Other Family Members.html' target="mainframe">OTHER FAMILY MEMBERS</a></li>
         </div>
       </ul>
     </li>
@@ -128,7 +121,7 @@
 
 <div id="overlay" onclick="hideSideBar()"></div>
 
-<iframe src="./About Myself.html" class= "myframe" name="mainframe" frameborder="0"></iframe>
+<iframe src="./Home.html" class= "myframe" name="mainframe" frameborder="0"></iframe>
 
 </body>
 
