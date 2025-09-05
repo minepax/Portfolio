@@ -4,7 +4,7 @@ function showSideBar() {
 }
 
 function hideSideBar() {
-  document.getElementById('sidebar').style.right = '-30vw'
+  document.getElementById('sidebar').style.right = '-50vw'
   document.getElementById('overlay').style.display = 'none'
 }
 
