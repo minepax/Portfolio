@@ -40,6 +40,12 @@ html, body {
     background-color: transparent;
 }
 
+#navbar #heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.5rem, 20vw, 1.8rem);
+    color: #cdb5d1;
+}
+
 #navbar ul {
     list-style-type: none;
     width: fit-content;
@@ -47,6 +53,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 }
 
 .nav-item-div {
@@ -60,6 +67,10 @@ html, body {
     cursor: pointer;
 }
 
+.nav-item-div img {
+    width: 20px;
+}
+
 .nav-item-div::after {
     content: '';
     position: absolute;
@@ -70,11 +81,6 @@ html, body {
     background-color: #cdb5d1;
     transition: all 0.3s ease;
     transform: translateX(-50%);
-}
-
-#navbar li {
-    height: 100%;
-    padding: 0rem 1rem;
 }
 
 #navbar li:hover .nav-item-div::after {
@@ -118,16 +124,18 @@ html, body {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    gap: 0;
 }
 
 #navbar .nav-bar-sub li {
     width: 100%;
-    height: 50%;
-    padding: 1rem;
+    padding: 0;
 }
 
-#navbar .nav-bar-sub a{
+#navbar .nav-bar-sub a {
     width: 100%;
+    padding: 1rem 1rem;
+    margin: 0;
 }
 
 #navbar .nav-bar-sub li:hover {
@@ -180,7 +188,7 @@ html, body {
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 5px;
     border-radius: 1rem;
     transition: all 0.5s ease 0s;
 }
@@ -258,6 +266,11 @@ html, body {
 
 .hamburger-menu {
     display: none;
+}
+
+.hamburger-menu img {
+    width: clamp(2.5rem, 1vw, 3rem);
+    aspect-ratio: 6/4;
 }
 
 /* All pages */
