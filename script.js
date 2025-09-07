@@ -1,3 +1,41 @@
+// Javascript for disabling right-click
+
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Javascript for sidebar
+
+function showSideBar() {
+  document.getElementById('sidebar').style.right = '0px'
+  document.getElementById('overlay').style.display = 'block'
+}
+
+function hideSideBar() {
+  document.getElementById('sidebar').style.right = '-50vw'
+  document.getElementById('overlay').style.display = 'none'
+}
+
+function toggleSubMenu(button) {
+  button.nextElementSibling.classList.toggle('show')
+  button.classList.toggle('rotate')
+}
+
+// Javascript for preloader div
+
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".preloader");
+  const hloader = document.querySelector(".preloader--hidden");
+  
+  loader.classList.add("preloader--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});
+
+// Javascript for My Class Photos
+
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 

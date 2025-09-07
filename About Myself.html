@@ -2,17 +2,32 @@
 <title>About Myself</title>
 
 <head>
-<script src="disable-right-click.js"></script>
-<link rel="stylesheet" href="content.css"/>
-<link rel="stylesheet" href="About Myself.css">
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
+<div class="preloader"></div>
+
+<!-- Import code for nav and side bars -->
+
+<div id="nav-placeholder"></div>
+
+<script src="//code.jquery.com/jquery.min.js"></script>
+
+<script>
+  $.get("Navigation.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
+  });
+</script>
+
+<!-- Ends here -->
+
 <div class="About-Myself-Div">
   <div style="display: flex; margin: 0; background-color: transparent; align-items: center;">
     <p class="headings">About Me</p>
-    <img  class="headings-icon" src=".\Icons\About Me Icons\About Icon.png">
+    <img class="heading-icons" src=".\icons\About Me Icons\About Icon.png">
   </div>
   <p class="paras">
     My full name is Maheshwar Rathakrishnan, I usually go by Mahesh. My native place is a little village called Melur in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is Badaga. Badagas: A tribal community that has migrated from Karnataka and settled in the Nilgiris. The language is a mix of dominantly Kannada along with minimal aspects from Tamil.<br><br>
@@ -23,27 +38,27 @@
 <div class="About-Myself-Div">
   <div style="display: flex; margin: 0; background-color: transparent; align-items: center;">
     <p class="headings">Family</p>
-    <img class="headings-icon" src=".\Icons\About Me Icons\Family Icon.png" >
+    <img class="heading-icons" src=".\icons\About Me Icons\Family Icon.png" >
   </div>
-  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;row-gap: 2rem; background-color: transparent; max-width: 35rem;">
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;row-gap: 2rem; background-color: transparent; max-width: 40rem;">
     <p class="paras">
     We are a family of four. My father's name is Rathakrishnan Mathan, everyone calls him by Ratha. My mother's name is Sreedevi Lakshmanan, she goes by Sree. I have an elder sister and her name is Deepthi, her name is shortened to Deepu. She completed high school in the same school as I did but in the only-girls branch (Our Own English High School, Alwarqa Girls). She also completed B.E. Computer Science (2017-2021) in the same university that I study at currently, BITS Pilani Dubai Campus.
     </p>
     <div class="gallery">
       <div class="Frame">
-        <img src=".\Images\Rathakrishnan.jpg">
+        <img src=".\images\Rathakrishnan.jpg">
         <p>My Father</p>
       </div>
       <div class="Frame">
-        <img src=".\Images\Sree Devi.jpg">
+        <img src=".\images\Sree Devi.jpg">
         <p>My Mother</p>
       </div>
       <div class="Frame">
-        <img src=".\Images\Deepthi.jpg">
+        <img src=".\images\Deepthi.jpg">
         <p>My Sister</p>
       </div>
       <div class="Frame">
-        <img src=".\Images\Maheshwar.jpg">
+        <img src=".\images\Maheshwar.jpg">
         <p>Myself</p>
       </div>
     </div>
@@ -53,7 +68,7 @@
 <div class="About-Myself-Div">
   <div style="display: flex; margin: 0; background: transparent; align-items: center;">
     <p class="headings">Family Records</p>
-    <img class="headings-icon" src=".\Icons\About Me Icons\Record Icon.png">
+    <img class="heading-icons" src=".\icons\About Me Icons\Record Icon.png">
   </div>
   <p class="paras">
     My family has registered accounts in the World Cube Association and we have participated in a few speedcubing competitions although not recently. Few highlights are when my sister set the record for 3x3 in UAE back in 2009 and my dad placing first in the Dubai Open 2009 Competition. All times have been performed in WCA sanctioned competitions in Dubai, they have been authorised and registered in the WCA website.<br><br>
@@ -64,6 +79,8 @@
     <a href="https://www.worldcubeassociation.org/persons/2009LAKS01" target="_blank">&#8226; Sreedevi (My Mother)</a>
   </p>
 </div>
+
+<div id="overlay" onclick="hideSideBar()"></div>
 
 </body>
 </html>

@@ -2,84 +2,42 @@
 <title>Maheshwar's Portfolio</title>
 
 <head>
-  <link rel="stylesheet" href="index.css" />
-  <script src="index.js" defer></script>
-  <script src="disable-right-click.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
 <div class="preloader"></div>
 
-<nav id="navbar">
-  <a href=".\Home.html" target="mainframe"><p id="heading">PORTFOLIO</p></a>
-  <ul>
-    <li class="hamburger-menu"><a href="#" onclick=showSideBar()><img src=".\Icons\Nav Icons\Menu Icon.png"></a></li>
-    <li class="hideOnMobile"><a href='.\Home.html' target="mainframe" class="nav-item-div"><img src=".\Icons\Nav Icons\Home Icon.png">HOME</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Badminton Icon.png">BADMINTON</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Rubiks Cube Icon.png">CUBING</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\PC Gaming Icon.png">PC GAMING</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Minecraft Icon.png">MINECRAFT</a></li>
-    <li class="hideOnMobile">
-      
-      <a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Other Icon.png">OTHER</a>
-      <div class="nav-bar-sub">
-        <ul>
-          <li><a href='.\About Myself.html' target="mainframe">ABOUT MYSELF</a></li>
-          <li><a href='.\My Class Photos.html' target="mainframe">CLASS PHOTOS</a></li>
-          <li><a href='.\My Other Family Members.html' target="mainframe">OTHER FAMILY MEMBERS</a></li>
-        </ul>
-      </div>
+<!-- Import code for nav and side bars -->
 
-    </li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Contact Icon.png">CONTACT</a></li>
-  </ul>
-</nav>
+<div id="nav-placeholder"></div>
 
-<nav id="sidebar">
-  <ul>
-    <li><a href=".\Home.html" target="mainframe"><img src=".\Icons\Nav Icons\Home Icon.png" width="20px"><span>HOME</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Badminton Icon.png" width="20px"><span>BADMINTON</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Rubiks Cube Icon.png" width="20px"><span>CUBING</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\PC Gaming Icon.png" width="20px"><span>PC GAMING</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Minecraft Icon.png" width="20px"><span>MINECRAFT</span></a></li>
-    <li>
-
-      <button onclick=toggleSubMenu(this) class="dropdown-btn">
-        <img src=".\Icons\Nav Icons\Other Icon.png" width="20px">
-        <span>OTHER</span>
-        <img src=".\Icons\Nav Icons\Dropdown Icon.png" width="20px">
-      </button>
-      <ul class="sub-menu">
-        <div>
-          <li><a href='.\About Myself.html' target="mainframe">ABOUT MYSELF</a></li>
-          <li><a href='.\My Class Photos.html' target="mainframe">CLASS PHOTOS</a></li>
-          <li><a href='.\My Other Family Members.html' target="mainframe">OTHER FAMILY MEMBERS</a></li>
-        </div>
-      </ul>
-
-    </li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Contact Icon.png" width="20px"><span>CONTACT</span></a></li>
-  </ul>
-</nav>
-
-<div id="overlay" onclick="hideSideBar()"></div>
-
-<iframe src="./Home.html" class= "myframe" name="mainframe" frameborder="0"></iframe>
+<script src="//code.jquery.com/jquery.min.js"></script>
 
 <script>
-    window.addEventListener("load", () => {
-    const loader = document.querySelector(".preloader");
-    const hloader = document.querySelector(".preloader--hidden");
-    
-    loader.classList.add("preloader--hidden");
-    
-    loader.addEventListener("transitionend", () => {
-      document.body.removeChild(loader);
-    });
+  $.get("Navigation.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
   });
 </script>
 
-</body>
+<!-- Ends here -->
 
+<div id="Home-Main">
+  <div id="Home-Head">
+      <p id="Home-Heading">
+          Hello!
+      </p>
+      <p id="Home-Para">
+          I'm Mahesh! Welcome to my first website creation which also happens to be my personal portfolio. Basically just a lot of random stuff about me and what I like/do.<br><br>
+          This includes basic information about myself and other interests/hobbies which are located in the navigation links. Enjoy your time here!
+      </p>
+  </div>
+  <img  id="Home-Profile" src=".\images\Maheshwar Profile.jpg">
+</div>
+
+<div id="overlay" onclick="hideSideBar()"></div>
+
+</body>
 </html>
