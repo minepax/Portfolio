@@ -2,7 +2,9 @@
 <title>Maheshwar's Portfolio</title>
 
 <head>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js" defer></script>
 </head>
 
@@ -25,19 +27,28 @@
 <!-- Ends here -->
 
 <div id="Home-Main">
-  <div id="Home-Head">
-      <p id="Home-Heading">
+
+  <div id="Heading">
+      <p id="Heading-Title">
           Hello!
       </p>
-      <p id="Home-Para">
+      <p class="paras">
           I'm Mahesh! Welcome to my first website creation which also happens to be my personal portfolio. Basically just a lot of random stuff about me and what I like/do.<br><br>
           This includes basic information about myself and other interests/hobbies which are located in the navigation links. Enjoy your time here!
       </p>
   </div>
-  <img  id="Home-Profile" src=".\Images\Maheshwar Profile.jpg">
+
+  <div id="Profile-Container">
+    <div id="Profile-Label">
+      <p id="Label-Para">That's me!</p>
+      <img src=".\Images\Arrow.svg" width="15px">
+    </div>
+    <img id="Profile-Img" src=".\Images\Maheshwar Profile.jpg">
+  </div>
+  
 </div>
 
-<div class="Home-Other">
+<div id="Home-Other">
   
   <div class="Home-Div">
     <div style="display: flex; margin: 0; background-color: transparent; align-items: center;">
@@ -55,7 +66,7 @@
       <p class="headings">Family</p>
       <img class="heading-icons" src=".\Icons\About Me Icons\Family Icon.png" >
     </div>
-    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;row-gap: 2rem; background-color: transparent; max-width: 40rem;">
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;row-gap: 2rem; background-color: transparent; max-width: 35rem;">
       <p class="paras">
       We are a family of four. My father's name is Rathakrishnan Mathan, everyone calls him by Ratha. My mother's name is Sreedevi Lakshmanan, she goes by Sree. I have an elder sister and her name is Deepthi, her name is shortened to Deepu. She completed high school in the same school as I did but in the only-girls branch (Our Own English High School, Alwarqa Girls). She also completed B.E. Computer Science (2017-2021) in the same university that I study at currently, BITS Pilani Dubai Campus.
       </p>

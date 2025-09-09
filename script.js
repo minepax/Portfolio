@@ -21,7 +21,7 @@ function toggleSubMenu(button) {
   button.classList.toggle('rotate')
 }
 
-// Javascript for preloader div
+// Javascript for preloader page
 
 window.addEventListener("load", () => {
   const loader = document.querySelector(".preloader");
