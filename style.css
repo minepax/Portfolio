@@ -118,6 +118,11 @@ body {
         font-family: 'Montserrat', sans-serif;
         font-size: clamp(1.5rem, 20vw, 1.8rem);
         color: #cdb5d1;
+        transition: all 0.5s ease;
+        
+        &:hover {
+            color: white;
+        }
     }
 
     ul {
@@ -139,7 +144,7 @@ body {
         display: flex;
         align-items: center;
         white-space: nowrap;
-        transition: all 0.4s ease 0s;
+        transition: all 0.5s ease;
 
         &:hover {
             color: white;
@@ -169,7 +174,7 @@ body {
         width: 0;
         height: 2px;
         background-color: white;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
         transform: translateX(-50%);
     }
 }
@@ -181,16 +186,19 @@ body {
 /* NavBar - Sub Menu CSS */
 
 .navbar li:hover .nav-bar-sub {
-    display: block;
-    position: absolute;
-    margin-top: 1px;
-    margin-left: -16px;
+    height: auto;
+    background-color: #2903339c;
+    backdrop-filter: blur(10px);
 }
 
 .nav-bar-sub {
-    display: none;
-    background-color: #380546;
-    border-radius: 1.5rem;
+    display: block;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    interpolate-size: allow-keywords;
+    border-radius: 0rem 0rem 1.5rem 1.5rem;
+    transition: all 0.5s ease;
 
     ul {
         list-style-type: none;
@@ -204,11 +212,8 @@ body {
     li {
         width: 100%;
         padding: 0;
+        transition: all 0.5s ease;
 
-        &:first-child {
-            border-top-left-radius: 1.5rem;
-            border-top-right-radius: 1.5rem;
-        }
 
         &:last-child {
             border-bottom-left-radius: 1.5rem;
@@ -245,7 +250,7 @@ body {
     backdrop-filter: blur(10px);
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
-    transition: 500ms ease-in-out 0s;
+    transition: 0.5s ease-in-out;
 
     ul {
         &:first-child{
@@ -286,7 +291,7 @@ body {
     align-items: center;
     gap: 0.8rem;
     border-radius: 1rem;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
 
     span {
         font-family: "Montserrat", sans-serif;
@@ -319,7 +324,7 @@ body {
     background-color: #380546;
     border-radius: 1.5rem;
     grid-template-rows: 0fr;
-    transition: 400ms ease-in-out 0s;
+    transition: 0.5s ease-in-out;
 
     div {
         overflow: hidden;
@@ -347,7 +352,7 @@ body {
     cursor: pointer;
 
     img {
-        transition: 0.4s ease;
+        transition: 0.5s ease;
     }
 }
 
