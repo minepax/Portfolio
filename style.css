@@ -23,7 +23,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-    background-color: #100014;
+    background-color: #290333;
 	border-image: fill 1 linear-gradient(#29033360, #29033360);
 }
 
@@ -66,15 +66,15 @@ body {
 
 ::-webkit-scrollbar {
 	width: 0.3rem;
-	background: #100014;
+	background: #290333;
 }
 
 ::-webkit-scrollbar-track {
-	background: #100014;
+	background: #290333;
 }
 
 ::-webkit-scrollbar-track-piece {
-	background: #100014;
+	background: #290333;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -84,7 +84,7 @@ body {
 /* For the page preloader */
 
 .preloader {
-    background: #100014 url(./Images/Loading-Gear.gif) no-repeat center center;
+    background: #290333 url(./Images/Loading-Gear.gif) no-repeat center center;
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -110,11 +110,17 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #290333;
+    backdrop-filter: blur(10px);
     position: sticky;
-    top: 0;
+    top: -6rem;
     left: 0;
+    animation: stickyNav linear forwards;
+    animation-timeline: view();
+    animation-range-start: 150vh;
+    animation-range-end: 170vh;
 
     #logo {
+        display: var(--_logoDisplay, flex);
         font-family: 'Montserrat', sans-serif;
         font-size: clamp(1.5rem, 20vw, 1.8rem);
         color: #cdb5d1;
@@ -136,8 +142,7 @@ body {
 
     a {
         font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        font-size: 15px;
+        font-size: 16px;
         outline: none;
         color: #cdb5d1;
         height: 100%;
@@ -149,6 +154,21 @@ body {
         &:hover {
             color: white;
         }
+    }
+}
+
+@keyframes stickyNav {
+    0%, 100% {
+        width: fit-content;
+        margin-inline: auto;
+        padding: 0rem 2rem;
+        border-radius: 0.5rem;
+        background-color: #1a0120c0;
+        --_logoDisplay: none;
+        --_navbarSub-bg: #370744;
+    }
+    100% {
+        top: 1rem;
     }
 }
 
@@ -187,8 +207,7 @@ body {
 
 .navbar li:hover .nav-bar-sub {
     height: auto;
-    background-color: #2903339c;
-    backdrop-filter: blur(10px);
+    background-color: var(--_navbarSub-bg, #290333);
 }
 
 .nav-bar-sub {
@@ -213,7 +232,6 @@ body {
         width: 100%;
         padding: 0;
         transition: all 0.5s ease;
-
 
         &:last-child {
             border-bottom-left-radius: 1.5rem;
@@ -379,6 +397,11 @@ body {
     }
     .hamburger-menu {
         display: block;
+    }
+    .navbar {
+        top: 0;
+        animation: none;
+        background-color: #1a0120c0;
     }
 }
 
