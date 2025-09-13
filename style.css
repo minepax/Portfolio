@@ -480,13 +480,13 @@ body {
         background-repeat: no-repeat;
         background-attachment: fixed;
         border-image: fill 1 linear-gradient(#290333b7, #290333b7);
+    }
 
-        ~.Home-Div {
-            margin: 5rem min(25rem, 25%);
+    .Home-Div {
+        margin: 5rem min(25rem, 25%);
 
-            &:last-of-type {
-                margin-bottom: 0rem;
-            }
+        &:last-of-type {
+            margin-bottom: 0rem;
         }
     }
 }
@@ -618,8 +618,8 @@ body {
             }
         }
     }
-    .Home-Div {
-		margin: min(10rem, 10%);
+    #Home-Content .Home-Div {
+		margin: 5rem min(10rem, 10%);
 	}
     .hint {
         padding-inline: min(10rem, 10%);
