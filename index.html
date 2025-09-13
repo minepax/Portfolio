@@ -2,8 +2,9 @@
 <title>Maheshwar's Portfolio</title>
 
 <head>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -17,96 +18,144 @@
 <script src="//code.jquery.com/jquery.min.js"></script>
 
 <script>
-  $.get("Navigation.html", function(data){
-      $("#nav-placeholder").replaceWith(data);
-  });
+    $.get("Navigation.html", function(data){
+        $("#nav-placeholder").replaceWith(data);
+    });
 </script>
 
 <!-- Ends here -->
 
 <div id="Home-Main">
-
-  <div id="Heading">
-      <p id="Heading-Title">
-          Hello!
-      </p>
-      <p class="paras">
-          I'm Mahesh! Welcome to my first website creation which also happens to be my personal portfolio. Basically just a lot of random stuff about me and what I like/do.<br><br>
-          This includes basic information about myself and other interests/hobbies which are located in the navigation links. Enjoy your time here!
-      </p>
-  </div>
-
-  <div id="Profile-Container">
-    <div id="Profile-Label">
-      <p id="Label-Para">That's me!</p>
-      <img src=".\Images\Arrow.svg" width="15px">
+    
+    <div id="Heading">
+        <p id="Heading-Title">
+            Hello!
+        </p>
+        <p class="paras">
+            I'm Mahesh! Welcome to my first website creation which also happens to be my personal portfolio. Basically just a lot of random stuff about me and what I like/do.<br><br>
+            This includes basic information about myself and other interests/hobbies which are located in the navigation links. Enjoy your time here!
+        </p>
     </div>
-    <img id="Profile-Img" src=".\Images\Maheshwar Profile.jpg">
-  </div>
+
+    <div id="Profile-Container">
+        <div id="Profile-Label">
+            <p id="Label-Para">That's me!</p>
+            <img src="./Icons/Home Icons/Arrow.png" width="30px">
+        </div>
+        <img id="Profile-Img" src="./Images/Maheshwar Profile.jpg">
+    </div>
   
 </div>
 
-<div id="Home-Other">
-  
-  <div class="Home-Div">
-    <div style="display: flex; margin: 0; background-color: transparent; align-items: center;">
-      <p class="headings">About Me</p>
-      <img class="heading-icons" src=".\Icons\About Me Icons\About Icon.png">
-    </div>
-    <p class="paras">
-      My full name is Maheshwar Rathakrishnan, I usually go by Mahesh. My native place is a little village called Melur in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is Badaga. Badagas: A tribal community that has migrated from Karnataka and settled in the Nilgiris. The language is a mix of dominantly Kannada along with minimal aspects from Tamil.<br><br>
-      I live in Sharjah and study in Dubai, both are emirates (states) of the United Arab Emirates (UAE) located in Middle-East Asia. I did my studies upto middle school (KG-1 to Grade 5) in a school called Kindergarten Starters (KGS) now renamed to GEMS Legacy School. I completed my high school (Grade 6 to 12) in Our Own High School, Alwarqa Boys. I am currently studying B.E. Computer Science at BITS Pilani Dubai Campus.
-    </p>
-  </div>
+<div id="Home-Content">
 
-  <div class="Home-Div">
-    <div style="display: flex; margin: 0; background-color: transparent; align-items: center;">
-      <p class="headings">Family</p>
-      <img class="heading-icons" src=".\Icons\About Me Icons\Family Icon.png" >
+    <div class="Home-Sections">
+        <p class="headings">About Me</p>
+        <img class="heading-icons" src="./Icons/Home Icons/About Icon.png">
     </div>
-    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;row-gap: 2rem; background-color: transparent; max-width: 35rem;">
-      <p class="paras">
-      We are a family of four. My father's name is Rathakrishnan Mathan, everyone calls him by Ratha. My mother's name is Sreedevi Lakshmanan, she goes by Sree. I have an elder sister and her name is Deepthi, her name is shortened to Deepu. She completed high school in the same school as I did but in the only-girls branch (Our Own English High School, Alwarqa Girls). She also completed B.E. Computer Science (2017-2021) in the same university that I study at currently, BITS Pilani Dubai Campus.
-      </p>
-      <div class="gallery">
-        <div class="Frame">
-          <img src=".\Images\Rathakrishnan.jpg">
-          <p>My Father</p>
-        </div>
-        <div class="Frame">
-          <img src=".\Images\Sree Devi.jpg">
-          <p>My Mother</p>
-        </div>
-        <div class="Frame">
-          <img src=".\Images\Deepthi.jpg">
-          <p>My Sister</p>
-        </div>
-        <div class="Frame">
-          <img src=".\Images\Maheshwar.jpg">
-          <p>Myself</p>
-        </div>
-      </div>
+    <div class="Home-Div">
+        <p class="paras">
+            My full name is Maheshwar Rathakrishnan, I usually go by Mahesh. My native place is a little village called Melur in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is Badaga. Badagas: A tribal community that has migrated from Karnataka and settled in the Nilgiris. The language is a mix of dominantly Kannada along with minimal aspects from Tamil.<br><br>
+            I live in Sharjah and study in Dubai, both are emirates (states) of the United Arab Emirates (UAE) located in Middle-East Asia. I did my studies upto middle school (KG-1 to Grade 5) in a school called Kindergarten Starters (KGS) now renamed to GEMS Legacy School. I completed my high school (Grade 6 to 12) in Our Own High School, Alwarqa Boys. I am currently studying B.E. Computer Science at BITS Pilani Dubai Campus.
+        </p>
     </div>
-  </div>
+    
+    <div class="Home-Sections">
+        <p class="headings">My Family</p>
+        <img class="heading-icons" src="./Icons/Home Icons/Family Icon.png">
+    </div>
+    <div class="Home-Div">
+        <p class="paras">
+            We are a family of four. My father's name is Rathakrishnan Mathan, everyone calls him by Ratha. My mother's name is Sreedevi Lakshmanan, she goes by Sree. I have an elder sister and her name is Deepthi, her name is shortened to Deepu. She completed high school in the same school as I did but in the only-girls branch (Our Own English High School, Alwarqa Girls). She also completed B.E. Computer Science (2017-2021) in the same university that I study at currently, BITS Pilani Dubai Campus.
+        </p>
+    </div>
+    
+    <div class="container">
+        <div class="card-wrapper swiper mySwiper">
+            <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                    <img src="./Images/Rathakrishnan.jpg" class="card-image">
+                    <ul class="card-info">
+                        <li>DAD</li>
+                        <li>Name: Rathakrishnan</li>
+                        <li>Born: Mar 8, 1969</li>
+                        <li>Birth Place: Coonoor, Tamil Nadu</li>
+                        <li>University: TN Agricultural University</li>
+                        <li>Degree: B.E Agriculture</li>
+                        <li>Occupation: Irrigation Design</li>
+                    </ul>
+                </li>
+                <li class="card-item swiper-slide">
+                    <img src="./Images/Sreedevi.jpg" class="card-image">
+                    <ul class="card-info">
+                        <li>MOM</li>
+                        <li>Name: Sreedevi</li>
+                        <li>Born: May 7, 1975</li>
+                        <li>Birth Place: Ooty, Tamil Nadu</li>
+                        <li>University: Bharathiar University</li>
+                        <li>Degree: M.SC Zoology</li>
+                        <li>Occupation: House Wife</li>
+                    </ul>
+                </li>
+                <li class="card-item swiper-slide">
+                    <img src="./Images/Deepthi.jpg" class="card-image">
+                    <ul class="card-info">
+                        <li>SISTER</li>
+                        <li>Name: Deepthi</li>
+                        <li>Born: Mar 24, 2000</li>
+                        <li>Birth Place: Ooty, Tamil Nadu</li>
+                        <li>University: BITS Pilani Dubai Campus</li>
+                        <li>Degree: B.E Computer Science</li>
+                        <li>Occupation: Working</li>
+                    </ul>
+                </li>
+                <li class="card-item swiper-slide">
+                    <img src="./Images/Maheshwar.jpg" class="card-image">
+                    <ul class="card-info">
+                        <li>MYSELF</li>
+                        <li>Name: Maheshwar</li>
+                        <li>Born: Dec 3, 2004</li>
+                        <li>Birth Place: Sharjah, UAE</li>
+                        <li>University: BITS Pilani Dubai Campus</li>
+                        <li>Degree: B.E Computer Science</li>
+                        <li>Occupation: Student</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="custom-navigation">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
 
-  <div class="Home-Div">
-    <div style="display: flex; margin: 0; background: transparent; align-items: center;">
-      <p class="headings">Family Records</p>
-      <img class="heading-icons" src=".\Icons\About Me Icons\Record Icon.png">
-    </div>
-    <p class="paras">
-      My family has registered accounts in the World Cube Association and we have participated in a few speedcubing competitions although not recently. Few highlights are when my sister set the record for 3x3 in UAE back in 2009 and my dad placing first in the Dubai Open 2009 Competition. All times have been performed in WCA sanctioned competitions in Dubai, they have been authorised and registered in the WCA website.<br><br>
-      Links to my family members' pages in WCA:<br>
-      <a href="https://www.worldcubeassociation.org/persons/2009RATH01" target="_blank">&#8226; Deepthi (My Sister)</a><br>
-      <a href="https://www.worldcubeassociation.org/persons/2009MATH01" target="_blank">&#8226; Rathakrishnan (My Father)</a><br>
-      <a href="https://www.worldcubeassociation.org/persons/2017RATH04" target="_blank">&#8226; Maheshwar (My Self)</a><br>
-      <a href="https://www.worldcubeassociation.org/persons/2009LAKS01" target="_blank">&#8226; Sreedevi (My Mother)</a>
-    </p>
-  </div>
-
+    <p class="hint">Swipe over the cards to slide through them!</p>
+    
 </div>
 
 <div id="overlay" onclick="hideSideBar()"></div>
+
+<!-- Swiper JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initializing swiper -->
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        grabCursor: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        navigation: {
+            nextEl: ".custom-navigation .swiper-button-next",
+            prevEl: ".custom-navigation .swiper-button-prev",
+        },
+    });
+</script>
 
 </body>
 </html>

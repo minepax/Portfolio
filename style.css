@@ -18,13 +18,7 @@ html {
 
 body {
 	overflow: overlay;
-	background-image: url(./Images/Background-Image.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-    background-color: #290333;
-	border-image: fill 1 linear-gradient(#29033360, #29033360);
+    background-image: linear-gradient(#4d045f , #100014);
 }
 
 * {
@@ -42,24 +36,22 @@ body {
 .headings {
     font-family: inherit;
     font-weight: 800;
-    font-size: 3.5rem;
+    font-size: 8rem;
     color: inherit;
     text-decoration: inherit;
     white-space: nowrap;
-    background-color: transparent;
 
     ~.heading-icons {
-        width: 4rem;
+        height: 8rem;
+        aspect-ratio: 1/0.9;
         padding-left: 10px;
-        background-color: transparent;
     }
 }
 
 .paras, .paras a{
 	text-align: justify;
 	font-size: 1rem;
-	max-width: 35rem;
-	margin: 0;
+    display: flex;
 }
 
 /* Scrollbar CSS */
@@ -104,20 +96,18 @@ body {
 .navbar {
     width: 100%;
     height: 10dvh;
-    padding: 0rem 5rem;
+    padding: 0rem min(5rem, 5%);
     display: flex;
     z-index: 11;
     align-items: center;
     justify-content: space-between;
-    background-color: #290333;
-    backdrop-filter: blur(10px);
     position: sticky;
     top: -6rem;
     left: 0;
     animation: stickyNav linear forwards;
     animation-timeline: view();
-    animation-range-start: 150vh;
-    animation-range-end: 170vh;
+    animation-range-start: 120vh;
+    animation-range-end: 140vh;
 
     #logo {
         display: var(--_logoDisplay, flex);
@@ -163,7 +153,8 @@ body {
         margin-inline: auto;
         padding: 0rem 2rem;
         border-radius: 0.5rem;
-        background-color: #1a0120c0;
+        background-color: #1a0120bd;
+        backdrop-filter: blur(10px);
         --_logoDisplay: none;
         --_navbarSub-bg: #370744;
     }
@@ -222,7 +213,6 @@ body {
     ul {
         list-style-type: none;
         display: flex;
-        justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
         gap: 0;
@@ -293,7 +283,7 @@ body {
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #e9e7bd;
+            background-color: #fcf9c6;
         }
     }
 }
@@ -391,7 +381,7 @@ body {
 
 /* Media queries for nav and side bars */
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1300px) {
     .hideOnMobile {
         display: none;
     }
@@ -413,6 +403,8 @@ body {
 
 /*---------------------------------------------------------------------------------------- HOME PAGE CSS -------------------------------------------------------------------------------------------*/
 
+/* Home main div CSS */
+
 #Home-Main {
     display: flex;
     align-items: center;
@@ -433,6 +425,10 @@ body {
         #Heading-Title {
             font-weight: 800;
             font-size: 5rem;
+        }
+
+        .paras {
+            max-width: 35rem;
         }
     }
 }
@@ -465,37 +461,141 @@ body {
     }
 }
 
-#Home-Other {
+/* Home content div CSS */
+
+#Home-Content {
     background-color: #290333;
     position: sticky;
-    top: 10dvh;
+    top: 0;
     z-index: 10;
 
-    .Home-Div{
+    .Home-Sections {
+        padding: min(10rem, 10%) 0rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0rem min(10rem, 10%) 5rem;
-        border: none;
-        border-radius: none;
-        box-shadow: none;
-        gap: 2rem;
+        justify-content: center;
+        background-image: url(./Images/Background.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        border-image: fill 1 linear-gradient(#290333b7, #290333b7);
 
-        &:first-of-type {
-            padding-top: 5rem;
+        ~.Home-Div {
+            margin: 5rem min(25rem, 25%);
+
+            &:last-of-type {
+                margin-bottom: 0rem;
+            }
         }
     }
 }
 
-/* Media queries for Home page divs */
+/* Card swiper CSS */
 
-@media screen and (max-width: 1400px) {
-    .Home-Div {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+.container {
+    width: fit-content;
+    margin: 5rem auto 0rem;
+    padding: 0rem 5rem;
+    position: relative;
+
+    .card-wrapper {
+        height: 20rem;
+        width: 38rem;
+    }
 }
+
+.card-item, .swiper-wrapper .swiper-slide {
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 1.5rem;
+    background-color: #b189b8;
+    user-select: none;
+
+    .card-image {
+        height: 100%;
+        aspect-ratio: 5/7;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        box-shadow: 3px 3px 5px #290333;
+    }
+
+    .card-info {
+        list-style-type: none;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: #fdfce4;
+        border-radius: 1.5rem;
+        box-shadow: 3px 3px 5px #290333;
+
+        li {
+            width: 100%;
+            color: #290333;
+            text-shadow: 1px 1px 2px #29033371;
+
+            &:first-of-type {
+                font-size: 2.5rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+/* Card swiper-pagination CSS */
+
+.custom-navigation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    .swiper-button-prev, .swiper-button-next {
+        background-repeat: no-repeat;
+        background-size: 300% auto;
+        background-position: center;
+        position: static;
+        margin: 0;
+        pointer-events: auto;
+    }
+
+    .swiper-button-prev {
+        background-image: url(./Icons/Home\ Icons/prev-arrow.svg);
+    }
+
+    .swiper-button-next {
+        background-image: url(./Icons/Home\ Icons/next-arrow.svg);
+    }
+
+    .swiper-button-next::after, .swiper-button-prev::after {
+        display: none;
+    }
+    .swiper-button-disabled {
+        transition: opacity 0.5s ease;
+    }
+}
+
+:root {
+    --swiper-pagination-color: #fdfce4;
+    --swiper-pagination-bullet-width: 10px;
+    --swiper-pagination-bullet-height: 10px;
+    --swiper-pagination-bullet-inactive-color: #290333;
+    --swiper-pagination-bullet-inactive-opacity: 0.8;
+    --swiper-pagination-bullet-horizontal-gap: 3px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+}
+
+/* Media queries for Home page divs */
 
 @media screen and (orientation: portrait){
     #Home-Main {
@@ -518,163 +618,79 @@ body {
             }
         }
     }
-    .Home-Other {
-        top: 6dvh;
-    }
-}
-
-/*--------------------------------------------------------------------------------------- ABOUT MYSELF CSS -----------------------------------------------------------------------------------------*/
-
-.About-Myself-Div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0rem 5rem 5rem;
-	padding: 5rem;
-    border: 2px solid #6e1586;
-    border-radius: 1.5rem;
-    box-shadow: 5px 5px 10px #6e1586;
-    background-color: #290333;
-    gap: 2rem;
-
-    &:first-of-type {
-        margin-top: 5rem;
-    }
-}
-
-.gallery {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 1rem;
-
-    .Frame {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border: 2px solid #6e1586;
-        border-radius: 1.5rem;
-        box-shadow: 2px 2px 5px #6e1586;
-        width: 100%;
-
-        img {
-            aspect-ratio: 5/6;
-            object-fit: cover;
-            width: 100%;
-            border-bottom: 2px solid #6e1586;
-            border-radius: 1.5rem 1.5rem 0rem 0rem;
-        }
-
-        p {
-            font-size: 0.8rem;
-            padding: 10px;
-        }
-    }
-}
-
-/* Media queries for About Myself divs */
-
-@media(max-width: 1600px) {
-    .About-Myself-Div {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+    .Home-Div {
+		margin: min(10rem, 10%);
 	}
+    .hint {
+        padding-inline: min(10rem, 10%);
+    }
+}
+
+@media (pointer: coarse) {
+    .swiper-button-prev, .swiper-button-next {
+        visibility: hidden;
+    }
 }
 
 /*------------------------------------------------------------------------------------- MY CLASS PHOTOS CSS ----------------------------------------------------------------------------------------*/
 
-.Class-Photos-Div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-	margin: 5rem;
-	padding: min(5rem, 5%);
+.carousel-container {
+    position: relative;
+    user-select: none;
+    width: 75%;
+    overflow: hidden;
+	margin: 5rem auto 0rem;
+    padding-bottom: 0rem;
     border: 2px solid #6e1586;
     border-radius: 1.5rem;
     box-shadow: 5px 5px 10px #6e1586;
-	background-color: #290333;
-    gap: 2rem;
 
-    .carousel-container {
-        position: relative;
+    .carousel-slide {
+        display: flex;
         width: 100%;
-        overflow: hidden;
-        border: 2px solid #6e1586;
-        border-radius: 1.5rem;
-        box-shadow: 5px 5px 10px #6e1586;
 
-        .carousel-slide {
-            display: flex;
-            width: 100%;
+        img {
+            min-width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: fill;
+        }
+    }
+
+    #prev, #next {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        width: 15%;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s ease;
+
+        img {
+            display: none;
+            width: 15%;
+        }
+
+        &:hover {
+            background-color: #290333b9;
+            backdrop-filter: blur(10px);
 
             img {
-                min-width: 100%;
-                aspect-ratio: 16/9;
-                object-fit: fill;
+                display: block;
             }
         }
     }
-}
 
-#prev, #next {
-    position: absolute;
-    z-index: 10;
-    left: 0;
-    width: 15%;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s ease;
-
-    img {
-        display: none;
-        width: 15%;
-    }
-
-    &:hover {
-        background-color: #290333b9;
-        backdrop-filter: blur(10px);
-
-        img {
-            display: block;
-        }
+    #next {
+        left: 100%;
+        transform: translate(-100%);
     }
 }
 
-#next {
-    left: 100%;
-    transform: translate(-100%);
-}
-
-.hint{
-    font-size: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #6e1586;
-    border-radius: 0.5rem;
-    box-shadow: 3px 3px 5px #6e1586;
-}
-
-/*--------------------------------------------------------------------------------- MY OTHER FAMILY MEMBERS CSS ------------------------------------------------------------------------------------*/
-
-.Family-Members-Div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 0rem 5rem 5rem;
-    padding: 5rem;
-    border: 2px solid #6e1586;
-    border-radius: 1.5rem;
-    box-shadow: 5px 5px 10px #6e1586;
-    background-color: #290333;
-    gap: 2rem;
-
-    &:first-of-type {
-        margin-top: 5rem;
-    }
+.hint {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0rem min(5rem, 5%);
 }
