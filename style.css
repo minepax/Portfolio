@@ -41,6 +41,7 @@ body {
     color: inherit;
     text-decoration: inherit;
     white-space: nowrap;
+    display: flex;
 
     ~.heading-icons {
         height: 8rem;
