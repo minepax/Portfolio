@@ -58,7 +58,6 @@ body {
     font-family: inherit;
     font-weight: 800;
     font-size: clamp(3rem, 8vw, 6rem);
-    text-shadow: 5px 5px 3px var(--accent-color-1);
     color: inherit;
     text-decoration: inherit;
     display: flex;
@@ -480,6 +479,11 @@ body {
         object-fit: cover;
         border: 3px solid var(--accent-color-2);
         border-radius: 50%;
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
     }
 }
 
@@ -547,6 +551,11 @@ body {
         object-fit: cover;
         border-radius: 1.5rem;
         box-shadow: 3px 3px 5px var(--main-color);
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
     }
 
     .card-info {

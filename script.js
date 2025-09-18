@@ -1,3 +1,11 @@
+// Trying some Javascript
+
+const profile = document.getElementById('Profile-Img');
+
+profile.addEventListener('click', () => {
+  profile.style.transform = 'translateX(-50vw) scale(1.02)';
+});
+
 // Javascript for disabling right-click
 
 document.addEventListener('contextmenu', function(e) {
