@@ -57,14 +57,14 @@ body {
 .headings {
     font-family: inherit;
     font-weight: 800;
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(3rem, 8vw, 6rem);
     text-shadow: 5px 5px 3px var(--accent-color-1);
     color: inherit;
     text-decoration: inherit;
     display: flex;
 
     ~.heading-icons {
-        height: clamp(3rem, 10vw, 6rem);
+        height: clamp(3rem, 8vw, 6rem);
         aspect-ratio: 1/0.9;
         padding-left: 10px;
     }
@@ -435,7 +435,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: min(5rem, 5%) min(5rem, 5%);
+    padding: min(2rem, 2%) min(5rem, 5%);
     gap: 2rem;
     position: sticky;
     top: 10dvh;
