@@ -1,13 +1,21 @@
 <nav class="navbar">
+  
   <a href=".\index.html" id="logo">PORTFOLIO</a>
+
   <ul>
-    <li class="hamburger-menu"><a href="#" onclick=showSideBar()><img src=".\Icons\Nav Icons\Menu Icon.png"></a></li>
-    <li class="hideOnMobile"><a href='.\index.html' class="nav-item-div"><img src=".\Icons\Nav Icons\Home Icon.png">HOME</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Badminton Icon.png">BADMINTON</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Rubiks Cube Icon.png">CUBING</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\PC Gaming Icon.png">PC GAMING</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Minecraft Icon.png">MINECRAFT</a></li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Other Icon.png">OTHER</a>
+    <li class="hamburger-menu">
+      <a href="#" onclick=showSideBar()>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+        </svg>
+      </a>
+    </li>
+    <li class="hideOnMobile"><a href='.\index.html'>HOME</a></li>
+    <li class="hideOnMobile"><a href='#'>BADMINTON</a></li>
+    <li class="hideOnMobile"><a href='#'>CUBING</a></li>
+    <li class="hideOnMobile"><a href='#'>PC GAMING</a></li>
+    <li class="hideOnMobile"><a href='#'>MINECRAFT</a></li>
+    <li class="hideOnMobile"><a href='#'>OTHER</a>
       <div class="nav-bar-sub">
         <ul>
           <li><a href='.\My Class Photos.html'>CLASS PHOTOS</a></li>
@@ -15,20 +23,21 @@
         </ul>
       </div>
     </li>
-    <li class="hideOnMobile"><a href='#' class="nav-item-div"><img src=".\Icons\Nav Icons\Contact Icon.png">CONTACT</a></li>
+    <li class="hideOnMobile"><a href='#'>CONTACT</a></li>
   </ul>
+
 </nav>
 
 <nav id="sidebar">
   <ul>
-    <li><a href=".\index.html"><img src=".\Icons\Nav Icons\Home Icon.png" width="20px"><span>HOME</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Badminton Icon.png" width="20px"><span>BADMINTON</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Rubiks Cube Icon.png" width="20px"><span>CUBING</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\PC Gaming Icon.png" width="20px"><span>PC GAMING</span></a></li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Minecraft Icon.png" width="20px"><span>MINECRAFT</span></a></li>
+    <li><a href=".\index.html"><span>HOME</span></a></li>
+    <li><a href="#"><span>BADMINTON</span></a></li>
+    <li><a href="#"><span>CUBING</span></a></li>
+    <li><a href="#"><span>PC GAMING</span></a></li>
+    <li><a href="#"><span>MINECRAFT</span></a></li>
     <li>
       <button onclick=toggleSubMenu(this) class="dropdown-btn">
-        <img src=".\Icons\Nav Icons\Other Icon.png" width="20px"><span>OTHER</span><img src=".\Icons\Nav Icons\Dropdown Icon.png" width="20px">
+        <span>OTHER</span><img src=".\Icons\Nav Icons\Dropdown Icon.png">
       </button>
       <ul class="sub-menu">
         <div>
@@ -37,6 +46,6 @@
         </div>
       </ul>
     </li>
-    <li><a href="#"><img src=".\Icons\Nav Icons\Contact Icon.png" width="20px"><span>CONTACT</span></a></li>
+    <li><a href="#"><span>CONTACT</span></a></li>
   </ul>
 </nav>

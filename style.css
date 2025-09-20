@@ -39,32 +39,40 @@ body {
     --accent-color-1: #6e1586;
     --accent-color-2: #cdb5d1;
     --font-color: #fcf9c6;
-    --nav-alt-color: #1a0120bd;
+    --hover-color: white;
+    --nav-alt-color: #1a0120b7;
+    --sidebar-sub-color: #380546;
+    --section-background: url(./Images/Background.jpg);
 }
 
-/* :root {
-    --background: linear-gradient(#ffffff , #fcf9c6);
-    --main-color: #fcf9c6;
-    --main-color-translucent: #fcf9c6b7;
-    --accent-color-1: #cdb5d1;
-    --accent-color-2: #6e1586;
-    --font-color: #290333;
-    --nav-alt-color: #ffffffbd;
-} */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: linear-gradient(white , var(--accent-color-1));
+        --main-color: #cdb5d1;
+        --main-color-translucent: #cdb5d1b7;
+        --accent-color-1: #b56cc5;
+        --accent-color-2: #6e1586;
+        --font-color: #290333;
+        --hover-color: black;
+        --nav-alt-color: #dbb6e4b7;
+        --sidebar-sub-color: #c385d1;
+        --section-background: url(./Images/Background-2.jpg);
+    }
+}
 
 /* Content CSS */
 
 .headings {
     font-family: inherit;
     font-weight: 800;
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 8vw + 0.5rem, 6rem);
     color: inherit;
     text-decoration: inherit;
     display: flex;
 
-    ~.heading-icons {
-        height: clamp(3rem, 8vw, 6rem);
-        aspect-ratio: 1/0.9;
+    ~svg {
+        fill: var(--font-color);
+        height: clamp(3rem, 8vw + 0.5rem, 6rem);
         padding-left: 10px;
     }
 }
@@ -72,7 +80,6 @@ body {
 .paras, .paras a{
 	text-align: justify;
 	font-size: 1rem;
-    text-shadow: 3px 3px 2px var(--accent-color-1);
 }
 
 /* Scrollbar CSS */
@@ -118,8 +125,8 @@ body {
     width: 100%;
     height: 10dvh;
     padding: 0rem min(5rem, 5%);
-    display: flex;
     z-index: 11;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
@@ -133,12 +140,12 @@ body {
     #logo {
         display: var(--_logoDisplay, flex);
         font-family: 'Montserrat', sans-serif;
-        font-size: clamp(1.5rem, 20vw, 1.8rem);
+        font-size: clamp(1.5rem, 20vw  + 0.5rem, 1.8rem);
         color: var(--accent-color-2);
         transition: all 0.5s ease;
-        
+
         &:hover {
-            color: white;
+            color: var(--hover-color);
             transform: none;
         }
     }
@@ -161,22 +168,66 @@ body {
         display: flex;
         align-items: center;
         white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
         transition: all 0.5s ease;
 
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--hover-color);
+            transition: all 0.5s ease;
+            transform: translateX(-50%);
+        }
+
         &:hover {
-            color: white;
+            color: var(--hover-color);
             transform: translateY(3px);
-            text-shadow: 3px 3px 2px var(--main-color);
         }
     }
 
-    li:hover .nav-item-div::after {
+    li:hover a::after {
         width: 100%;
     }
 }
 
+.theme-switch {
+    height: 40px;
+    aspect-ratio: 1/1;
+    border: 2px solid var(--accent-color-2);
+    border-radius: 50%;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;   
+}
+
+.theme-switch svg {
+    fill: var(--accent-color-2);
+    width: 24px;
+}
+
+.theme-switch svg:last-child {
+    display: none;
+}
+
+.lightmode .theme-switch svg:first-child {
+    display: none;
+}
+
+.lightmode .theme-switch svg:last-child {
+    display: block;
+}
+
 @keyframes stickyNav {
     0%, 100% {
+        height: 8dvh;
         width: fit-content;
         margin-inline: auto;
         padding: 0rem 2rem;
@@ -184,6 +235,7 @@ body {
         background-color: var(--nav-alt-color);
         backdrop-filter: blur(10px);
         --_logoDisplay: none;
+        --_themeDisplay: none;
         --_navbarSub-bg: #370744;
     }
     100% {
@@ -191,38 +243,11 @@ body {
     }
 }
 
-.nav-item-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    gap: 5px;
-    height: 100%;
-    cursor: pointer;
-
-    img {
-        width: 20px;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background-color: white;
-        transition: all 0.5s ease;
-        transform: translateX(-50%);
-    }
-}
-
 /* NavBar - Sub Menu CSS */
 
 .navbar li:hover .nav-bar-sub {
     height: auto;
-    background-color: var(--_navbarSub-bg, var(--main-color));
+    background-color: var(--main-color);
 }
 
 .nav-bar-sub {
@@ -256,11 +281,17 @@ body {
             background-color: var(--accent-color-1);
             border-bottom: none;
         }
+        
     }
 
     a {
         width: 100%;
         padding: 1rem 1rem;
+
+        &::after {
+            content: none;
+            display: none;
+        }
 
         &:hover {
             transform: none;
@@ -322,7 +353,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     transition: all 0.5s ease;
 
     span {
@@ -336,7 +367,7 @@ body {
         background-color: var(--accent-color-1);
         
         span {
-            color: white;
+            color: var(--hover-color);
         }
     }
 }
@@ -353,7 +384,7 @@ body {
 
 #sidebar .sub-menu {
     display: grid;
-    background-color: #380546;
+    background-color: var(--sidebar-sub-color);
     border-radius: 1.5rem;
     grid-template-rows: 0fr;
     transition: 0.5s ease-in-out;
@@ -367,7 +398,7 @@ body {
 
         &:hover {
             background-color: var(--accent-color-1);
-            color: white;
+            color: var(--hover-color);
         }
     }
 }
@@ -384,11 +415,12 @@ body {
     cursor: pointer;
 
     img {
-        transition: 0.5s ease;
+        width: 20px;
+        transition: all 0.5s ease;
     }
 }
 
-.rotate img:last-child {
+.rotate img {
     rotate: -180deg;
 }
 
@@ -396,10 +428,23 @@ body {
 
 .hamburger-menu {
     display: none;
+    svg {
+        width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
+        fill: var(--accent-color-2);
+        transition: fill 0.5s ease;
+    }
+    
+    a:hover {
+        transform: none;
 
-    img {
-        width: clamp(2.5rem, 1vw, 3rem);
-        aspect-ratio: 6/4;
+        svg {
+            fill: var(--hover-color);
+        }
+    }
+
+    a::after {
+        content: none;
+        display: none;
     }
 }
 
@@ -471,13 +516,18 @@ body {
 	        text-align: none;
             white-space: nowrap;
         }
+
+        svg {
+            fill: var(--font-color);
+            height: 20px;
+        }
     }
 
     #Profile-Img {
         width: 100%;
         aspect-ratio: 5/6;
         object-fit: cover;
-        border: 3px solid var(--accent-color-2);
+        border: 3px solid var(--font-color);
         border-radius: 50%;
         transition: transform 0.5s ease;
 
@@ -500,7 +550,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url(./Images/Background.jpg);
+        background-image: var(--section-background);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -531,7 +581,10 @@ body {
 
     .card-wrapper {
         height: 20rem;
-        width: clamp(30rem, 100% , 45rem);
+        width: clamp(30rem, 100%, 38rem);
+        border-radius: 0.5rem;
+        border: 1px solid black;
+        box-shadow: 3px 3px 5px black;
     }
 }
 
@@ -541,16 +594,17 @@ body {
     align-items: flex-start;
     justify-content: center;
     gap: 1rem;
-    border-radius: 1.5rem;
-    background-color: var(--accent-color-1);
+    border-radius: 0.5rem;
+    background-color: #b56cc5;
     user-select: none;
 
     .card-image {
         height: 100%;
         aspect-ratio: 5/7;
         object-fit: cover;
-        border-radius: 1.5rem;
-        box-shadow: 3px 3px 5px var(--main-color);
+        border-radius: 0.5rem;
+        border: 0px solid black;
+        box-shadow: 2px 2px 5px black;
         transition: transform 0.5s ease;
 
         &:hover {
@@ -567,13 +621,13 @@ body {
         align-items: flex-start;
         justify-content: space-evenly;
         flex-direction: column;
-        background-color: var(--accent-color-2);
-        border-radius: 1.5rem;
-        box-shadow: 3px 3px 5px var(--main-color);
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: 2px 2px 5px black;
 
         li {
             width: fit-content;
-            color: var(--main-color);
+            color: #290333;
             font-weight: 600;
 
             &:first-of-type {
@@ -622,11 +676,11 @@ body {
 }
 
 :root {
-    --swiper-pagination-color: var(--font-color);
+    --swiper-pagination-color: white;
     --swiper-pagination-bullet-width: 10px;
     --swiper-pagination-bullet-height: 10px;
-    --swiper-pagination-bullet-inactive-color: var(--main-color);
-    --swiper-pagination-bullet-inactive-opacity: 0.8;
+    --swiper-pagination-bullet-inactive-color: #290333;
+    --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 3px;
     --swiper-pagination-bullet-vertical-gap: 6px;
 }
@@ -671,19 +725,9 @@ body {
         padding: 1rem;
         align-items: center;
         flex-direction: column;
-        gap: 1rem;
         .card-image {
             height: 15rem;
             width: auto;
-            aspect-ratio: 5/7;
-        }
-        .card-info {
-            align-items: flex-start;
-            justify-content: space-evenly;
-            flex-direction: column;
-            background-color: var(--accent-color-2);
-            border-radius: 1.5rem;
-            box-shadow: 3px 3px 5px var(--main-color);
         }
     }
 }
@@ -703,9 +747,9 @@ body {
     overflow: hidden;
 	margin: 5rem auto 0rem;
     padding-bottom: 0rem;
-    border: 2px solid var(--accent-color-1);
+    border: 2px solid black;
     border-radius: 1.5rem;
-    box-shadow: 5px 5px 10px var(--accent-color-1);
+    box-shadow: 5px 5px 10px black;
 
     .carousel-slide {
         display: flex;
@@ -736,7 +780,7 @@ body {
         }
 
         &:hover {
-            background-color: var(--main-color-translucent);
+            background-color: #290333b7;
             backdrop-filter: blur(10px);
 
             img {

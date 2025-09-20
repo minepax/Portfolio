@@ -40,8 +40,12 @@
 
     <div id="Profile-Container">
         <div id="Profile-Label">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" xml:space="preserve">
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                    <path d="M 65.653 0 c 0.525 0 1.041 0.207 1.424 0.596 l 22.346 22.656 c 0.768 0.778 0.768 2.03 0 2.809 L 67.078 48.716 c -0.569 0.578 -1.431 0.755 -2.183 0.446 c -0.751 -0.308 -1.241 -1.039 -1.241 -1.851 V 26.688 C 30.581 27.743 4 54.842 4 88 c 0 1.104 -0.896 2 -2 2 s -2 -0.896 -2 -2 c 0 -36.031 29.452 -65.344 65.654 -65.344 c 1.104 0 2 0.896 2 2 v 17.779 l 17.537 -17.779 L 67.654 6.876 v 7.316 c 0 1.104 -0.896 2 -2 2 s -2 -0.896 -2 -2 V 2 c 0 -0.812 0.49 -1.542 1.241 -1.851 C 65.141 0.049 65.398 0 65.653 0 z" style="stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                </g>
+            </svg>
             <p class="paras">That's me!</p>
-            <img src="./Icons/Home Icons/Arrow.png" width="30px">
         </div>
         <img id="Profile-Img" src="./Images/Maheshwar Profile.jpg">
     </div>
@@ -52,7 +56,9 @@
 
     <div class="Home-Sections">
         <p class="headings">About Me</p>
-        <img class="heading-icons" src="./Icons/Home Icons/About Icon.png">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path d="M480-240q-56 0-107 17.5T280-170v10h400v-10q-42-35-93-52.5T480-240Zm0-80q69 0 129 21t111 59v-560H240v560q51-38 111-59t129-21Zm0-160q-25 0-42.5-17.5T420-540q0-25 17.5-42.5T480-600q25 0 42.5 17.5T540-540q0 25-17.5 42.5T480-480ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm240-320q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Zm0-140Z"/>
+        </svg>
     </div>
     <div class="Home-Div">
         <p class="paras">
@@ -63,7 +69,9 @@
     
     <div class="Home-Sections">
         <p class="headings">My Family</p>
-        <img class="heading-icons" src="./Icons/Home Icons/Family Icon.png">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path d="M240-320q-33 0-56.5-23.5T160-400q0-33 23.5-56.5T240-480q33 0 56.5 23.5T320-400q0 33-23.5 56.5T240-320Zm480 0q-33 0-56.5-23.5T640-400q0-33 23.5-56.5T720-480q33 0 56.5 23.5T800-400q0 33-23.5 56.5T720-320Zm-240-40q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM284-120q14-69 68.5-114.5T480-280q73 0 127.5 45.5T676-120H284Zm-204 0q0-66 47-113t113-47q17 0 32 3t29 9q-30 29-50 66.5T224-120H80Zm656 0q-7-44-27-81.5T659-268q14-6 29-9t32-3q66 0 113 47t47 113H736ZM88-480l-48-64 440-336 160 122v-82h120v174l160 122-48 64-392-299L88-480Z"/>
+        </svg>
     </div>
     <div class="Home-Div">
         <p class="paras">
@@ -145,7 +153,7 @@
 
 <script>
     var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
+        spaceBetween: 20,
         grabCursor: true,
         loopFillGroupWithBlank: true,
         pagination: {

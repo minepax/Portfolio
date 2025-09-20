@@ -1,11 +1,3 @@
-// Trying some Javascript
-
-const profile = document.getElementById('Profile-Img');
-
-profile.addEventListener('click', () => {
-  profile.style.transform = 'translateX(-50vw) scale(1.02)';
-});
-
 // Javascript for disabling right-click
 
 document.addEventListener('contextmenu', function(e) {
@@ -42,7 +34,7 @@ window.addEventListener("load", () => {
   });
 });
 
-// Javascript for My Class Photos
+// Javascript for class photos image slider
 
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
