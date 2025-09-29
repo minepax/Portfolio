@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <title>Badminton</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script>
+    <style>
+        :root {
+            --bg-gradient: #290333b7;
+            --hr-color: #fcf9c6;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-gradient: #cdb5d1b7;
+                --hr-color: #290333;
+            }
+        }
+
+        hr {
+            margin: 5rem auto;
+            width: 70%;
+            height: 3px;
+            border: none;
+            background-color: var(--hr-color);
+        }
+
+        body {
+            background-image: url(./Images/Badminton-Background-2.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            border-image: fill 1 linear-gradient(var(--bg-gradient), var(--bg-gradient));
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="preloader"></div>
+
+<!-- Import code for nav and side bars -->
+
+<div id="nav-placeholder"></div>
+
+<script src="//code.jquery.com/jquery.min.js"></script>
+
+<script>
+    $.get("navbar.html", function(data){
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<!-- Ends here -->
+
+<main id="Badminton-Wrapper">
+
+    <nav id="Badminton-Nav">
+        <ul>
+            <li>
+                <a href="#topic-1"><h3>Introduction</h3></a><br>
+                <p class="sub-list"><a href="#topic-1-sub-1">What is badminton?</a></p>
+                <p class="sub-list"><a href="#topic-1-sub-2">What it takes to go pro</a></p>
+                <p class="sub-list"><a href="#topic-1-sub-3">Badminton and I</a></p>
+            </li>
+            <li><a href="#topic-2"><h3>Men's Singles</h3></a></li>
+            <li><a href="#topic-3"><h3>Women's Singles</h3></a></li>
+        </ul>
+    </nav>
+
+    <article id="Badminton-Content">
+
+        <!-- Introduction -->
+
+        <h1 id="topic-1">Introduction</h1><br>
+
+        <p>
+            This introduction is for those who are not aware of badminton as a sport so skip on ahead using the sidebar (or scroll) if you know the basics of this sport!
+        </p><br><br>
+
+        <h2 id="topic-1-sub-1">What is badminton?</h2><br>
+
+        <p>
+            It is a racquet sport involving a racquet and a shuttlecock. You use the racquet to hit the shuttlecock above, and to the other side of a net. Formally it is played on a rectangular court with lines that indicate boundaries but you can usually find people enjoying badminton in places like parks, yards or even beaches.<br><br>
+
+            Badminton has pretty simple rules at the beginners level. There are boundaries that differentiate between 'in' and 'out' similar to tennis and other racquet sports. Badminton also has different 'modes' or disciplines in the sport mainly singles (1v1: Men, Women) and doubles (2v2: Men, Women, Mixed) with each having different boundaries. The main goal of a badminton match is to win using points and they are earned in a variety of ways.<br><br>
+            
+            Some of the basic ways to earn points include:<br><br>
+            <ul>
+                <li>Your opponent hits the shuttle such that it does not travel above the net to your side of the court</li>
+                <li>Your opponent hits the shuttle such that it does travel above the net to your side of the court but lands out of bounds</li>
+                <li>You hit the shuttle such that it travels above the net and in bounds of your opponents side of the court</li>
+            </ul>
+        </p><br>
+
+        <h2 id="topic-1-sub-2">What it takes to go pro</h2><br>
+
+        <p>
+            On the surface level, badminton may seem like a very straight-forward sport with minimal to no strategy. But infact the opposite is true at the elite levels, it requires a deep understanding and control of various aspects like the following to consider it professionally:<br><br>
+
+            <ul>
+                <li>Timing</li>
+                <li>Balance</li>
+                <li>Speed</li>
+                <li>Rhythm</li>
+                <li>General upper and lower body strength</li>
+                <li>Ability to concentrate strength into small points of impact</li>
+                <li>Ability to control strength and be delicate</li>
+            </ul>
+        </p><br>
+        
+        <p>
+            The international governing organization for all things badminton is the <a href="https://bwfbadminton.com/" target="#">BWF</a> (Badminton World Federation). They conduct tournaments throughout the world for players from different countries to participate in and have a chance of representing their nation.<br><br>
+            
+            BWF also has a comprehensive and a pretty detailed ranking system which consists of players earning points by participating and achieving positions in the tournaments (Eg: Quaterfinalist, Semfinalist, Runner-up or Winner). Visit the BWF site for more if you are interested!<br><br>
+
+            Out of the millions of players who enjoy the sport, only a handful make it to the professional level only to further be dominated by greater players who have much deeper understandings of much more complex concepts.<br><br>
+        </p><br>
+
+        <h2 id="topic-1-sub-3">Badminton and I</h2><br>
+
+        <p>
+            Badminton is an important part of my life as a passion and as my favorite sport/fitness activity. I started playing badminton in 10th grade casually with my dad and cousin as a leisurely time pass and fitness activity on the weekends.<br><br>
+
+            After joining university, playing badminton became a part of my daily life during free hours. Watching tutorials and international tournament matches quickly became a major hobby for me which helped me improve in various aspects like technical, tactical, physical and mental. Furthermore, I would try and apply anything and everything that I learned during the time I played in university.<br><br>
+
+            This page is only for fun and to be taken lightly! Just a bunch of personal opinions and random information on some of my favorite players whom I consider great as they possess skills, knowledge or an understanding that is superior to an average professional player on the world circuit.
+        </p>
+
+        <hr>
+
+        <!-- Men's Singles -->
+
+        <h1>Men's Singles</h1><br>
+
+        <p>
+            Mens singles is all about strength, speed and attack. The golden era of this discipline included players like <a href="https://en.wikipedia.org/wiki/Lin_Dan" target="#">Lin Dan</a> (China), <a href="https://en.wikipedia.org/wiki/Chen_Long" target="#">Chen Long</a> (China) and <a href="https://en.wikipedia.org/wiki/Lee_Chong_Wei" target="#">Lee Chong Wei</a> (Malaysia), they brought a new perspective to the game with increasing rally IQ along with crazy fitness levels which quickly became major requiremenets to survive at the highest level of this discipline.<br><br>
+            
+            Following this, a new era of players have emerged. These new players have studied the previous legends; followed their footsteps by improving upon the strategies, playstyles and minor details that made them great, and incorporated all of it into their game while bringing their own flare and style to it.
+        </p>
+
+        <hr>
+        
+        <!-- Women's Singles -->
+
+        <h1 id="topic-2">Women's Singles</h1><br>
+
+        <p>
+            (In the works...)
+        </p>
+
+    </article>
+
+    <aside id="Badminton-Aside">
+
+        <h2>Some useful articles!</h2>
+
+        <div class="aside-card">
+            <a href="https://badminton-insight.com/the-4-grips-in-badminton/" target="#">
+                <img src="https://badminton-insight.com/wp-content/uploads/2021/03/4-Grips-In-Badminton-1024x576.png">
+                <h3>Badminton Grips</h3>
+            </a>
+            <p>They say a badminton match never has the exact same situation twice within it and so different grips are used for different situations. This article provides a basic guide of when and how to use them.</p>
+        </div>
+
+        <div class="aside-card">
+            <a href="https://badminton-insight.com/how-to-do-a-forehand-clear-in-badminton/" target="#">
+                <img src="https://badminton-insight.com/wp-content/uploads/2024/01/Forehand-Clear-Tutorial-1-1024x576.png">
+                <h3>Basic Shots: Clear</h3>
+            </a>
+            <p>The clear in badminton is a basic shot for everyone to master. This article has all that you need to learn the technique for an effortless clear.</p>
+        </div>
+
+        <div class="aside-card">
+            <a href="https://badminton-insight.com/how-to-smash-in-badminton/" target="#">
+                <img src="https://badminton-insight.com/wp-content/uploads/2023/10/Smash-Tutorial-1024x576.png">
+                <h3>Basic Shots: Smash</h3>
+            </a>
+            <p>If you are going to win matches, it is with smashes! So use this article to learn the right technique for a powerful smash because without smashes, there is no badminton!. </p>
+        </div>        
+
+        <div class="aside-card">
+            <a href="https://badminton-insight.com/how-to-improve-as-a-beginner-in-badminton/" target="#">
+                <img src="https://badminton-insight.com/wp-content/uploads/2024/08/maxresdefault-3-1024x576.webp">
+                <h3>Common Beginner Mistakes</h3>
+            </a>
+            <p>If you are a beginner, you likely commit mistakes unknowingly. This article has a couple technical ones that you can keep in mind and correct right away!</p>
+        </div>
+        
+    </aside>
+
+</main>
+
+<div id="overlay" onclick="hideSideBar()"></div>
+
+</body>
+</html>

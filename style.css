@@ -10,6 +10,8 @@
 html, body {
     height: 100dvh;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 html {
@@ -32,6 +34,44 @@ body {
 	text-decoration: none;
 }
 
+h1 {
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw + 0.5rem, 6rem);
+
+    ~svg {
+        fill: var(--font-color);
+        height: clamp(3rem, 8vw + 0.5rem, 6rem);
+        padding-left: 10px;
+    }
+}
+
+h2 {
+    font-weight: 800;
+    font-size: clamp(1.7rem, 3vw + 0.5rem, 2.5rem);
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+p {
+	font-size: 1.2rem;
+	text-align: justify;
+    color: var(--hover-color);
+    max-width: 60ch;
+}
+
+img {
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+
+    &:hover {
+        filter: grayscale(0%);
+        transform: scale(1.02);
+    }
+}
+
 :root {
     --background: linear-gradient(#4d045f , #100014);
     --main-color: #290333;
@@ -39,6 +79,7 @@ body {
     --accent-color-1: #6e1586;
     --accent-color-2: #cdb5d1;
     --font-color: #fcf9c6;
+    --font-highlight: #fffa92;
     --hover-color: white;
     --nav-alt-color: #1a0120b7;
     --sidebar-sub-color: #380546;
@@ -53,33 +94,12 @@ body {
         --accent-color-1: #b56cc5;
         --accent-color-2: #6e1586;
         --font-color: #290333;
+        --font-highlight: #9306b6;
         --hover-color: black;
         --nav-alt-color: #dbb6e4b7;
         --sidebar-sub-color: #c385d1;
         --section-background: url(./Images/Background-2.jpg);
     }
-}
-
-/* Content CSS */
-
-.headings {
-    font-family: inherit;
-    font-weight: 800;
-    font-size: clamp(3rem, 8vw + 0.5rem, 6rem);
-    color: inherit;
-    text-decoration: inherit;
-    display: flex;
-
-    ~svg {
-        fill: var(--font-color);
-        height: clamp(3rem, 8vw + 0.5rem, 6rem);
-        padding-left: 10px;
-    }
-}
-
-.paras, .paras a{
-	text-align: justify;
-	font-size: 1rem;
 }
 
 /* Scrollbar CSS */
@@ -124,7 +144,7 @@ body {
 .navbar {
     width: 100%;
     height: 10dvh;
-    padding: 0rem min(5rem, 5%);
+    padding: 0rem min(5rem, 5vw);
     z-index: 11;
     display: flex;
     align-items: center;
@@ -479,7 +499,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 6dvh min(5rem, 5%);
+    padding: 6dvh min(5rem, 5vw);
     gap: 2rem;
     position: sticky;
     top: 10dvh;
@@ -492,8 +512,9 @@ body {
         flex-direction: column;
         gap: 2rem;
 
-        .paras {
-            max-width: 30rem;
+        p {
+            color: var(--font-color);
+            max-width: 40ch;
         }
     }
 }
@@ -511,8 +532,8 @@ body {
         align-items: flex-end;
         flex-direction: column;
 
-        .paras {
-            font-size: 0.8rem;
+        p {
+            font-size: 0.7rem;
 	        text-align: none;
             white-space: nowrap;
         }
@@ -529,11 +550,6 @@ body {
         object-fit: cover;
         border: 3px solid var(--font-color);
         border-radius: 50%;
-        transition: transform 0.5s ease;
-
-        &:hover {
-            transform: scale(1.02);
-        }
     }
 }
 
@@ -546,7 +562,7 @@ body {
     z-index: 10;
 
     .Home-Sections {
-        padding: min(10rem, 10%) 2rem;
+        padding: min(10rem, 10vw) 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -556,18 +572,13 @@ body {
         background-repeat: no-repeat;
         background-attachment: fixed;
         border-image: fill 1 linear-gradient(var(--main-color-translucent), var(--main-color-translucent));
-
-        .headings {
-            text-shadow: none;
-        }
     }
 
     .Home-Div {
-        margin: min(5rem, 10%) min(25rem, 25%);
-
-        &:last-of-type {
-            margin-bottom: 0rem;
-        }
+        padding: min(5rem, 5vw);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }
 
@@ -575,8 +586,8 @@ body {
 
 .container {
     width: 100%;
-    margin: min(5rem, 10%) 0rem 0rem;
-    padding: 0rem min(5rem, 10%);
+    margin-top: min(5rem, 5vw);
+    padding-inline: min(5rem, 5vw);
     position: relative;
 
     .card-wrapper {
@@ -603,13 +614,7 @@ body {
         aspect-ratio: 5/7;
         object-fit: cover;
         border-radius: 0.5rem;
-        border: 0px solid black;
         box-shadow: 2px 2px 5px black;
-        transition: transform 0.5s ease;
-
-        &:hover {
-            transform: scale(1.02);
-        }
     }
 
     .card-info {
@@ -709,14 +714,11 @@ body {
         }
     }
     #Home-Content .Home-Div {
-		margin-inline: min(10rem, 10%);
-	}
-    .hint {
-        padding-inline: min(10rem, 10%);
+        padding: min(10rem, 10vw);
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 920px) {
     .container .card-wrapper {
         height: 35rem;
         width: 100%;
@@ -738,7 +740,7 @@ body {
     }
 }
 
-/*------------------------------------------------------------------------------------- MY CLASS PHOTOS CSS ----------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------- CLASS PHOTOS CSS ----------------------------------------------------------------------------------------*/
 
 .carousel-container {
     position: relative;
@@ -796,7 +798,118 @@ body {
 }
 
 .hint {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0rem min(5rem, 5%);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+/*------------------------------------------------------------------------------------------ Badminton Page CSS ---------------------------------------------------------------------------------------------*/
+
+#Badminton-Wrapper {
+    padding-inline: min(5rem, 5vw);
+    display: flex;
+    justify-content: center;
+}
+
+#Badminton-Nav {
+    padding-block: min(5rem, 5vw);
+    height: 100dvh;
+    position: sticky;
+    top: 0;
+
+    ul {
+        list-style-type: none;
+        padding: 2rem;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: 2px 2px 5px black;
+        background: #cdb5d177;
+        backdrop-filter: blur(5px);
+    }
+
+    .sub-list a {
+        font-size: 1.1rem;
+        padding-left: 2rem;
+        color: var(--hover-color);
+        white-space: nowrap;
+    }
+}
+
+#Badminton-Content {
+    padding: min(5rem, 5vw);
+
+    p a {
+        color: var(--hover-color);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: var(--font-highlight);
+        }
+    }
+
+    ul {
+        list-style-type: square;
+        font-size: 1.2rem;
+        max-width: 60ch;
+        padding-left: 2rem;
+
+        li {
+            color: var(--hover-color);
+        }
+    }
+}
+
+#Badminton-Aside {
+    padding-block: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .aside-card {
+        margin-inline: 2rem;
+        padding: 1rem;
+        max-width: min-content;
+        border-radius: 0.5rem;
+        box-shadow: 2px 2px 5px black;
+        background: #cdb5d177;
+        backdrop-filter: blur(10px);
+        transition: transform 0.5s ease;
+
+        img {
+            margin-bottom: 0.5rem;
+            width: 320px;
+            height: 200px;
+            box-shadow: 2px 2px 5px black;
+            border-radius: 0.5rem;
+            /* filter: none;
+
+            &:hover {
+                transform: none;
+            } */
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #Badminton-Nav {
+        top: 6dvh;
+    }
 }
