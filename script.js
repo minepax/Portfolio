@@ -4,6 +4,17 @@ document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
 
+// Javascript for badminton page list
+
+function showList() {
+  const list = document.getElementById('Badminton-Hidden-Nav');
+  if (list.style.width === 'auto') {
+    list.style.width = '0';
+  } else {
+    list.style.width = 'auto';
+  }
+}
+
 // Javascript for sidebar
 
 function showSideBar() {

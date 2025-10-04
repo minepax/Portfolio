@@ -805,16 +805,17 @@ img {
 /*------------------------------------------------------------------------------------------ Badminton Page CSS ---------------------------------------------------------------------------------------------*/
 
 #Badminton-Wrapper {
-    padding-inline: min(5rem, 5vw);
+    padding: min(5rem, 5vw);
+    padding-bottom: 0;
     display: flex;
     justify-content: center;
+    gap: min(5rem, 5vw);
 }
 
 #Badminton-Nav {
-    padding-block: min(5rem, 5vw);
-    height: 100dvh;
+    height: 90dvh;
     position: sticky;
-    top: 0;
+    top: 5dvh;
 
     ul {
         list-style-type: none;
@@ -840,7 +841,7 @@ img {
 }
 
 #Badminton-Content {
-    padding: min(5rem, 5vw);
+    padding-bottom: min(5rem, 5vw);
 
     p a {
         color: var(--hover-color);
@@ -867,15 +868,18 @@ img {
 }
 
 #Badminton-Aside {
-    padding-block: 5rem;
+    padding-bottom: min(5rem, 5vw);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     gap: 1.5rem;
 
+    h2 {
+        white-space: nowrap;
+    }
+
     .aside-card {
-        margin-inline: 2rem;
         padding: 1rem;
         max-width: min-content;
         border-radius: 0.5rem;
@@ -885,16 +889,17 @@ img {
         transition: transform 0.5s ease;
 
         img {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             width: 320px;
             height: 200px;
             box-shadow: 2px 2px 5px black;
             border-radius: 0.5rem;
-            /* filter: none;
+            filter: none;
+            transition: none;
 
             &:hover {
                 transform: none;
-            } */
+            }
         }
 
         p {
@@ -908,8 +913,131 @@ img {
     }
 }
 
+#Badminton-Nav-Btn {
+    padding: 2px;
+    display: none;
+    position: fixed;
+    top: calc(10dvh + 2rem);
+    left: min(5rem, 5vw);
+    translate: 0 -50%;
+    border-radius: 10px;
+    background-color: var(--nav-alt-color);
+    backdrop-filter: blur(10px);
+
+    svg {
+        width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
+        fill: var(--accent-color-2);
+        transition: fill 0.5s ease;
+    }
+    
+    a:hover {
+        transform: none;
+
+        svg {
+            fill: var(--hover-color);
+        }
+    }
+
+    a::after {
+        content: none;
+        display: none;
+    }
+}
+
+#Badminton-Hidden-Nav {
+    position: fixed;
+    top: 10dvh;
+    z-index: 100;
+    width: 0;
+    height: 90dvh;
+    overflow: hidden;
+    interpolate-size: allow-keywords;
+    transition: width 0.5s ease;
+
+    ul {
+        list-style-type: none;
+        padding: 2rem;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        border-radius: 0 1.5rem 1.5rem 0;
+        background: var(--nav-alt-color);
+        backdrop-filter: blur(10px);
+
+        h3 {
+            white-space: nowrap;
+        }
+    }
+
+    li:first-of-type {
+        svg {
+            width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
+            fill: var(--accent-color-2);
+            transition: fill 0.5s ease;
+
+            &:hover {
+                fill: var(--hover-color);
+            }
+        }
+    }
+
+    .sub-list a {
+        font-size: 1.1rem;
+        padding-left: 2rem;
+        color: var(--hover-color);
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #Badminton-Nav {
+        display: none;
+    }
+    #Badminton-Nav-Btn {
+        display: block;
+    }
+    #Badminton-Wrapper {
+        flex-direction: column;
+    }
+    #Badminton-Content {
+        margin-inline: auto;
+    }
+    #Badminton-Aside {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        align-items: stretch;
+        align-self: center;
+        justify-items: center;
+        h2 {
+            font-size: clamp(3rem, 8vw + 0.5rem, 6rem);
+            grid-column: 1/-1;
+        }
+        .aside-card {
+            max-width: none;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
 @media screen and (orientation: portrait) {
     #Badminton-Nav {
         top: 6dvh;
     }
+    #Badminton-Nav-Btn {
+        top: calc(6dvh + 2rem);
+    }
+    #Badminton-Hidden-Nav {
+        top: 6dvh;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    
 }
