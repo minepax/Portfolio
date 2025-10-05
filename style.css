@@ -842,12 +842,13 @@ img {
 
 #Badminton-Content {
     padding-bottom: min(5rem, 5vw);
+    width: fit-content;
 
     p a {
         color: var(--hover-color);
         text-decoration: underline;
         text-decoration-thickness: 2px;
-        text-underline-offset: 4px;
+        text-underline-offset: 3px;
         transition: all 0.2s ease;
 
         &:hover {
@@ -863,6 +864,83 @@ img {
 
         li {
             color: var(--hover-color);
+        }
+    }
+
+    .player-card {
+        margin-inline: auto;
+        max-width: 70ch;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        box-shadow: 2px 2px 5px black;
+        background-image: url(./Images/Lin\ Dan.avif);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top;
+        transition: all 0.5s ease;
+
+        &:nth-of-type(2) {
+            background-image: url(./Images/Lee\ Chong\ Wei.webp);
+        }
+
+        &:nth-of-type(3) {
+            background-image: url(./Images/Chen\ Long.webp);
+        }
+
+        &:nth-of-type(4) {
+            background-image: url(./Images/Kento\ Momota.jpg);
+        }
+
+        &:nth-of-type(5) {
+            background-image: url(./Images/Kunlavut\ Vitidsarn.jpg);
+        }
+
+        &:hover {
+            background-size: 105%;
+        }
+
+        h2 {
+            color: #fcf9c6;
+        }
+
+        p, li {
+            color: white;
+        }
+
+        .player-card-content {
+            padding: 1.5rem;
+            height: 100%;
+            transform: translateY(80%);
+            transition: transform 0.5s ease;
+            background: linear-gradient(
+                hsl(0 0% 0% / 0),
+                hsl(0 0% 0% / 0.5) 20%,
+                hsl(0 0% 0% / 1)
+            );
+
+            button {
+                width: fit-content;
+                padding: 10px;
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+                background: var(--accent-color-1);
+                transition: transform 0.5s ease;
+
+                &:hover a {
+                    color: var(--hover-color);
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        &:hover .player-card-content{
+            transform: translateY(0);
+            overflow-y: auto;
         }
     }
 }
@@ -958,6 +1036,8 @@ img {
         list-style-type: none;
         padding: 2rem;
         height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;

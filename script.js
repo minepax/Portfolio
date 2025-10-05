@@ -4,7 +4,7 @@ document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
 
-// Javascript for badminton page list
+// Javascript for badminton page hidden list
 
 function showList() {
   const list = document.getElementById('Badminton-Hidden-Nav');
