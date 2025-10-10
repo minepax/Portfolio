@@ -37,6 +37,7 @@ body {
 h1 {
     font-weight: 800;
     font-size: clamp(3rem, 8vw + 0.5rem, 6rem);
+    text-shadow: 5px 5px 5px var(--accent-color-1);
 
     ~svg {
         fill: var(--font-color);
@@ -72,32 +73,36 @@ img {
     }
 }
 
+/* Theme switch CSS */
+
 :root {
     --background: linear-gradient(#4d045f , #100014);
-    --main-color: #290333;
-    --main-color-translucent: #290333b7;
-    --accent-color-1: #6e1586;
-    --accent-color-2: #cdb5d1;
-    --font-color: #fcf9c6;
-    --font-highlight: #fffa92;
+    --main-color: hsl(288, 100%, 10%);
+    --main-color-translucent: hsla(288, 100%, 10%, 0.7);
+    --accent-color-1: hsl(288, 100%, 30%);
+    --accent-color-2: hsl(288, 100%, 80%);
+    --nav-alt-color: hsla(288, 90%, 5%, 0.7);
+    --sidebar-sub-color: hsl(288, 80%, 15%);
+    --font-highlight: hsl(288, 100%, 80%);
+    --font-color: hsl(57, 100%, 90%);
     --hover-color: white;
-    --nav-alt-color: #1a0120b7;
-    --sidebar-sub-color: #380546;
     --section-background: url(./Images/Background.jpg);
 }
+
+/* Media query for theme switch */
 
 @media (prefers-color-scheme: light) {
     :root {
         --background: linear-gradient(white , var(--accent-color-1));
-        --main-color: #cdb5d1;
-        --main-color-translucent: #cdb5d1b7;
-        --accent-color-1: #b56cc5;
-        --accent-color-2: #6e1586;
-        --font-color: #290333;
-        --font-highlight: #9306b6;
+        --main-color: hsl(288, 100%, 80%);
+        --main-color-translucent: hsla(288, 100%, 80%, 0.7);
+        --accent-color-1: hsl(288, 100%, 70%);
+        --accent-color-2: hsl(288, 100%, 30%);
+        --nav-alt-color: hsla(288, 50%, 80%, 0.7);
+        --sidebar-sub-color: hsl(289, 45%, 67%);
+        --font-highlight: hsl(288, 100%, 30%);
+        --font-color: hsl(288, 100%, 10%);
         --hover-color: black;
-        --nav-alt-color: #dbb6e4b7;
-        --sidebar-sub-color: #c385d1;
         --section-background: url(./Images/Background-2.jpg);
     }
 }
@@ -121,7 +126,7 @@ img {
   	background-color: var(--font-color);
 }
 
-/* For the page preloader */
+/* Page preloader CSS */
 
 .preloader {
     background: var(--main-color) url(./Images/Loading-Gear.gif) no-repeat center center;
@@ -187,9 +192,9 @@ img {
         height: 100%;
         display: flex;
         align-items: center;
-        white-space: nowrap;
+        text-wrap: nowrap;
         position: relative;
-        overflow: hidden;
+        overflow: clip;
         cursor: pointer;
         transition: all 0.5s ease;
 
@@ -216,7 +221,7 @@ img {
     }
 }
 
-.theme-switch {
+/* .theme-switch {
     height: 40px;
     aspect-ratio: 1/1;
     border: 2px solid var(--accent-color-2);
@@ -243,7 +248,9 @@ img {
 
 .lightmode .theme-switch svg:last-child {
     display: block;
-}
+} */
+
+/* Animation keyframes for navbar on scroll */
 
 @keyframes stickyNav {
     0%, 100% {
@@ -263,7 +270,7 @@ img {
     }
 }
 
-/* NavBar - Sub Menu CSS */
+/* NavBar - sub menu CSS */
 
 .navbar li:hover .nav-bar-sub {
     height: auto;
@@ -369,7 +376,7 @@ img {
     font-size: 1rem;
     padding: 1.5rem;
     color: var(--accent-color-2);
-    white-space: nowrap;
+    text-wrap: nowrap;
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -389,6 +396,10 @@ img {
         span {
             color: var(--hover-color);
         }
+
+        .arrow-down {
+            border-top: 6px solid var(--hover-color);
+        }
     }
 }
 
@@ -400,7 +411,7 @@ img {
     display: none;
 }
 
-/* SideBar - Sub Menu CSS */
+/* SideBar - sub menu CSS */
 
 #sidebar .sub-menu {
     display: grid;
@@ -434,17 +445,20 @@ img {
     border: none;
     cursor: pointer;
 
-    img {
-        width: 20px;
+    .arrow-down {
+        width: 0px;
+        height: 0px;
+        border-inline: 6px solid transparent;
+        border-top: 6px solid var(--accent-color-2);
         transition: all 0.5s ease;
     }
 }
 
-.rotate img {
-    rotate: -180deg;
+.rotate .arrow-down {
+    transform: rotate(-180deg);
 }
 
-/* Hamburger menu button code */
+/* Hamburger menu button CSS */
 
 .hamburger-menu {
     display: none;
@@ -493,7 +507,7 @@ img {
 
 /*---------------------------------------------------------------------------------------- HOME PAGE CSS -------------------------------------------------------------------------------------------*/
 
-/* Home main div CSS */
+/* Main div CSS */
 
 #Home-Main {
     display: flex;
@@ -519,6 +533,8 @@ img {
     }
 }
 
+/* Profile pic area CSS */
+
 #Profile-Container {
     display: flex;
     align-items: center;
@@ -535,7 +551,7 @@ img {
         p {
             font-size: 0.7rem;
 	        text-align: none;
-            white-space: nowrap;
+            text-wrap: nowrap;
         }
 
         svg {
@@ -550,10 +566,11 @@ img {
         object-fit: cover;
         border: 3px solid var(--font-color);
         border-radius: 50%;
+        box-shadow: 5px 5px 20px black;
     }
 }
 
-/* Home content div CSS */
+/* Content div CSS */
 
 #Home-Content {
     background-color: var(--main-color);
@@ -582,7 +599,7 @@ img {
     }
 }
 
-/* Card swiper CSS */
+/* Family cards swiper CSS */
 
 .container {
     width: 100%;
@@ -594,26 +611,24 @@ img {
         height: 20rem;
         width: clamp(30rem, 100%, 38rem);
         border-radius: 0.5rem;
-        border: 1px solid black;
-        box-shadow: 3px 3px 5px black;
+        box-shadow: 5px 5px 20px black;
     }
 }
 
 .card-item, .swiper-wrapper .swiper-slide {
-    padding: 2rem;
+    padding: 0rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 1rem;
+    gap: 0rem;
     border-radius: 0.5rem;
-    background-color: #b56cc5;
     user-select: none;
+    background-color: hsl(288, 100%, 90%);
 
     .card-image {
         height: 100%;
         aspect-ratio: 5/7;
         object-fit: cover;
-        border-radius: 0.5rem;
         box-shadow: 2px 2px 5px black;
     }
 
@@ -621,14 +636,11 @@ img {
         list-style-type: none;
         height: 100%;
         width: 100%;
-        padding: 1rem;
+        padding: 2rem;
         display: flex;
         align-items: flex-start;
-        justify-content: space-evenly;
+        justify-content: space-between;
         flex-direction: column;
-        border-radius: 0.5rem;
-        background-color: white;
-        box-shadow: 2px 2px 5px black;
 
         li {
             width: fit-content;
@@ -681,7 +693,7 @@ img {
 }
 
 :root {
-    --swiper-pagination-color: white;
+    --swiper-pagination-color: hsl(288, 100%, 60%);
     --swiper-pagination-bullet-width: 10px;
     --swiper-pagination-bullet-height: 10px;
     --swiper-pagination-bullet-inactive-color: #290333;
@@ -690,7 +702,22 @@ img {
     --swiper-pagination-bullet-vertical-gap: 6px;
 }
 
-/* Media queries for Home page divs */
+/* Media queries for home page */
+
+@media screen and (max-width: 920px) {
+    .container .card-wrapper {
+        height: 35rem;
+        width: 100%;
+    }
+    .card-item, .swiper-wrapper .swiper-slide {
+        padding: 0rem;
+        align-items: center;
+        flex-direction: column;
+        .card-image {
+            height: 15rem;
+        }
+    }
+}
 
 @media screen and (orientation: portrait){
     #Home-Main {
@@ -715,22 +742,6 @@ img {
     }
     #Home-Content .Home-Div {
         padding: min(10rem, 10vw);
-    }
-}
-
-@media screen and (max-width: 920px) {
-    .container .card-wrapper {
-        height: 35rem;
-        width: 100%;
-    }
-    .card-item, .swiper-wrapper .swiper-slide {
-        padding: 1rem;
-        align-items: center;
-        flex-direction: column;
-        .card-image {
-            height: 15rem;
-            width: auto;
-        }
     }
 }
 
@@ -804,6 +815,94 @@ img {
 
 /*------------------------------------------------------------------------------------------ Badminton Page CSS ---------------------------------------------------------------------------------------------*/
 
+/* Hidden sidebar CSS */
+
+#Badminton-Hidden-Nav {
+    position: fixed;
+    top: 10dvh;
+    z-index: 100;
+    width: 0;
+    height: 90dvh;
+    overflow: clip;
+    interpolate-size: allow-keywords;
+    transition: width 0.5s ease;
+    border-radius: 0 1.5rem 1.5rem 0;
+    box-shadow: 10px 10px 20px black;
+    background: var(--nav-alt-color);
+    backdrop-filter: blur(10px);
+
+    ul {
+        list-style-type: none;
+        padding: 2rem;
+        height: 100%;
+        overflow-x: clip;
+        overflow-y: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h3 {
+            text-wrap: nowrap;
+        }
+    }
+
+    li:first-of-type {
+        svg {
+            width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
+            fill: var(--accent-color-2);
+            transition: fill 0.5s ease;
+
+            &:hover {
+                fill: var(--hover-color);
+            }
+        }
+    }
+
+    .sub-list a {
+        font-size: 1rem;
+        padding-left: 2rem;
+        color: var(--hover-color);
+        text-wrap: nowrap;
+    }
+}
+
+/* Hidden sidebar button CSS */
+
+#Badminton-Nav-Btn {
+    padding: 2px;
+    display: none;
+    position: fixed;
+    top: calc(10dvh + 2rem);
+    left: min(5rem, 5vw);
+    translate: 0 -50%;
+    border-radius: 10px;
+    background-color: var(--accent-color-1);
+    /* backdrop-filter: blur(10px); */
+
+    svg {
+        width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
+        fill: var(--font-color);
+        transition: fill 0.5s ease;
+    }
+    
+    a:hover {
+        transform: none;
+
+        svg {
+            fill: var(--hover-color);
+        }
+    }
+
+    a::after {
+        content: none;
+        display: none;
+    }
+}
+
+/* Wrapper around body CSS */
+
 #Badminton-Wrapper {
     padding: min(5rem, 5vw);
     padding-bottom: 0;
@@ -812,10 +911,16 @@ img {
     gap: min(5rem, 5vw);
 }
 
+/* Article sidebar CSS */
+
 #Badminton-Nav {
     height: 90dvh;
     position: sticky;
     top: 5dvh;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 20px black;
+    background: #cdb5d14b;
+    backdrop-filter: blur(10px);
 
     ul {
         list-style-type: none;
@@ -826,19 +931,17 @@ img {
         justify-content: flex-start;
         flex-direction: column;
         gap: 1.5rem;
-        border-radius: 1.5rem;
-        box-shadow: 2px 2px 5px black;
-        background: #cdb5d177;
-        backdrop-filter: blur(5px);
     }
 
     .sub-list a {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding-left: 2rem;
         color: var(--hover-color);
-        white-space: nowrap;
+        text-wrap: nowrap;
     }
 }
+
+/* Main article CSS */
 
 #Badminton-Content {
     padding-bottom: min(5rem, 5vw);
@@ -849,10 +952,10 @@ img {
         text-decoration: underline;
         text-decoration-thickness: 2px;
         text-underline-offset: 3px;
-        transition: all 0.2s ease;
 
         &:hover {
             color: var(--font-highlight);
+            font-weight: 800;
         }
     }
 
@@ -871,9 +974,9 @@ img {
         margin-inline: auto;
         max-width: 70ch;
         aspect-ratio: 16/9;
-        overflow: hidden;
+        overflow: clip;
         border-radius: 0.5rem;
-        box-shadow: 2px 2px 5px black;
+        box-shadow: 5px 5px 20px black;
         background-image: url(./Images/Lin\ Dan.avif);
         background-repeat: no-repeat;
         background-size: 100%;
@@ -900,50 +1003,81 @@ img {
             background-size: 105%;
         }
 
-        h2 {
-            color: #fcf9c6;
+        &:hover .player-card-content {
+            transform: translateY(0);
+            transition-delay: 0.5s;
+            backdrop-filter: blur(2px);
+            overflow-y: auto;
         }
 
-        p, li {
-            color: white;
+        &:hover .player-card-content > h2::after {
+            transform: scaleX(1);
+        }
+
+        &:hover .player-card-content *:not(h2) {
+            opacity: 1;
+            transition-delay: 1s;
         }
 
         .player-card-content {
             padding: 1.5rem;
             height: 100%;
-            transform: translateY(80%);
+            transform: translateY(70%);
             transition: transform 0.5s ease;
             background: linear-gradient(
                 hsl(0 0% 0% / 0),
-                hsl(0 0% 0% / 0.5) 20%,
+                hsl(0 0% 0% / 0.2) 20%,
                 hsl(0 0% 0% / 1)
             );
 
-            button {
-                width: fit-content;
-                padding: 10px;
-                cursor: pointer;
-                border: none;
-                border-radius: 10px;
-                background: var(--accent-color-1);
-                transition: transform 0.5s ease;
+            *:not(h2) {
+                opacity: 0;
+                transition: opacity 0.5s linear;
+            }
 
-                &:hover a {
-                    color: var(--hover-color);
-                }
+            h2 {
+                position: relative;
+                width: max-content;
+                color: #fcf9c6;
+                text-shadow: 3px 3px 10px black;
+            }
+
+            p, li {
+                font-size: 1rem;
+                color: white;
+            }
+
+            h2::after {
+                content: '';
+                position: absolute;
+                left: -1.5rem;
+                bottom: -5px;
+                height: 3px;
+                width: calc(100% + 1.5rem);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.5s ease;
+                background: #fcf9c6;
+            }
+
+            .button {
+                padding: 10px;
+                width: fit-content;
+                cursor: pointer;
+                color: white;
+                border-radius: 10px;
+                background: #b56cc5;
 
                 &:hover {
-                    transform: scale(1.05);
+                    transition: color 0.5s ease;
+                    color: black;
                 }
             }
         }
-
-        &:hover .player-card-content{
-            transform: translateY(0);
-            overflow-y: auto;
-        }
     }
 }
+
+/* Aside (articles on the right side) CSS */
 
 #Badminton-Aside {
     padding-bottom: min(5rem, 5vw);
@@ -954,23 +1088,24 @@ img {
     gap: 1.5rem;
 
     h2 {
-        white-space: nowrap;
+        text-wrap: nowrap;
+        text-shadow: 4px 4px 5px var(--accent-color-1);
     }
 
     .aside-card {
         padding: 1rem;
         max-width: min-content;
         border-radius: 0.5rem;
-        box-shadow: 2px 2px 5px black;
-        background: #cdb5d177;
+        box-shadow: 10px 10px 20px black;
+        background: #cdb5d14b;
         backdrop-filter: blur(10px);
         transition: transform 0.5s ease;
 
         img {
             margin-bottom: 1rem;
             width: 320px;
-            height: 200px;
-            box-shadow: 2px 2px 5px black;
+            aspect-ratio: 16/9;
+            box-shadow: 4px 4px 10px black;
             border-radius: 0.5rem;
             filter: none;
             transition: none;
@@ -982,7 +1117,7 @@ img {
 
         p {
             margin-top: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         &:hover {
@@ -991,86 +1126,7 @@ img {
     }
 }
 
-#Badminton-Nav-Btn {
-    padding: 2px;
-    display: none;
-    position: fixed;
-    top: calc(10dvh + 2rem);
-    left: min(5rem, 5vw);
-    translate: 0 -50%;
-    border-radius: 10px;
-    background-color: var(--nav-alt-color);
-    backdrop-filter: blur(10px);
-
-    svg {
-        width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
-        fill: var(--accent-color-2);
-        transition: fill 0.5s ease;
-    }
-    
-    a:hover {
-        transform: none;
-
-        svg {
-            fill: var(--hover-color);
-        }
-    }
-
-    a::after {
-        content: none;
-        display: none;
-    }
-}
-
-#Badminton-Hidden-Nav {
-    position: fixed;
-    top: 10dvh;
-    z-index: 100;
-    width: 0;
-    height: 90dvh;
-    overflow: hidden;
-    interpolate-size: allow-keywords;
-    transition: width 0.5s ease;
-
-    ul {
-        list-style-type: none;
-        padding: 2rem;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
-        gap: 1.5rem;
-        border-radius: 0 1.5rem 1.5rem 0;
-        background: var(--nav-alt-color);
-        backdrop-filter: blur(10px);
-
-        h3 {
-            white-space: nowrap;
-        }
-    }
-
-    li:first-of-type {
-        svg {
-            width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
-            fill: var(--accent-color-2);
-            transition: fill 0.5s ease;
-
-            &:hover {
-                fill: var(--hover-color);
-            }
-        }
-    }
-
-    .sub-list a {
-        font-size: 1.1rem;
-        padding-left: 2rem;
-        color: var(--hover-color);
-        white-space: nowrap;
-    }
-}
+/* Media queries for badminton page */
 
 @media screen and (max-width: 1300px) {
     #Badminton-Nav {
@@ -1115,9 +1171,6 @@ img {
     }
     #Badminton-Hidden-Nav {
         top: 6dvh;
+        height: 94dvh;
     }
-}
-
-@media screen and (max-width: 950px) {
-    
 }
