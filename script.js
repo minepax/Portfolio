@@ -6,24 +6,24 @@ document.addEventListener('contextmenu', function(e) {
 
 // Javascript for badminton page hidden list
 
-function showList() {
+function toggleList() {
   const list = document.getElementById('Badminton-Hidden-Nav');
-  if (list.style.width === 'auto') {
+  if (list.style.width === 'max-content') {
     list.style.width = '0';
   } else {
-    list.style.width = 'auto';
+    list.style.width = 'max-content';
   }
 }
 
 // Javascript for sidebar
 
 function showSideBar() {
-  document.getElementById('sidebar').style.right = '0px'
+  document.getElementById('sidebar').style.width = 'max-content';
   document.getElementById('overlay').style.display = 'block'
 }
 
 function hideSideBar() {
-  document.getElementById('sidebar').style.right = '-50vw'
+  document.getElementById('sidebar').style.width = '0'
   document.getElementById('overlay').style.display = 'none'
 }
 

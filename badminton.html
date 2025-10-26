@@ -7,14 +7,14 @@
     <script src="script.js" defer></script>
     <style>
         :root {
-            --bg-gradient: #290333b7;
-            --hr-color: #fcf9c6;
+            --bg-gradient: hsla(288, 100%, 10%, 0.7);
+            --hr-color: hsl(55, 100%, 90%);
         }
 
         @media (prefers-color-scheme: light) {
             :root {
-                --bg-gradient: #cdb5d1b7;
-                --hr-color: #290333;
+                --bg-gradient: hsla(288, 100%, 90%, 0.7);
+                --hr-color: hsl(288, 100%, 10%);
             }
         }
 
@@ -58,7 +58,7 @@
 <!-- Hidden button and list for responsiveness -->
 
 <div id="Badminton-Nav-Btn">
-    <a href="#" onclick=showList()>
+    <a href="#" onclick=toggleList()>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
             <path d="M360-200v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360ZM200-160q-33 0-56.5-23.5T120-240q0-33 23.5-56.5T200-320q33 0 56.5 23.5T280-240q0 33-23.5 56.5T200-160Zm0-240q-33 0-56.5-23.5T120-480q0-33 23.5-56.5T200-560q33 0 56.5 23.5T280-480q0 33-23.5 56.5T200-400Zm0-240q-33 0-56.5-23.5T120-720q0-33 23.5-56.5T200-800q33 0 56.5 23.5T280-720q0 33-23.5 56.5T200-640Z"/>
         </svg>
@@ -68,7 +68,7 @@
 <div id="Badminton-Hidden-Nav">
     <ul>
         <li>
-            <a href="#" onclick=showList()>
+            <a href="#" onclick=toggleList()>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                 </svg>
@@ -119,7 +119,7 @@
         <h2 id="topic-1-sub-1">What is badminton?</h2><br>
 
         <p>
-            It is a racquet sport involving a racquet and a shuttlecock. You use the racquet to hit the shuttlecock above, and to the other side of a net. Formally it is played on a rectangular court with lines that indicate boundaries but you can usually find people enjoying badminton in places like parks, yards or even beaches.<br><br>
+            It is a racquet sport involving a racquet and a shuttlecock. You use the racquet to hit the shuttlecock above, and to the other side of a net. It is formally played on a rectangular court with thick lines to indicate boundaries but you can usually find people enjoying badminton in places like parks, yards or even beaches.<br><br>
 
             Badminton has pretty simple rules at the beginners level. There are boundaries that differentiate between 'in' and 'out' similar to tennis and other racquet sports. Badminton also has different 'modes' or disciplines in the sport mainly singles (1v1: Men, Women) and doubles (2v2: Men, Women, Mixed) with each having different boundaries. The main goal of a badminton match is to win using points and they are earned in a variety of ways.<br><br>
             
@@ -150,9 +150,9 @@
         <p>
             The international governing organization for all things badminton is the <a href="https://bwfbadminton.com/" target="#">BWF</a> (Badminton World Federation). They conduct tournaments throughout the world for players from different countries to participate in and have a chance of representing their nation.<br><br>
             
-            BWF also has a comprehensive and a pretty detailed ranking system which consists of players earning points by participating and achieving positions in the tournaments (Eg: Quaterfinalist, Semfinalist, Runner-up or Winner). Visit the BWF site for more if you are interested!<br><br>
+            BWF also has a comprehensive and detailed ranking system which consists of players earning points by participating and achieving positions in the tournaments (Eg: Quaterfinalist, Semfinalist, Runner-up or Winner). Visit the BWF site for more if you are interested!<br><br>
 
-            Out of the millions of players who enjoy the sport, only a handful make it to the professional level only to further be dominated by greater players who have much deeper understandings of much more complex concepts.
+            Out of the millions of players who enjoy the sport, only a handful make it to the professional level only to further be dominated by greater players who have deeper understandings of much more complex concepts.
         </p>
 
         <hr>
@@ -228,7 +228,7 @@
                 <p>
                     Chen Long's strengths:<br><br>
                     <ul>
-                        <li>Mental Attitude: Underrated strength which helps him ignore errors or mistakes and focus on the strategy.</li><br>
+                        <li>Mental Attitude: Underrated strength which helps him ignore errors or mistakes and focus on strategy.</li><br>
                         <li>Defense: In my opinion the best defense in any singles player ever. Theres a reason he is known as The Great Wall of China!</li><br>
                         <li>Counter-Attack: The way he springs back from his defensive position using his quad strength hunting for counter attacking chances is a beauty!</li>
                     </ul>
@@ -247,8 +247,8 @@
                     Kento Momota's strengths:<br><br>
                     <ul>
                         <li>Patience, Stamina & Efficiency: The most patient player I have ever seen! He plays a 'passive attack' game which forces opponents into errors while he does not get tired because of his efficient footwork and swing style</li><br>
-                        <li>Defense & neutralizing: A very smart defensive playstyle. He neuatralizes and defends opponents' attempts at attacking effortlessly!</li><br>
-                        <li>Swift Attack: Similar to Lin Dan, his quick and timed aggressions surprise opponents who are not expecting it due to his overall slow rhythm.</li>
+                        <li>Defense & neutralizing: A very smart defensive playstyle. He neutralizes and defends opponents' attempts at attacking effortlessly!</li><br>
+                        <li>Swift Attack: Similar to Lin Dan, his quick and timed aggressions surprise opponents who are not expecting it due to his overall relatively slow and controlled rhythm.</li>
                     </ul>
                 </p><br><br>
                 <a class="button" href="https://en.wikipedia.org/wiki/Kento_Momota" target="#">Know more!</a>
@@ -266,7 +266,7 @@
                     <ul>
                         <li>Pattern Recognition: He recognizes patterns or habits of his opponents and silently uses it to his advantage. Players are left wondering how they lost the rally and in turn, the match!</li><br>
                         <li>Mental Fortitude: Vitidsarn's mental composure, error rate and decision making at high stake moments are why he is known as a big game player!</li><br>
-                        <li>Stamina & Endurance: His efficiency and staying power in exhasuting rallies and matches has given him the nick-name the '3-Game God' as he wins majority of the matches that go to 3 games.</li>
+                        <li>Stamina & Endurance: His efficiency and staying power in exhasuting rallies and matches has given him the nick-name the '3-Game God' as he wins majority of the matches that go to the final set.</li>
                     </ul>
                 </p><br><br>
                 <a class="button" href="https://en.wikipedia.org/wiki/Kunlavut_Vitidsarn" target="#">Know more!</a>
