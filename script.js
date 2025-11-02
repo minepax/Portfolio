@@ -15,6 +15,20 @@ function toggleList() {
   }
 }
 
+// Javascript for modal
+
+const showModal = document.querySelector('.show-modal');
+const hideModal = document.querySelector('.hide-modal');
+const modal = document.querySelector('.modal');
+
+showModal.addEventListener('click', () => {
+  modal.showModal();
+});
+
+hideModal.addEventListener('click', () => {
+  modal.close();
+});
+
 // Javascript for sidebar
 
 function showSideBar() {
