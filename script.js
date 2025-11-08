@@ -50,7 +50,6 @@ function toggleSubMenu(button) {
 
 window.addEventListener("load", () => {
   const loader = document.querySelector(".preloader");
-  const hloader = document.querySelector(".preloader--hidden");
   
   loader.classList.add("preloader--hidden");
   

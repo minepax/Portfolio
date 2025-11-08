@@ -6,40 +6,29 @@
     <link rel="stylesheet" href="style.css"/>
     <script src="script.js" defer></script>
     <style>
+
         :root {
             --bg-gradient: hsla(288, 100%, 7%, 0.8);
-            --hr-color: hsl(55, 100%, 90%);
         }
 
         @media (prefers-color-scheme: light) {
             :root {
                 --bg-gradient: hsla(288, 100%, 90%, 0.7);
-                --hr-color: hsl(288, 100%, 10%);
             }
         }
 
-        hr {
-            margin: 5rem auto;
-            width: 70%;
-            height: 3px;
-            border: none;
-            background-color: var(--hr-color);
-        }
-
         body {
-            background-image: url(./Images/Badminton-Background.jpg);
+            background-image: linear-gradient(var(--bg-gradient)), url(./Images/Badminton-Background.jpg);
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            border-image: fill 1 linear-gradient(var(--bg-gradient), var(--bg-gradient));
         }
+        
     </style>
 </head>
 
 <body>
-
-<div class="preloader"></div>
 
 <!-- Import code for nav and side bars -->
 
@@ -119,7 +108,7 @@
         <h2 id="topic-1-sub-1">What is badminton?</h2><br>
 
         <p>
-            It is a racquet sport involving a racquet and a shuttlecock. You use the racquet to hit the shuttlecock above, and to the other side of a net. It is formally played on a <span class="show-modal">rectangular court</span> with thick lines to indicate boundaries but you can usually find people enjoying badminton in places like parks, yards or even beaches.<br><br>
+            It is a racquet sport involving a racquet and a shuttlecock. You use the racquet to hit the shuttlecock above, and to the other side of a net. It is formally played on a <span class="show-modal link">rectangular court</span> with thick lines to indicate boundaries but you can usually find people enjoying badminton in places like parks, yards or even beaches.<br><br>
 
             Badminton has pretty simple rules at the beginners level. There are boundaries that differentiate between 'in' and 'out' similar to tennis and other racquet sports. Badminton also has different 'modes' or disciplines in the sport mainly singles (1v1: Men, Women) and doubles (2v2: Men, Women, Mixed) with each having different boundaries. The main goal of a badminton match is to win using points and they are earned in a variety of ways.<br><br>
             
@@ -132,11 +121,13 @@
         </p><br>
 
         <dialog class="modal">
+            <div class="modal-content">
+                <h3>A standard badminton court!</h3><br>
+                <img src="./Images/Badminton-Court.png"><br>
+            </div>
             <svg class="hide-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
             </svg>
-            <h3>A standard badminton court!</h3><br>
-            <img src="./Images/Badminton-Court.png"><br>
         </dialog>
 
         <h2 id="topic-1-sub-2">What it takes to go pro</h2><br>
@@ -156,7 +147,7 @@
         </p><br>
         
         <p>
-            The international governing organization for all things badminton is the <a href="https://bwfbadminton.com/" target="#">BWF</a> (Badminton World Federation). They conduct tournaments throughout the world for players from different countries to participate in and have a chance of representing their nation.<br><br>
+            The international governing organization for all things badminton is the <a class="link" href="https://bwfbadminton.com/" target="#">BWF</a> (Badminton World Federation). They conduct tournaments throughout the world for players from different countries to participate in and have a chance of representing their nation.<br><br>
             
             BWF also has a comprehensive and detailed ranking system which consists of players earning points by participating and achieving positions in the tournaments (Eg: Quaterfinalist, Semfinalist, Runner-up or Winner). Visit the BWF site for more if you are interested!<br><br>
 
@@ -184,7 +175,7 @@
         <h2 id="topic-3-sub-1">Overview</h2><br>
 
         <p>
-            Mens singles is all about strength, speed and attack. The golden era of this discipline included players like <a href="https://en.wikipedia.org/wiki/Lin_Dan" target="#">Lin Dan</a> (China), <a href="https://en.wikipedia.org/wiki/Chen_Long" target="#">Chen Long</a> (China) and <a href="https://en.wikipedia.org/wiki/Lee_Chong_Wei" target="#">Lee Chong Wei</a> (Malaysia), they brought a new perspective to the game with increasing rally IQ along with crazy fitness levels which quickly became major requirements to survive at the highest level of this discipline.<br><br>
+            Mens singles is all about strength, speed and attack. The golden era of this discipline included players like <a class="link" href="https://en.wikipedia.org/wiki/Lin_Dan" target="#">Lin Dan</a> (China), <a class="link" href="https://en.wikipedia.org/wiki/Chen_Long" target="#">Chen Long</a> (China) and <a class="link" href="https://en.wikipedia.org/wiki/Lee_Chong_Wei" target="#">Lee Chong Wei</a> (Malaysia), they brought a new perspective to the game with increasing rally IQ along with crazy fitness levels which quickly became major requirements to survive at the highest level of this discipline.<br><br>
             
             Following this, a new era of players have emerged. These new players have studied the previous legends; followed their footsteps by improving upon the strategies, playstyles and minor details that made them great, and incorporated all of it into their game while bringing their own flare and style to it. Here are my top 5 favourite men's singles players of all time...
         </p><br>
