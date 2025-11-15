@@ -46,18 +46,6 @@ function toggleSubMenu(button) {
   button.classList.toggle('rotate')
 }
 
-// Javascript for preloader page
-
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".preloader");
-  
-  loader.classList.add("preloader--hidden");
-  
-  loader.addEventListener("transitionend", () => {
-    document.body.removeChild(loader);
-  });
-});
-
 // Javascript for class photos image slider
 
 const carouselSlide = document.querySelector('.carousel-slide');

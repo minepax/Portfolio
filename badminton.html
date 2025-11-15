@@ -8,12 +8,12 @@
     <style>
 
         :root {
-            --bg-gradient: hsla(288, 100%, 7%, 0.8);
+            --bg-gradient: hsla(288, 100%, 5%, 0.9);
         }
 
         @media (prefers-color-scheme: light) {
             :root {
-                --bg-gradient: hsla(288, 100%, 90%, 0.7);
+                --bg-gradient: hsla(288, 100%, 85%, 0.8);
             }
         }
 
@@ -34,11 +34,11 @@
 
 <div id="nav-placeholder"></div>
 
-<script src="//code.jquery.com/jquery.min.js"></script>
-
 <script>
-    $.get("navbar.html", function(data){
-        $("#nav-placeholder").replaceWith(data);
+    fetch("navbar.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").outerHTML = html;
     });
 </script>
 

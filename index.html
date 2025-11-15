@@ -14,11 +14,11 @@
 
 <div id="nav-placeholder"></div>
 
-<script src="//code.jquery.com/jquery.min.js"></script>
-
 <script>
-    $.get("navbar.html", function(data){
-        $("#nav-placeholder").replaceWith(data);
+    fetch("navbar.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").outerHTML = html;
     });
 </script>
 
