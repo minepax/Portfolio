@@ -82,7 +82,7 @@ html {
 
 body {
     line-height: 1.6;
-    background-image: linear-gradient(hsl(from var(--clr-primary) h s l / 0.8)), url(Portfolio/public/images/Background.jpg);
+    background-image: linear-gradient(hsl(from var(--clr-primary) h s l / 0.8)), url(../../public/images/Background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -595,26 +595,26 @@ hr {
         overflow: clip;
         border-radius: 0.5rem;
         box-shadow: 5px 5px 20px black;
-        background-image: url(Portfolio/public/images/Lin\ Dan.avif);
+        background-image: url(../../public/images/Lin\ Dan.avif);
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: top;
         transition: all 0.5s ease;
 
         &:nth-of-type(2) {
-            background-image: url(Portfolio/public/images/Lee\ Chong\ Wei.webp);
+            background-image: url(../../public/images/Lee\ Chong\ Wei.webp);
         }
 
         &:nth-of-type(3) {
-            background-image: url(Portfolio/public/images/Chen\ Long.webp);
+            background-image: url(../../public/images/Chen\ Long.webp);
         }
 
         &:nth-of-type(4) {
-            background-image: url(Portfolio/public/images/Kento\ Momota.jpg);
+            background-image: url(../../public/images/Kento\ Momota.jpg);
         }
 
         &:nth-of-type(5) {
-            background-image: url(Portfolio/public/images/Kunlavut\ Vitidsarn.jpg);
+            background-image: url(../../public/images/Kunlavut\ Vitidsarn.jpg);
         }
 
         &:hover {
