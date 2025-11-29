@@ -4,7 +4,24 @@ document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
 
-// Javascript for badminton page hidden list
+// Javascript for sidebar
+
+function showSideBar() {
+  document.querySelector('.sidebar').style.width = 'max-content';
+  document.getElementById('overlay').style.display = 'block'
+}
+
+function hideSideBar() {
+  document.querySelector('.sidebar').style.width = '0'
+  document.getElementById('overlay').style.display = 'none'
+}
+
+function toggleSubMenu(button) {
+  button.nextElementSibling.classList.toggle('show')
+  button.classList.toggle('rotate')
+}
+
+// Javascript for badminton page hidden nav list
 
 function toggleList() {
   const list = document.getElementById('Badminton-Hidden-Nav');
@@ -27,67 +44,4 @@ showModal.addEventListener('click', () => {
 
 hideModal.addEventListener('click', () => {
   modal.close();
-});
-
-// Javascript for sidebar
-
-function showSideBar() {
-  document.getElementById('sidebar').style.width = 'max-content';
-  document.getElementById('overlay').style.display = 'block'
-}
-
-function hideSideBar() {
-  document.getElementById('sidebar').style.width = '0'
-  document.getElementById('overlay').style.display = 'none'
-}
-
-function toggleSubMenu(button) {
-  button.nextElementSibling.classList.toggle('show')
-  button.classList.toggle('rotate')
-}
-
-// Javascript for class photos image slider
-
-const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
-
-const prevBtn = document.querySelector('#prev');
-const nextBtn = document.querySelector('#next');
-
-let counter = 1;
-let size = carouselImages[0].clientWidth;
-
-carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-nextBtn.addEventListener('click', () => {
-    if (counter >= carouselImages.length - 1) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-prevBtn.addEventListener('click', () => {
-    if (counter <= 0) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-carouselSlide.addEventListener('transitionend', () => {
-    if (carouselImages[counter].id === 'lastClone') {
-        carouselSlide.style.transition = "none";
-        counter = carouselImages.length - 2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-    if (carouselImages[counter].id === 'firstClone') {
-        carouselSlide.style.transition = 'none';
-        counter = carouselImages.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-});
-
-window.addEventListener('resize', () => {
-    carouselSlide.style.transition = "none";
-    size = carouselImages[0].clientWidth;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
