@@ -1,0 +1,405 @@
+<header class="header">
+    <div class="wrapper">
+
+        <a href="#" class="hamburger-menu" onclick=showSideBar()>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+            </svg>
+        </a>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href='/Portfolio'>HOME</a></li>
+                <li><a href='#'>MY WORK</a></li>
+                <li><a href='#'>HOBBIES</a>
+                    <div class="nav-bar-sub">
+                        <ul>
+                            <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
+                            <li><a href='#'>CUBING</a></li>
+                            <li><a href='#'>MINECRAFT</a></li>
+                            <li><a href='#'>CONSUMER TECH</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href='#'>CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <a href="/Portfolio" class="logo">PORTFOLIO</a>
+        
+    </div>
+</header>
+
+<nav class="sidebar">
+    <ul>
+        <li><a href="/Portfolio"><span>HOME</span></a></li>
+        <li><a href="#"><span>MY WORK</span></a></li>
+        <li>
+
+            <button onclick=toggleSubMenu(this) class="dropdown-btn">
+                <span>HOBBIES</span>
+                <div class="arrow-down"></div>
+            </button>
+
+            <ul class="sub-menu">
+                <div>
+                    <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
+                    <li><a href='#'>CUBING</a></li>
+                    <li><a href='#'>MINECRAFT</a></li>
+                    <li><a href='#'>CONSUMER TECH</a></li>
+                </div>
+            </ul>
+
+        </li>
+        <li><a href="#"><span>CONTACT</span></a></li>
+    </ul>
+</nav>
+
+<style>
+
+.header {
+    height: 6rem;
+    z-index: 11;
+    position: sticky;
+    top: -6rem;
+    left: 0;
+    animation: stickyNav linear forwards;
+    animation-timeline: view();
+    animation-range-start: 120vh;
+    animation-range-end: 150vh;
+
+    .wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(1.5rem, 20vw  + 0.5rem, 1.8rem);
+        color: var(--clr-tertiary);
+        display: var(--_display-none, flex);
+        align-items: center;
+        transition: color 0.5s ease;
+        color: transparent;
+        background: linear-gradient(
+            90deg,
+            var(--clr-grd-1),
+            var(--clr-grd-2),
+            var(--clr-grd-2),
+            var(--clr-grd-1)
+        );
+        background-clip: text;
+        background-size: 200% auto;
+        animation: logo_animation 3s linear infinite;
+
+        &:hover {
+            color: var(--clr-accent-1);
+            transform: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.navbar {
+
+    ul {
+        list-style-type: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    li {
+        height: 100%;
+    }
+
+    a {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        color: var(--clr-tertiary);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-wrap: nowrap;
+        position: relative;
+        overflow: clip;
+        cursor: pointer;
+        transition: color 0.5s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            display: block;
+            background-color: var(--clr-accent-1);
+            transition: all 0.5s ease;
+            transform: translateX(-50%);
+        }
+
+        &:hover {
+            color: var(--clr-accent-1);
+        }
+    }
+
+    a:has( + .nav-bar-sub)::after {
+        display: none;
+    }
+
+    li:hover a::after {
+        width: 100%;
+    }
+}
+
+@keyframes logo_animation {
+    0% {background-position: 200% 0%;}
+    100% {background-position: 0% 0%;}
+}
+
+@keyframes stickyNav {
+    0%, 100% {
+        margin-inline: auto;
+        padding-inline: 1rem;
+        width: fit-content;
+        height: 5rem;
+        border-radius: 100vw;
+        border: 1px solid hsla(288, 100%, 80%, 0.3);
+        background-color: var(--nav-alt-clr);
+        backdrop-filter: blur(10px);
+        --_display-none: none;
+        --_display-haha: 0px;
+    }
+    100% {
+        top: 1rem;
+    }
+}
+
+.navbar li:hover .nav-bar-sub {
+    height: auto;
+}
+
+.navbar .nav-bar-sub {
+    display: block;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    interpolate-size: allow-keywords;
+    border-radius: 0 0 1rem 1rem;
+    background-color: hsl(from var(--clr-primary) h s calc(l - 3));
+    transition: all 0.5s ease;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    li {
+        width: 100%;
+        padding: 0;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: var(--clr-secondary);
+            border-bottom: none;
+        }
+        
+    }
+
+    a {
+        padding: 1rem;
+
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+/* ----- SIDEBAR ----- */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 0;
+    height: 100dvh;
+    overflow: clip;
+    interpolate-size: allow-keywords;
+    transition: 0.5s ease;
+    background-color: var(--nav-alt-clr);
+    backdrop-filter: blur(10px);
+
+    ul {
+
+        &:first-child{
+            list-style-type: none;
+            padding: 2rem 1rem;
+            width: 100%;
+            height: 100%;
+            overflow: clip auto;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0.1rem;
+            height: 0.2rem;
+            background: var(--clr-primary);
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--clr-primary);
+        }
+
+        &::-webkit-scrollbar-track-piece {
+            background: var(--clr-primary);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--clr-accent-1);
+        }
+    }
+}
+
+.sidebar a, .dropdown-btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1.5rem;
+    color: var(--clr-tertiary);
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+
+    span {
+        font-family: "Montserrat", sans-serif;
+        color: var(--clr-tertiary);
+        flex-grow: 1;
+        transition: all 0.4s ease;
+    }
+
+    &:hover {
+        background-color: var(--clr-secondary);
+        
+        span {
+            color: var(--clr-accent-1);
+        }
+
+        .arrow-down {
+            border-top: 6px solid var(--clr-accent-1);
+        }
+    }
+}
+
+.sidebar .sub-menu {
+    display: grid;
+    background-color: var(--sidebar-sub-clr);
+    border-radius: 1rem;
+    grid-template-rows: 0fr;
+    transition: 0.3s ease-in-out;
+
+    div {
+        overflow: hidden;
+    }
+
+    a {
+        padding-left: 2rem;
+
+        &:hover {
+            background-color: var(--clr-secondary);
+            color: var(--clr-accent-1);
+        }
+    }
+}
+
+.sidebar .sub-menu.show {
+    grid-template-rows: 1fr;
+}
+
+.dropdown-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .arrow-down {
+        width: 0px;
+        height: 0px;
+        border-inline: 6px solid transparent;
+        border-top: 6px solid var(--clr-tertiary);
+        transition: all 0.5s ease;
+    }
+}
+
+.rotate .arrow-down {
+    transform: rotate(-180deg);
+}
+
+/* ----- HAMBURGER MENU BUTTON ----- */
+
+.hamburger-menu {
+    display: none;
+    align-items: center;
+    transition: all 0.5s ease;
+
+    svg {
+        width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
+        fill: var(--clr-tertiary);
+        transition: fill 0.5s ease;
+    }
+    
+    a:hover {
+        transform: none;
+
+        svg {
+            fill: var(--clr-accent-1);
+        }
+    }
+
+    a::after {
+        content: none;
+        display: none;
+    }
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+/* ----- MEDIA QUERIES - NAVBAR ----- */
+
+@media screen and (max-width: 1300px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .header {
+        top: 0;
+        height: 5rem;
+        animation: none;
+        background-color: var(--nav-alt-clr);
+        backdrop-filter: blur(10px);
+
+        .navbar {
+            display: none;
+        }
+    }
+}
+
+</style>
