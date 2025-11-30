@@ -56,16 +56,6 @@
    3. GLOBAL STYLES
    --------------------------------------------------------- */
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-  	font-family: "Inter", sans-serif;
-	font-weight: 200;
-	color: var(--clr-font);
-	text-decoration: none;
-}
-
 html, body {
 	margin: 0;
 	padding: 0;
@@ -105,11 +95,29 @@ body {
   	background-color: var(--clr-accent-1);
 }
 
+#overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    display: none;
+}
+
 
 
 /* =========================================================
-   4. GLOBAL ELEMENT STYLES
+   4. GLOBAL RESETS
    --------------------------------------------------------- */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  	font-family: "Inter", sans-serif;
+	font-weight: 200;
+	color: var(--clr-font);
+	text-decoration: none;
+}
 
 :where(h1, h2, h3) {
     font-family: "Bitter", sans-serif;
@@ -196,14 +204,6 @@ hr {
     margin-inline: auto;
     font-size: 1rem;
     color: var(--clr-accent-2);
-}
-
-#overlay {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    inset: 0;
-    z-index: 998;
-    display: none;
 }
 
 
