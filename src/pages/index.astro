@@ -17,35 +17,71 @@ import Maheshwar from "../images/Maheshwar.jpg";
 
 <MainLayout></MainLayout>
 
-<div class="wrapper">
+<main class="wrapper">
 
-    <div class="home-hero">
+    <section class="home-hero">
+
         <div class="content">
             <h1>Hello!</h1>
             <p>
-                I'm Mahesh! Welcome to my first website creation which also happens to be my personal portfolio. Basically just a lot of random stuff about me and what I like/do.
+                I'm Mahesh and welcome to my personal portfolio! You can find stuff about me and what I like. Enjoy your time here :)
             </p>
         </div>
+
         <Image src={Profile} alt="" class="profile" />
-    </div>
 
-    <main class="home-content">
+    </section>
 
-        <h1>About Me</h1>
+    <section class="about-me">
 
-        <p>
-            My full name is Maheshwar Rathakrishnan, I usually go by Mahesh. My native place is a little village called Melur in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is Badaga. <a class="link" href="https://en.wikipedia.org/wiki/Badagas" target="#">Badagas</a> are a tribal community that has migrated from Karnataka and settled in the Nilgiris. The language is a mix of dominantly Kannada along with minimal aspects from Tamil.
-        </p>
+        <div class="about-me-content">
+            <h1>About Me</h1>
+            <p>
+                My name is Maheshwar Rathakrishnan and I usually go by Mahesh. I'm an aspiring computer science engineer trying to specialize in web technologies, focusing on front-end design and development. Currently exploring the depths of CSS and learning various front-end frameworks.
+            </p>
+        </div>
 
-        <p>
-            I live in Sharjah and study in Dubai, both are emirates (states) of the United Arab Emirates (UAE) located in Middle-East Asia. I did my studies upto middle school (KG-1 to Grade 5) in a school called Kindergarten Starters (KGS) now renamed to <a class="link" href="https://www.gemslegacyschool-dubai.com" target="#">GEMS Legacy School</a>. I completed my high school (Grade 6 to 12) in Our Own High School, Alwarqa <a class="link" href="https://www.gemsoo-alwarqa.com" target="#">(OOW)</a> and am currently studying B.E. Computer Science at BITS Pilani Dubai Campus <a class="link" href="https://www.bits-pilani.ac.in/dubai" target="#">(BPDC)</a>.
-        </p>
+        <div class="about-me-grid">
+
+            <div class="about-me-card">
+                <img src="" alt="">
+                <h3>Background</h3>
+                <p>
+                    I'm from a small village called <a class="link" href="https://en.wikipedia.org/wiki/Melur,_Nilgiris" target="#">Melur</a> in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is <a class="link" href="https://en.wikipedia.org/wiki/Badagas" target="#">Badaga</a>. I currently live in Sharjah, UAE.
+                </p>
+            </div>
+
+            <div class="about-me-card">
+                <img src="" alt="">
+                <h3>School</h3>
+                <p>
+                    I studied upto middle school in Kindergarten Starters (KGS) now renamed to <a class="link" href="https://www.gemslegacyschool-dubai.com" target="#">GEMS Legacy School</a>. I completed my high school in Our Own High School, Alwarqa <a class="link" href="https://www.gemsoo-alwarqa.com" target="#">(OOW)</a>.
+                </p>
+            </div>
+
+            <div class="about-me-card">
+                <img src="" alt="">
+                <h3>University</h3>
+                <p>
+                    I am currently completing my bachelors degree in Computer Science Engineering at BITS Pilani Dubai Campus <a class="link" href="https://www.bits-pilani.ac.in/dubai" target="#">(BPDC)</a>.
+                </p>
+            </div>
+
+            <div class="about-me-card">
+                <img src="" alt="">
+                <h3>Hobbies</h3>
+                <p>
+                    My main hobbies and interests include: badminton, <a class="link" href="https://en.wikipedia.org/wiki/Speedcubing" target="#">speedcubing</a>, gaming, consumer tech and cinema. You can find articles related to some of my interests in the navigation!
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="my-family">
         
         <h1>My Family</h1>
-
-        <p>
-            We are a family of four. My father's name is Rathakrishnan Mathan, everyone calls him by Ratha. My mother's name is Sreedevi Lakshmanan, she goes by Sree. I have an elder sister and her name is Deepthi, her name is shortened to Deepu. She completed high school in the same school as I did but in the only-girls branch (Our Own English High School, Alwarqa Girls). She also completed B.E. Computer Science (2017-2021) in the same university that I study at currently, BITS Pilani Dubai Campus.
-        </p>
 
         <div class="card-wrapper swiper mySwiper">
             <ul class="card-list swiper-wrapper">
@@ -53,7 +89,7 @@ import Maheshwar from "../images/Maheshwar.jpg";
                 <li class="card-item swiper-slide">
                     <Image src={Rathakrishnan} alt="" class="card-image" />
                     <ul class="card-info">
-                        <li>DAD</li>
+                        <li><h3>DAD</h3></li>
                         <li>Name: Rathakrishnan</li>
                         <li>Born: Mar 8, 1969</li>
                         <li>Birth Place: Coonoor, Tamil Nadu</li>
@@ -66,7 +102,7 @@ import Maheshwar from "../images/Maheshwar.jpg";
                 <li class="card-item swiper-slide">
                     <Image src={Sreedevi} alt="" class="card-image" />
                     <ul class="card-info">
-                        <li>MOM</li>
+                        <li><h3>MOM</h3></li>
                         <li>Name: Sreedevi</li>
                         <li>Born: May 7, 1975</li>
                         <li>Birth Place: Ooty, Tamil Nadu</li>
@@ -79,7 +115,7 @@ import Maheshwar from "../images/Maheshwar.jpg";
                 <li class="card-item swiper-slide">
                     <Image src={Deepthi} alt="" class="card-image" />
                     <ul class="card-info">
-                        <li>SISTER</li>
+                        <li><h3>SISTER</h3></li>
                         <li>Name: Deepthi</li>
                         <li>Born: Mar 24, 2000</li>
                         <li>Birth Place: Ooty, Tamil Nadu</li>
@@ -92,7 +128,7 @@ import Maheshwar from "../images/Maheshwar.jpg";
                 <li class="card-item swiper-slide">
                     <Image src={Maheshwar} alt="" class="card-image" />
                     <ul class="card-info">
-                        <li>MYSELF</li>
+                        <li><h3>MYSELF</h3></li>
                         <li>Name: Maheshwar</li>
                         <li>Born: Dec 3, 2004</li>
                         <li>Birth Place: Sharjah, UAE</li>
@@ -113,11 +149,11 @@ import Maheshwar from "../images/Maheshwar.jpg";
             
         </div>
 
-        <p class="hint">Swipe over the cards to slide through them!</p>
+        <!-- <p class="hint">Swipe over the cards to slide through them!</p> -->
 
-    </main>
+    </section>
 
-</div>
+</main>
 
 <!-- Importing Swiper JS -->
 
