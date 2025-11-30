@@ -1,12 +1,18 @@
 ---
 
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+
+import Profile from "../images/Maheshwar Profile.jpg";
+import Rathakrishnan from "../images/Rathakrishnan.jpg";
+import Sreedevi from "../images/Sreedevi.jpg";
+import Deepthi from "../images/Deepthi.jpg";
+import Maheshwar from "../images/Maheshwar.jpg";
 
 ---
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> -->
 </head>
 
 <MainLayout></MainLayout>
@@ -20,7 +26,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 I'm Mahesh! Welcome to my first website creation which also happens to be my personal portfolio. Basically just a lot of random stuff about me and what I like/do.
             </p>
         </div>
-        <img class="profile" src="/Portfolio/images/Maheshwar Profile.jpg">
+        <Image src={Profile} alt="" class="profile" />
     </div>
 
     <main class="home-content">
@@ -44,7 +50,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <ul class="card-list swiper-wrapper">
 
                 <li class="card-item swiper-slide">
-                    <img src="/Portfolio/images/Rathakrishnan.jpg" class="card-image">
+                    <Image src={Rathakrishnan} alt="" class="card-image" />
                     <ul class="card-info">
                         <li>DAD</li>
                         <li>Name: Rathakrishnan</li>
@@ -57,7 +63,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 </li>
 
                 <li class="card-item swiper-slide">
-                    <img src="/Portfolio/images/Sreedevi.jpg" class="card-image">
+                    <Image src={Sreedevi} alt="" class="card-image" />
                     <ul class="card-info">
                         <li>MOM</li>
                         <li>Name: Sreedevi</li>
@@ -70,7 +76,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 </li>
                 
                 <li class="card-item swiper-slide">
-                    <img src="/Portfolio/images/Deepthi.jpg" class="card-image">
+                    <Image src={Deepthi} alt="" class="card-image" />
                     <ul class="card-info">
                         <li>SISTER</li>
                         <li>Name: Deepthi</li>
@@ -83,7 +89,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 </li>
 
                 <li class="card-item swiper-slide">
-                    <img src="/Portfolio/images/Maheshwar.jpg" class="card-image">
+                    <Image src={Maheshwar} alt="" class="card-image" />
                     <ul class="card-info">
                         <li>MYSELF</li>
                         <li>Name: Maheshwar</li>
@@ -112,12 +118,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 </div>
 
-<!-- Swiper JS -->
+<!-- Importing Swiper JS -->
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" is:inline></script>
 
-<!-- Initializing swiper -->
+<!-- Initializing Swiper -->
 
-<!-- <script>
+<script>
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 100,
         grabCursor: true,
@@ -131,4 +138,4 @@ import MainLayout from "../layouts/MainLayout.astro";
             prevEl: ".custom-navigation .swiper-button-prev",
         },
     });
-</script> -->
+</script>
