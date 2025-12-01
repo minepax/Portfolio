@@ -457,7 +457,7 @@ hr {
             align-items: center;
             text-align: center;
 
-            h3 {margin-top: 1rem;}
+            h2 {margin-top: 1rem;}
 
             p {max-width: 50ch;}
         }
