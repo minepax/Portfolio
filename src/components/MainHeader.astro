@@ -11,7 +11,8 @@
             <ul>
                 <li><a href='/Portfolio'>HOME</a></li>
                 <li><a href='#'>MY WORK</a></li>
-                <li><a href='#'>HOBBIES</a>
+                <li><span>HOBBIES</span>
+                    <div class="arrow-down"></div>
                     <div class="nav-bar-sub">
                         <ul>
                             <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
@@ -58,7 +59,7 @@
 <style>
 
 .header {
-    height: 6rem;
+    height: 5rem;
     z-index: 11;
     position: sticky;
     top: -6rem;
@@ -106,27 +107,20 @@
         list-style-type: none;
         height: 100%;
         display: flex;
-        align-items: center;
-        justify-content: center;
         gap: 2rem;
     }
 
-    li {
+    a, span {
         height: 100%;
-    }
-
-    a {
         font-family: "Montserrat", sans-serif;
         font-size: 1rem;
         color: var(--clr-tertiary);
-        height: 100%;
+        text-wrap: nowrap;
+        cursor: pointer;
         display: flex;
         align-items: center;
-        text-wrap: nowrap;
-        position: relative;
-        overflow: clip;
-        cursor: pointer;
         transition: color 0.5s ease;
+        position: relative;
 
         &::after {
             content: '';
@@ -144,10 +138,6 @@
         &:hover {
             color: var(--clr-accent-1);
         }
-    }
-
-    a:has( + .nav-bar-sub)::after {
-        display: none;
     }
 
     li:hover a::after {
@@ -183,7 +173,7 @@
     height: auto;
 }
 
-.navbar .nav-bar-sub {
+.nav-bar-sub {
     display: block;
     position: absolute;
     height: 0;
@@ -347,33 +337,20 @@
 
     svg {
         width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
-        fill: var(--clr-tertiary);
+        fill: var(--clr-accent-1);
         transition: fill 0.5s ease;
-    }
-    
-    &:hover {
-        transform: none;
-
-        svg {
-            fill: var(--clr-accent-1);
-        }
-    }
-
-    &:hover {
-        scale: 1.1;
     }
 }
 
 /* ----- MEDIA QUERIES - NAVBAR ----- */
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 800px) {
     .hamburger-menu {
         display: flex;
     }
 
     .header {
         top: 0;
-        height: 5rem;
         animation: none;
         background-color: var(--nav-alt-clr);
         backdrop-filter: blur(10px);

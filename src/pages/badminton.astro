@@ -9,9 +9,9 @@ import Court from "../images/Badminton-Court.png";
 
 <MainLayout></MainLayout>
 
-<!-- Hidden button and list for responsiveness -->
+<!-- Hidden toc nav -->
 
-<div id="Badminton-Nav-Btn">
+<div class="badminton-toc-btn">
     <a href="#" onclick=toggleList()>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
             <path d="M360-200v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360ZM200-160q-33 0-56.5-23.5T120-240q0-33 23.5-56.5T200-320q33 0 56.5 23.5T280-240q0 33-23.5 56.5T200-160Zm0-240q-33 0-56.5-23.5T120-480q0-33 23.5-56.5T200-560q33 0 56.5 23.5T280-480q0 33-23.5 56.5T200-400Zm0-240q-33 0-56.5-23.5T120-720q0-33 23.5-56.5T200-800q33 0 56.5 23.5T280-720q0 33-23.5 56.5T200-640Z"/>
@@ -19,46 +19,37 @@ import Court from "../images/Badminton-Court.png";
     </a>
 </div>
 
-<div id="Badminton-Hidden-Nav">
+<nav class="badminton-toc">
     <ul>
         <li>
             <a href="#" onclick=toggleList()>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="200 -760 560 580">
                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                 </svg>
             </a>
         </li>
         <li>
-            <a href="#topic-1"><h3>Introduction</h3></a><br>
+            <a href="#topic-1"><h3>Introduction</h3></a>
             <p class="sub-list"><a href="#topic-1-sub-1">What is badminton?</a></p>
             <p class="sub-list"><a href="#topic-1-sub-2">What it takes to go pro</a></p>
         </li>
         <li><a href="#topic-2"><h3>Badminton and I</h3></a></li>
-        <li><a href="#topic-3"><h3>Men's Singles</h3></a></li>
+        <li>
+            <a href="#topic-3"><h3>Men's Singles</h3></a>
+            <p class="sub-list"><a href="#topic-3-sub-1">Overview</a></p>
+            <p class="sub-list"><a href="#topic-3-sub-2">Favourite Players</a></p>
+        </li>
         <li><a href="#topic-4"><h3>Women's Singles</h3></a></li>
     </ul>
-</div>
+</nav>
 
-<main id="Badminton-Wrapper">
+<!-- Main content -->
 
-    <nav id="Badminton-Nav">
-        <ul>
-            <li>
-                <a href="#topic-1"><h3>Introduction</h3></a><br>
-                <p class="sub-list"><a href="#topic-1-sub-1">What is badminton?</a></p>
-                <p class="sub-list"><a href="#topic-1-sub-2">What it takes to go pro</a></p>
-            </li>
-            <li><a href="#topic-2"><h3>Badminton and I</h3></a></li>
-            <li>
-                <a href="#topic-3"><h3>Men's Singles</h3></a><br>
-                <p class="sub-list"><a href="#topic-3-sub-1">Overview</a></p>
-                <p class="sub-list"><a href="#topic-3-sub-2">Favourite Players</a></p>
-            </li>
-            <li><a href="#topic-4"><h3>Women's Singles</h3></a></li>
-        </ul>
-    </nav>
+<main class="wrapper badminton-wrapper">
 
-    <article id="Badminton-Content">
+    <!-- Main article -->
+
+    <article class="badminton-content">
 
         <!-- Introduction -->
 
@@ -118,6 +109,8 @@ import Court from "../images/Badminton-Court.png";
         </p>
 
         <hr>
+
+        <!-- Badminton and I -->
 
         <h1 id="topic-2">Badminton and I</h1><br>
 
@@ -247,7 +240,9 @@ import Court from "../images/Badminton-Court.png";
 
     </article>
 
-    <aside id="Badminton-Aside">
+    <!-- useful articles aside -->
+
+    <aside class="badminton-aside">
 
         <h2>Useful articles!</h2>
 

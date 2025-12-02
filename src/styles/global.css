@@ -16,7 +16,7 @@
     --background: url(../images/Background.jpg);
 
     --clr-primary: hsl(288 100% 10%);
-    --clr-primary-surface: hsl(from var(--clr-primary) h 30% 50%);
+    --clr-primary-surface: hsl(from var(--clr-primary) h 50% 30%);
     --clr-secondary: hsl(from var(--clr-primary) h s 30%);
     --clr-tertiary: hsl(from var(--clr-primary) h s 80%);
     --clr-accent-1: hsl(45 100% 40%);
@@ -48,7 +48,6 @@
         --clr-primary-surface: hsl(from var(--clr-primary) h 50% 70%);
         --clr-secondary: hsl(from var(--clr-primary) h s 70%);
         --clr-tertiary: hsl(from var(--clr-primary) h s 20%);
-        /* --clr-accent-1: hsl(45, 50%, 40%); */
         --clr-accent-1: hsl(45 100% 30%);
         --clr-accent-2: hsl(from var(--clr-accent-1) h 50% 25%);
         --clr-accent-3: hsl(160 100% 25%);
@@ -86,7 +85,7 @@ html {
 body {
     line-height: 1.6;
     background-image: linear-gradient(hsl(from var(--clr-primary) h s l / 0.8)), var(--background);
-    /* background: var(--clr-primary); */
+    background-color: var(--clr-primary);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -161,7 +160,6 @@ h3 {
 }
 
 p {
-    max-width: 60ch;
 	font-size: 1.2rem;
     text-wrap: pretty;
 }
@@ -201,7 +199,7 @@ hr {
     color: var(--clr-tertiary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-underline-offset: 5px;
+    text-underline-offset: 3px;
 
     &:hover {
         text-decoration: none;
@@ -429,7 +427,7 @@ hr {
     --swiper-pagination-color: var(--clr-accent-1);
     --swiper-pagination-bullet-width: 10px;
     --swiper-pagination-bullet-height: 10px;
-    --swiper-pagination-bullet-inactive-color: var(--clr-primary);
+    --swiper-pagination-bullet-inactive-color: hsl(from var(--clr-font) h s l / 0.3);
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 3px;
     --swiper-pagination-bullet-vertical-gap: 6px;
@@ -472,14 +470,14 @@ hr {
 
 /* ----- BADMINTON PAGE ----- */
 
-#Badminton-Hidden-Nav {
+.badminton-toc {
     position: fixed;
     top: 5rem;
-    left: 0rem;
+    left: 0;
     z-index: 100;
     width: 0;
     height: calc(100dvh - 5rem);
-    overflow: hidden;
+    overflow: clip;
     interpolate-size: allow-keywords;
     box-shadow: var(--shadow);
     background: var(--nav-alt-clr);
@@ -492,10 +490,8 @@ hr {
         height: 100%;
         overflow-x: clip;
         overflow-y: auto;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
+        display: grid;
+        align-content: start;
         gap: 1.5rem;
 
         h3 {
@@ -503,15 +499,11 @@ hr {
         }
     }
 
-    li:first-of-type {
-        svg {
-            width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
-            fill: var(--clr-tertiary);
-            transition: fill 0.5s ease;
+    li:first-of-type{
 
-            &:hover {
-                fill: var(--clr-accent-1);
-            }
+        svg {
+            width: 1.5rem;
+            fill: var(--clr-accent-1);
         }
     }
 
@@ -522,75 +514,32 @@ hr {
     }
 }
 
-#Badminton-Nav-Btn {
+.badminton-toc-btn {
     padding: 2px;
     display: none;
     position: fixed;
     top: 6rem;
     left: 2rem;
     z-index: 50;
-    translate: 0 0;
-    border-radius: 10px;
-    background-color: var(--clr-secondary);
-    transition: scale 0.5s ease;
+    border-radius: 0.4rem;
+    border: 1px solid var(--clr-tertiary);
+    backdrop-filter: blur(10px);
 
     svg {
         width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
-        fill: var(--clr-tertiary);
-        transition: all 0.5s ease;
-    }
-    
-    a:hover {
-        transform: none;
-
-        svg {
-            fill: var(--clr-accent-1);
-        }
-    }
-
-    &:hover {
-        scale: 1.1;
+        fill: var(--clr-accent-3);
     }
 }
 
-#Badminton-Wrapper {
-    padding: 5rem 2rem;
-    padding-bottom: 0;
+.badminton-wrapper {
+    padding-block: 5rem;
     display: flex;
-    justify-content: center;
-    gap: min(5rem, 5vw);
+    justify-content: space-between;
+    gap: 5rem;
 }
 
-#Badminton-Nav {
-    position: sticky;
-    top: 5dvh;
-    height: 90dvh;
-    flex-shrink: 0;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-    background: hsl(from var(--clr-primary-surface) h s l / 0.5);
-    backdrop-filter: blur(10px);
-
-    ul {
-        list-style-type: none;
-        padding: 2rem;
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .sub-list a {
-        font-size: 1rem;
-        padding-left: 2rem;
-        text-wrap: nowrap;
-    }
-}
-
-#Badminton-Content {
-    padding-bottom: min(5rem, 5vw);
+.badminton-content {
+    max-width: 77ch;
 
     ul {
         list-style-type: square;
@@ -689,7 +638,6 @@ hr {
     }
 
     .player-card {
-        max-width: 70ch;
         aspect-ratio: 16/9;
         overflow: clip;
         border-radius: 0.5rem;
@@ -794,7 +742,7 @@ hr {
     }
 }
 
-#Badminton-Aside {
+.badminton-aside {
     padding-bottom: 5rem;
     display: grid;
     align-content: start;
@@ -809,6 +757,7 @@ hr {
         padding: 1rem;
         width: 350px;
         display: grid;
+        align-content: start;
         gap: 0.4rem;
         border-radius: 0.5rem;
         box-shadow: var(--shadow);
@@ -836,27 +785,23 @@ hr {
 
 /* ----- MEDIA QUERIES - BADMINTON PAGE ----- */
 
-@media (max-width: 1300px) {
-    #Badminton-Nav {
-        display: none;
+@media (max-width: 1100px) {
+
+    .badminton-wrapper {
+        flex-direction: column;
+        gap: 10rem;
     }
 
-    #Badminton-Nav-Btn {
+    .badminton-toc-btn {
         display: block;
     }
 
-    #Badminton-Wrapper {
-        flex-direction: column;
-    }
-
-    #Badminton-Content {
+    .badminton-content {
         margin-inline: auto;
     }
 
-    #Badminton-Aside {
-        width: 100%;
+    .badminton-aside {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        align-items: stretch;
 
         h2 {
             font-size: clamp(3rem, 8vw + 0.5rem, 6rem);

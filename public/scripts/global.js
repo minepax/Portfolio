@@ -21,10 +21,10 @@ function toggleSubMenu(button) {
   button.classList.toggle('rotate')
 }
 
-// Javascript for badminton page hidden nav list
+// Javascript for badminton page hidden toc
 
 function toggleList() {
-  const list = document.getElementById('Badminton-Hidden-Nav');
+  const list = document.querySelector('.badminton-toc');
   if (list.style.width === 'max-content') {
     list.style.width = '0';
   } else {
