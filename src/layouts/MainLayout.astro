@@ -1,5 +1,6 @@
 ---
 
+import { ClientRouter } from "astro:transitions";
 import MainHeader from "../components/MainHeader.astro";
 import '../styles/global.css';
 
@@ -11,13 +12,14 @@ import '../styles/global.css';
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width initial-scale=1">
     <script src="/Portfolio/scripts/global.js" is:inline defer></script>
+    <ClientRouter />
 </head>
 
 <body>
 
-    <MainHeader></MainHeader>
+    <MainHeader />
 
-    <slot></slot>
+    <slot />
 
     <div id="overlay" onclick="hideSideBar()"></div>
 
