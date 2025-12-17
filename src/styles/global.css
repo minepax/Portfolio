@@ -108,14 +108,6 @@ body {
   	background-color: var(--clr-accent-1);
 }
 
-#overlay {
-    background: hsl(0 0% 0% / 0.5);
-    position: fixed;
-    inset: 0;
-    z-index: 998;
-    display: none;
-}
-
 
 
 /* =========================================================
@@ -484,6 +476,8 @@ hr {
     backdrop-filter: blur(10px);
     transition: width 0.5s ease;
 
+    &[data-open] {width: max-content;}
+
     ul {
         list-style-type: none;
         padding: 2rem;
@@ -499,7 +493,10 @@ hr {
         }
     }
 
-    li:first-of-type{
+    .badminton-toc-close {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
 
         svg {
             width: 1.5rem;
@@ -515,14 +512,16 @@ hr {
 }
 
 .badminton-toc-btn {
-    padding: 2px;
-    display: none;
     position: fixed;
     top: 6rem;
     left: 2rem;
     z-index: 50;
+    cursor: pointer;
+    padding: 2px;
+    display: none;
     border-radius: 0.4rem;
     border: 1px solid var(--clr-tertiary);
+    background-color: transparent;
     backdrop-filter: blur(10px);
 
     svg {
@@ -679,9 +678,9 @@ hr {
             transform: scaleX(1);
         }
 
-        &:hover .player-card-content *:not(h2) {
-            opacity: 1;
+        &:hover .player-card-content *:not(h2, .know-more-btn) {
             transition-delay: 1s;
+            opacity: 1;
         }
 
         .player-card-content {
@@ -695,7 +694,7 @@ hr {
                 hsl(0 0% 0% / 1)
             );
 
-            *:not(h2) {
+            *:not(h2, .know-more-btn) {
                 opacity: 0;
                 transition: opacity 0.5s linear;
             }
@@ -725,17 +724,18 @@ hr {
                 background: #fcf9c6;
             }
 
-            .button {
-                padding: 10px;
+            .know-more-btn {
+                padding: 0.75rem 1rem;
                 width: fit-content;
                 cursor: pointer;
                 color: white;
-                border-radius: 10px;
-                background: #b56cc5;
-
+                border: 1px solid hsl(0 0% 100% / 0.3);
+                border-radius: 100vw;
+                background: hsl(288 100% 10%);
+                transition: opacity 0.3s ease;
+                
                 &:hover {
-                    transition: color 0.5s ease;
-                    color: black;
+                    opacity: 0.7;
                 }
             }
         }

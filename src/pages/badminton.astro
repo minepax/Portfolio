@@ -11,22 +11,20 @@ import Court from "../images/Badminton-Court.png";
 
 <!-- Hidden toc nav -->
 
-<div class="badminton-toc-btn">
-    <a href="#" onclick=toggleList()>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path d="M360-200v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360ZM200-160q-33 0-56.5-23.5T120-240q0-33 23.5-56.5T200-320q33 0 56.5 23.5T280-240q0 33-23.5 56.5T200-160Zm0-240q-33 0-56.5-23.5T120-480q0-33 23.5-56.5T200-560q33 0 56.5 23.5T280-480q0 33-23.5 56.5T200-400Zm0-240q-33 0-56.5-23.5T120-720q0-33 23.5-56.5T200-800q33 0 56.5 23.5T280-720q0 33-23.5 56.5T200-640Z"/>
-        </svg>
-    </a>
-</div>
+<button class="badminton-toc-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M360-200v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360ZM200-160q-33 0-56.5-23.5T120-240q0-33 23.5-56.5T200-320q33 0 56.5 23.5T280-240q0 33-23.5 56.5T200-160Zm0-240q-33 0-56.5-23.5T120-480q0-33 23.5-56.5T200-560q33 0 56.5 23.5T280-480q0 33-23.5 56.5T200-400Zm0-240q-33 0-56.5-23.5T120-720q0-33 23.5-56.5T200-800q33 0 56.5 23.5T280-720q0 33-23.5 56.5T200-640Z"/>
+    </svg>
+</button>
 
 <nav class="badminton-toc">
     <ul>
         <li>
-            <a href="#" onclick=toggleList()>
+            <button class="badminton-toc-close">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="200 -760 560 580">
                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                 </svg>
-            </a>
+            </button>
         </li>
         <li>
             <a href="#topic-1"><h3>Introduction</h3></a>
@@ -152,7 +150,7 @@ import Court from "../images/Badminton-Court.png";
                         <li>Strategic Thinking: Lin Dan is the master of tailoring strategies specific to his opponents and court conditions.</li>
                     </ul>
                 </p><br><br>
-                <a class="button" href="https://en.wikipedia.org/wiki/Lin_Dan" target="#">Know more!</a>
+                <a class="know-more-btn" href="https://en.wikipedia.org/wiki/Lin_Dan" target="#">Know more!</a>
             </div>
         </div><br>
 
@@ -170,7 +168,7 @@ import Court from "../images/Badminton-Court.png";
                         <li>Defense: Easily in the top 3 for the best defenses ever in singles!</li>
                     </ul>
                 </p><br><br>
-                <a class="button" href="https://en.wikipedia.org/wiki/Lee_Chong_Wei" target="#">Know more!</a>
+                <a class="know-more-btn" href="https://en.wikipedia.org/wiki/Lee_Chong_Wei" target="#">Know more!</a>
             </div>
         </div><br>
 
@@ -188,7 +186,7 @@ import Court from "../images/Badminton-Court.png";
                         <li>Counter-Attack: The way he springs back from his defensive position using his quad strength hunting for counter attacking chances is a beauty!</li>
                     </ul>
                 </p><br><br>
-                <a class="button" href="https://en.wikipedia.org/wiki/Chen_Long" target="#">Know more!</a>
+                <a class="know-more-btn" href="https://en.wikipedia.org/wiki/Chen_Long" target="#">Know more!</a>
             </div>
         </div><br>
 
@@ -206,7 +204,7 @@ import Court from "../images/Badminton-Court.png";
                         <li>Swift Attack: Similar to Lin Dan, his quick and timed aggressions surprise opponents who are not expecting it due to his overall relatively slow and controlled rhythm.</li>
                     </ul>
                 </p><br><br>
-                <a class="button" href="https://en.wikipedia.org/wiki/Kento_Momota" target="#">Know more!</a>
+                <a class="know-more-btn" href="https://en.wikipedia.org/wiki/Kento_Momota" target="#">Know more!</a>
             </div>
         </div><br>
 
@@ -224,7 +222,7 @@ import Court from "../images/Badminton-Court.png";
                         <li>Stamina & Endurance: His efficiency and staying power in exhasuting rallies and matches has given him the nick-name the '3-Game God' as he wins majority of the matches that go to the final set.</li>
                     </ul>
                 </p><br><br>
-                <a class="button" href="https://en.wikipedia.org/wiki/Kunlavut_Vitidsarn" target="#">Know more!</a>
+                <a class="know-more-btn" href="https://en.wikipedia.org/wiki/Kunlavut_Vitidsarn" target="#">Know more!</a>
             </div>
         </div>
 
@@ -281,6 +279,9 @@ import Court from "../images/Badminton-Court.png";
     </aside>
 
 </main>
+
+<script src="/Portfolio/scripts/ui/modal.js" is:inline />
+<script src="/Portfolio/scripts/ui/toc.js" is:inline />
 
 <style>
 

@@ -1,19 +1,18 @@
 <header class="header">
     <div class="wrapper">
 
-        <a href="#" class="hamburger-menu" onclick=showSideBar()>
+        <button class="hamburger-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
             </svg>
-        </a>
+        </button>
 
         <nav class="navbar">
             <ul>
                 <li><a href='/Portfolio'>HOME</a></li>
-                <li><a href='#'>MY WORK</a></li>
+                <li><span>MY WORK</span></li>
                 <li><span>HOBBIES</span>
-                    <div class="arrow-down"></div>
-                    <div class="nav-bar-sub">
+                    <div class="navbar-sub">
                         <ul>
                             <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
                             <li><a href='#'>CUBING</a></li>
@@ -22,7 +21,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href='#'>CONTACT</a></li>
+                <li><span>CONTACT</span></li>
             </ul>
         </nav>
 
@@ -37,12 +36,12 @@
         <li><a href="#"><span>MY WORK</span></a></li>
         <li>
 
-            <button onclick=toggleSubMenu(this) class="dropdown-btn">
+            <button class="dropdown-btn">
                 <span>HOBBIES</span>
                 <div class="arrow-down"></div>
             </button>
 
-            <ul class="sub-menu">
+            <ul class="sidebar-sub">
                 <div>
                     <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
                     <li><a href='#'>CUBING</a></li>
@@ -55,6 +54,10 @@
         <li><a href="#"><span>CONTACT</span></a></li>
     </ul>
 </nav>
+
+<div class="overlay"></div>
+
+<script src="/Portfolio/scripts/ui/sidebar.js" is:inline />
 
 <style>
 
@@ -129,7 +132,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            display: block;
+            display: var(--_display-none, block);
             background-color: var(--clr-accent-1);
             transition: all 0.5s ease;
             transform: translateX(-50%);
@@ -137,13 +140,15 @@
 
         &:hover {
             color: var(--clr-accent-1);
+            
+            &::after {
+                width: 100%;
+            }
         }
     }
-
-    li:hover a::after {
-        width: 100%;
-    }
 }
+
+.navbar span:has(+ .navbar-sub)::after {height: 0;}
 
 @keyframes logo_animation {
     0% {background-position: 200% 0%;}
@@ -169,11 +174,9 @@
     }
 }
 
-.navbar li:hover .nav-bar-sub {
-    height: auto;
-}
+.navbar li:hover .navbar-sub {height: auto;}
 
-.nav-bar-sub {
+.navbar-sub {
     display: block;
     position: absolute;
     height: 0;
@@ -224,6 +227,8 @@
     transition: 0.5s ease;
     background-color: var(--nav-alt-clr);
     backdrop-filter: blur(3px);
+
+    &[data-visible] {width: max-content;}
 
     ul {
 
@@ -287,7 +292,7 @@
     }
 }
 
-.sidebar .sub-menu {
+.sidebar-sub {
     display: grid;
     background-color: var(--clr-secondary);
     border-radius: 1rem;
@@ -302,10 +307,8 @@
         background-color: var(--clr-primary);
         color: var(--clr-accent-1);
     }
-}
-
-.sidebar .sub-menu.show {
-    grid-template-rows: 1fr;
+    
+    &[data-visible] {grid-template-rows: 1fr;}
 }
 
 .dropdown-btn {
@@ -321,32 +324,40 @@
         border-inline: 6px solid transparent;
         border-top: 6px solid var(--clr-tertiary);
         transition: all 0.5s ease;
+
+        &[data-rotate] {transform: rotate(-180deg);}
     }
 }
 
-.rotate .arrow-down {
-    transform: rotate(-180deg);
+.overlay {
+    background: hsl(0 0% 0% / 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    display: none;
 }
+
+.sidebar[data-visible] ~ .overlay {display: block;}
 
 /* ----- HAMBURGER MENU BUTTON ----- */
 
-.hamburger-menu {
+.hamburger-btn {
     display: none;
-    align-items: center;
-    transition: all 0.5s ease;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 
     svg {
         width: clamp(2.5rem, 1vw  + 0.5rem, 3rem);
         fill: var(--clr-accent-1);
-        transition: fill 0.5s ease;
     }
 }
 
-/* ----- MEDIA QUERIES - NAVBAR ----- */
+/* ----- MEDIA QUERIES - NAV AND SIDE BARS ----- */
 
 @media screen and (max-width: 800px) {
-    .hamburger-menu {
-        display: flex;
+    .hamburger-btn {
+        display: block;
     }
 
     .header {
