@@ -9,19 +9,19 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href='/Portfolio'>HOME</a></li>
-                <li><span>MY WORK</span></li>
-                <li><span>HOBBIES</span>
+                <li><a class="navbar-link" href='/Portfolio'>HOME</a></li>
+                <li><span class="navbar-link">MY WORK</span></li>
+                <li><span class="navbar-link">HOBBIES</span>
                     <div class="navbar-sub">
                         <ul>
-                            <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
-                            <li><a href='#'>CUBING</a></li>
-                            <li><a href='#'>MINECRAFT</a></li>
-                            <li><a href='#'>CONSUMER TECH</a></li>
+                            <li><a class="navbar-sub-link" href='/Portfolio/badminton'>BADMINTON</a></li>
+                            <li><span class="navbar-sub-link">CUBING</span></li>
+                            <li><span class="navbar-sub-link">MINECRAFT</span></li>
+                            <li><span class="navbar-sub-link">CONSUMER TECH</span></li>
                         </ul>
                     </div>
                 </li>
-                <li><span>CONTACT</span></li>
+                <li><span class="navbar-link">CONTACT</span></li>
             </ul>
         </nav>
 
@@ -32,26 +32,26 @@
 
 <nav class="sidebar">
     <ul>
-        <li><a href="/Portfolio"><span>HOME</span></a></li>
-        <li><a href="#"><span>MY WORK</span></a></li>
+        <li><a class="sidebar-link" href="/Portfolio"><span>HOME</span></a></li>
+        <li><a class="sidebar-link" href="#"><span>MY WORK</span></a></li>
         <li>
 
             <button class="dropdown-btn">
-                <span>HOBBIES</span>
+                <span class="sidebar-link">HOBBIES</span>
                 <div class="arrow-down"></div>
             </button>
 
             <ul class="sidebar-sub">
                 <div>
-                    <li><a href='/Portfolio/badminton'>BADMINTON</a></li>
-                    <li><a href='#'>CUBING</a></li>
-                    <li><a href='#'>MINECRAFT</a></li>
-                    <li><a href='#'>CONSUMER TECH</a></li>
+                    <li><a class="sidebar-sub-link" href='/Portfolio/badminton'>BADMINTON</a></li>
+                    <li><a class="sidebar-sub-link" href='#'>CUBING</a></li>
+                    <li><a class="sidebar-sub-link" href='#'>MINECRAFT</a></li>
+                    <li><a class="sidebar-sub-link" href='#'>CONSUMER TECH</a></li>
                 </div>
             </ul>
 
         </li>
-        <li><a href="#"><span>CONTACT</span></a></li>
+        <li><a class="sidebar-link" href="#"><span>CONTACT</span></a></li>
     </ul>
 </nav>
 
@@ -62,12 +62,15 @@
 <style>
 
 .header {
-    height: 5rem;
-    z-index: 11;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
     position: sticky;
     top: -6rem;
     left: 0;
-    animation: stickyNav linear forwards;
+    z-index: 11;
+    height: 5rem;
+    animation: floating_nav linear forwards;
     animation-timeline: view();
     animation-range-start: 120vh;
     animation-range-end: 150vh;
@@ -79,9 +82,7 @@
     }
 
     .logo {
-        font-family: 'Montserrat', sans-serif;
         font-size: clamp(1.5rem, 20vw  + 0.5rem, 1.8rem);
-        color: var(--clr-tertiary);
         display: var(--_display-none, flex);
         align-items: center;
         transition: color 0.5s ease;
@@ -104,6 +105,29 @@
     }
 }
 
+@keyframes logo_animation {
+    0% {background-position: 200% 0%;}
+    100% {background-position: 0% 0%;}
+}
+
+@keyframes floating_nav {
+    0%, 100% {
+        margin-inline: auto;
+        padding-inline: 1rem;
+        width: fit-content;
+        height: 5rem;
+        border-radius: 100vw;
+        border: 1px solid hsl(from var(--clr-tertiary) h s l / 0.4);
+        box-shadow: var(--shadow);
+        background-color: var(--nav-alt-clr);
+        backdrop-filter: blur(10px);
+        --_display-none: none;
+    }
+    100% {
+        top: 1rem;
+    }
+}
+
 .navbar {
 
     ul {
@@ -111,19 +135,18 @@
         height: 100%;
         display: flex;
         gap: 2rem;
+        
+        li:hover .navbar-sub {height: auto;}
     }
 
-    a, span {
+    .navbar-link {
+        position: relative;
         height: 100%;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1rem;
-        color: var(--clr-tertiary);
-        text-wrap: nowrap;
         cursor: pointer;
         display: flex;
         align-items: center;
+        color: var(--clr-tertiary);
         transition: color 0.5s ease;
-        position: relative;
 
         &::after {
             content: '';
@@ -145,78 +168,44 @@
                 width: 100%;
             }
         }
+        
+        &:has(+ .navbar-sub)::after {display: none;}
     }
 }
-
-.navbar span:has(+ .navbar-sub)::after {height: 0;}
-
-@keyframes logo_animation {
-    0% {background-position: 200% 0%;}
-    100% {background-position: 0% 0%;}
-}
-
-@keyframes stickyNav {
-    0%, 100% {
-        margin-inline: auto;
-        padding-inline: 1rem;
-        width: fit-content;
-        height: 5rem;
-        border-radius: 100vw;
-        border: 1px solid hsl(from var(--clr-tertiary) h s l / 0.4);
-        box-shadow: var(--shadow);
-        background-color: var(--nav-alt-clr);
-        backdrop-filter: blur(10px);
-        --_display-none: none;
-        --_display-haha: 0px;
-    }
-    100% {
-        top: 1rem;
-    }
-}
-
-.navbar li:hover .navbar-sub {height: auto;}
 
 .navbar-sub {
-    display: block;
     position: absolute;
     height: 0;
-    overflow: hidden;
+    overflow: clip;
     interpolate-size: allow-keywords;
     border-radius: 0 0 1rem 1rem;
     background-color: var(--sidebar-sub-clr);
-    backdrop-filter: ;
-    transition: all 0.5s ease;
+    transition: height 0.5s ease;
 
     ul {
         list-style-type: none;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
+        display: grid;
         gap: 0;
     }
 
-    li {
-        width: 100%;
-        padding: 0;
-        transition: all 0.5s ease;
-    }
-
-    a {
+    .navbar-sub-link {
         padding: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: var(--clr-tertiary);
+        transition: color 0.5s ease;
 
-        &::after {
-            display: none;
-        }
-
-        &:hover {
-            transform: none;
-        }
+        &:hover {color: var(--clr-accent-1);}
     }
 }
 
 /* ----- SIDEBAR ----- */
 
 .sidebar {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
     position: fixed;
     top: 0;
     z-index: 999;
@@ -226,19 +215,16 @@
     interpolate-size: allow-keywords;
     transition: 0.5s ease;
     background-color: var(--nav-alt-clr);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
 
     &[data-visible] {width: max-content;}
 
-    ul {
-
-        &:first-child{
-            list-style-type: none;
-            padding: 2rem 1rem;
-            width: 100%;
-            height: 100%;
-            overflow: clip auto;
-        }
+    > ul {
+        list-style-type: none;
+        padding: 2rem 1rem;
+        width: 100%;
+        height: 100%;
+        overflow: clip auto;
 
         &::-webkit-scrollbar {
             width: 0.1rem;
@@ -258,65 +244,51 @@
             background-color: var(--clr-accent-1);
         }
     }
-}
 
-.sidebar a, .dropdown-btn {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 1.5rem;
-    color: var(--clr-tertiary);
-    text-wrap: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    border-radius: 1rem;
-    transition: all 0.5s ease;
-
-    span {
-        font-family: "Montserrat", sans-serif;
+    .sidebar-link {
+        padding: 1.5rem;
         color: var(--clr-tertiary);
-        flex-grow: 1;
-        transition: all 0.4s ease;
-    }
+        text-wrap: nowrap;
+        display: flex;
+        align-items: center;
+        transition: all 0.5s ease;
 
-    &:hover {
-        
-        span {
+        &:hover {
             color: var(--clr-accent-1);
-        }
-
-        .arrow-down {
-            border-top: 6px solid var(--clr-accent-1);
         }
     }
 }
 
 .sidebar-sub {
     display: grid;
-    background-color: var(--clr-secondary);
-    border-radius: 1rem;
     grid-template-rows: 0fr;
+    border-radius: 1rem;
+    background-color: var(--clr-tertiary);
     transition: 0.3s ease-in-out;
 
-    div {
-        overflow: hidden;
-    }
-
-    a:hover {
-        background-color: var(--clr-primary);
-        color: var(--clr-accent-1);
-    }
-    
     &[data-visible] {grid-template-rows: 1fr;}
+
+    div {overflow: hidden;}
+
+    .sidebar-sub-link {
+        padding: 1.5rem;
+        color: var(--clr-primary);
+        text-wrap: nowrap;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .dropdown-btn {
+    padding-right: 1.5rem;
     width: 100%;
-    text-align: left;
-    background: none;
-    border: none;
     cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    background: none;
 
     .arrow-down {
         width: 0px;
@@ -326,6 +298,11 @@
         transition: all 0.5s ease;
 
         &[data-rotate] {transform: rotate(-180deg);}
+    }
+
+    &:hover {
+        .sidebar-link {color: var(--clr-accent-1);}
+        .arrow-down {border-top: 6px solid var(--clr-accent-1);}
     }
 }
 
