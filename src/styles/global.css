@@ -190,14 +190,13 @@ hr {
 .link {
     font-style: italic;
     cursor: pointer;
-    color: var(--clr-tertiary);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
-
-    &:hover {
-        text-decoration: none;
-        color: var(--clr-accent-3);
+    color: var(--clr-accent-3);
+    text-decoration: none;
+    
+    &:is(:hover, :focus) {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 2px;
     }
 }
 
@@ -284,16 +283,16 @@ hr {
             width: fit-content;
             display: flex;
             gap: 1rem;
+            
+            &:is(:hover, :focus) svg {
+                fill: var(--clr-accent-3);
+                transform: scale(1.1);
+            }
 
             svg {
                 height: 2rem;
                 fill: var(--clr-font);
                 transition: all 0.5s ease;
-
-                &:hover {
-                    fill: var(--clr-accent-3);
-                    transform: scale(1.1);
-                }
             }
         }
     }
@@ -325,7 +324,7 @@ hr {
                 font-size: 0.9rem;
                 line-height: 1.4;
                 text-align: center;
-                color: hsl(from var(--clr-font) h s calc(l - 15));
+                opacity: 0.8;
             }
         }
     }
@@ -471,14 +470,15 @@ hr {
     z-index: 100;
     width: 0;
     height: calc(100dvh - 5rem);
+    visibility: hidden;
     overflow: clip;
     interpolate-size: allow-keywords;
     box-shadow: var(--shadow);
     background: var(--nav-alt-clr);
     backdrop-filter: blur(10px);
-    transition: width 0.5s ease;
+    transition: width 0.5s ease, visibility 0.5s;
 
-    &[data-open] {width: max-content;}
+    &[data-open] {width: max-content; visibility: visible;}
 
     ul {
         list-style-type: none;
@@ -591,7 +591,7 @@ hr {
             background-color: var(--clr-primary);
             transition: all 0.5s ease;
 
-            &:hover {
+            &:is(:hover, :focus) {
                 fill: var(--clr-accent-1);
             }
         }
@@ -632,10 +632,6 @@ hr {
             max-width: 20rem;
             display: flex;
             justify-self: center;
-
-            &:hover {
-                transform: none;
-            }
         }
     }
 
@@ -666,22 +662,22 @@ hr {
             background-image: url(../images/Kunlavut-Vitidsarn.jpg);
         }
 
-        &:hover {
+        &:is(:hover, :focus) {
             background-size: 105%;
         }
 
-        &:hover .player-card-content {
+        &:is(:hover, :focus) .player-card-content {
             transform: translateY(0);
             transition-delay: 0.5s;
             backdrop-filter: blur(2px);
             overflow-y: auto;
         }
 
-        &:hover .player-card-content > h2::after {
+        &:is(:hover, :focus) .player-card-content > h2::after {
             transform: scaleX(1);
         }
 
-        &:hover .player-card-content *:not(h2, .know-more-btn) {
+        &:is(:hover, :focus) .player-card-content *:not(h2, .know-more-btn) {
             transition-delay: 1s;
             opacity: 1;
         }
@@ -737,7 +733,7 @@ hr {
                 background: hsl(288 100% 10%);
                 transition: opacity 0.3s ease;
                 
-                &:hover {
+                &:is(:hover, :focus) {
                     opacity: 0.7;
                 }
             }
@@ -780,7 +776,7 @@ hr {
             color: hsl(from var(--clr-font) h s calc(l - 15));
         }
 
-        &:hover {
+        &:is(:hover, :focus) {
             transform: scale(1.02);
         }
     }
