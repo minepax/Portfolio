@@ -83,6 +83,7 @@ body {
 	font-weight: 200;
     line-height: 1.6;
 	color: var(--clr-font);
+    background-color: var(--clr-primary);
 }
 
 ::-webkit-scrollbar {
