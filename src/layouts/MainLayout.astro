@@ -1,8 +1,15 @@
 ---
 
 import { ClientRouter } from "astro:transitions";
+import { getImage } from "astro:assets";
+
+import DarkBgImage from "../images/Background-Dark.jpg";
+import LightBgImage from "../images/Background-Light.jpg";
 import MainHeader from "../components/MainHeader.astro";
 import '../styles/global.css';
+
+const optimizedDarkBg = await getImage({ src: DarkBgImage, format: 'jpg' });
+const optimizedLightBg = await getImage({ src: LightBgImage, format: 'jpg' });
 
 ---
 
@@ -11,6 +18,8 @@ import '../styles/global.css';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="preload" as="image" href={optimizedDarkBg.src} fetchpriority="high" media="(prefers-color-scheme: dark)">
+    <link rel="preload" as="image" href={optimizedLightBg.src} fetchpriority="high" media="(prefers-color-scheme: light)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -26,3 +35,26 @@ import '../styles/global.css';
 
 </body>
 </html>
+
+<style is:global define:vars={{ 
+  darkBg: `url(${optimizedDarkBg.src})`, 
+  lightBg: `url(${optimizedLightBg.src})` 
+}}>
+
+:root {--background: var(--darkBg);}
+
+/* ----- LIGHT MODE ----- */
+
+@media (prefers-color-scheme: light) {
+    :root {--background: var(--lightBg);}
+}
+
+body {
+    background-image: linear-gradient(hsl(from var(--clr-primary) h s l / 0.8)), var(--background);
+    background-color: var(--clr-primary);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+</style>

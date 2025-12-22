@@ -13,8 +13,6 @@
    --------------------------------------------------------- */
 
 :root {
-    --background: url(../images/Background.jpg);
-
     --clr-primary: hsl(288 100% 10%);
     --clr-primary-surface: hsl(from var(--clr-primary) h 50% 30%);
     --clr-secondary: hsl(from var(--clr-primary) h s 30%);
@@ -42,8 +40,6 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --background: url(../images/Background-Light.jpg);
-
         --clr-primary: hsl(288 100% 90%);
         --clr-primary-surface: hsl(from var(--clr-primary) h 50% 70%);
         --clr-secondary: hsl(from var(--clr-primary) h s 70%);
@@ -87,12 +83,6 @@ body {
 	font-weight: 200;
     line-height: 1.6;
 	color: var(--clr-font);
-
-    background-image: linear-gradient(hsl(from var(--clr-primary) h s l / 0.8)), var(--background);
-    background-color: var(--clr-primary);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {

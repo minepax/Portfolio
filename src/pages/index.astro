@@ -1,7 +1,7 @@
 ---
 
+import { Image, getImage } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
 
 import Profile from "../images/Maheshwar Profile.jpg";
 import Rathakrishnan from "../images/Rathakrishnan.jpg";
@@ -9,9 +9,12 @@ import Sreedevi from "../images/Sreedevi.jpg";
 import Deepthi from "../images/Deepthi.jpg";
 import Maheshwar from "../images/Maheshwar.jpg";
 
+const optimizedProfile = await getImage({ src: Profile, format: 'jpg' });
+
 ---
 
 <head>
+    <link rel="preload" as="image" href={optimizedProfile.src} fetchpriority="high" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 </head>
 
@@ -28,7 +31,7 @@ import Maheshwar from "../images/Maheshwar.jpg";
             </p>
         </div>
 
-        <Image src={Profile} alt="" class="profile" />
+        <Image src={Profile} alt="My Profile" loading="eager" fetchpriority="high" decoding="sync" class="profile" />
 
     </section>
 
