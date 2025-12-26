@@ -262,11 +262,32 @@ hr {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
 
-        p {
-            max-width: 40ch;
+        h1 {
+            position: relative;
+            width: fit-content;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(100% - 0.5rem);
+                left: 0;
+                width: 0;
+                height: 0.25rem;
+                border-radius: 100vw;
+                background: currentColor;
+                animation: heading-underline-view ease forwards;
+                animation-timeline: view();
+                animation-range: entry 10vh 60vh;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
         }
+
+        p {max-width: 40ch;}
 
         h2 {margin-top: auto;}
 
@@ -275,15 +296,16 @@ hr {
             display: flex;
             gap: 1rem;
             
-            &:is(:hover, :focus) svg {
-                fill: var(--clr-accent-3);
-                transform: scale(1.1);
-            }
-
             svg {
                 height: 2rem;
                 fill: var(--clr-font);
+                transform-origin: bottom;
                 transition: all 0.5s ease;
+            }
+
+            a:is(:hover, :focus) svg {
+                fill: var(--clr-accent-3);
+                transform: scale(1.1);
             }
         }
     }
@@ -318,6 +340,12 @@ hr {
                 opacity: 0.8;
             }
         }
+    }
+}
+
+@keyframes heading-underline-view {
+    100% {
+        width: 100%;
     }
 }
 
