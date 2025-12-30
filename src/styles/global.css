@@ -1,15 +1,5 @@
 /* =========================================================
-   1. FONT IMPORTS
-   --------------------------------------------------------- */
-   
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&display=swap'); */
-
-
-
-/* =========================================================
-   2. GLOBAL VARIABLES
+   1. GLOBAL VARIABLES
    --------------------------------------------------------- */
 
 :root {
@@ -61,13 +51,13 @@
 
 
 /* =========================================================
-   3. GLOBAL STYLES
+   2. GLOBAL STYLES
    --------------------------------------------------------- */
 
 html, body {
 	margin: 0;
 	padding: 0;
-    height: 100dvh;
+    height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
@@ -106,7 +96,7 @@ body {
 
 
 /* =========================================================
-   4. GLOBAL RESETS
+   3. GLOBAL RESETS
    --------------------------------------------------------- */
 
 * {
@@ -165,7 +155,7 @@ hr {
 
 
 /* =========================================================
-   5. COMPONENTS
+   4. UTILITIES & COMPONENTS
    --------------------------------------------------------- */
 
 /* WRAPPER */
@@ -173,6 +163,7 @@ hr {
 .wrapper {
     margin-inline: auto;
     padding-inline: 2rem;
+    width: 100%;
     max-width: 80rem;
 }
 
@@ -200,21 +191,22 @@ hr {
 
 
 /* =========================================================
-   6. PAGE SECTIONS
+   5. PAGE SECTIONS
    --------------------------------------------------------- */
 
 /* ----- HOME PAGE ----- */
 
-:where(.about-me, .my-family) {
-    margin-top: 18rem;
-}
-
 .home-hero {
-    margin-top: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    height: calc(100dvh - 5rem);
+    /* background-color: var(--clr-primary); */
+    
+    .wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
 
     .content {
         display: grid;
@@ -254,6 +246,7 @@ hr {
 }
 
 .about-me {
+    padding-block: 10rem;
     display: flex;
     gap: 2rem;
 
@@ -350,7 +343,7 @@ hr {
 }
 
 .my-family {
-    margin-bottom: 12rem;
+    padding-block: 10rem;
     display: grid;
     justify-items: center;
     gap: 3rem;
@@ -449,7 +442,10 @@ hr {
 
 @media (max-width: 1100px) {
     .home-hero {
-        flex-direction: column-reverse;
+        .wrapper {
+            justify-content: center;
+            flex-direction: column-reverse;
+        }
 
         .content {
             justify-items: center;
@@ -638,7 +634,6 @@ hr {
         padding: 2rem;
         display: grid;
         align-content: start;
-        /* justify-items: center; */
         gap: 1rem;
 
         h3 {

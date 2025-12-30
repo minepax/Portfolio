@@ -20,181 +20,186 @@ const optimizedProfile = await getImage({ src: Profile, format: 'jpg' });
 
 <MainLayout />
 
-<main class="wrapper">
-
+<main>
+    
     <section class="home-hero">
+        <div class="wrapper">
 
-        <div class="content">
-            <h1>Hello!</h1>
-            <p>
-                I'm Mahesh and welcome to my personal portfolio! Here you can find stuff about me and what I like. Enjoy your time here :)
-            </p>
-        </div>
-
-        <Image src={Profile} alt="My Profile" loading="eager" fetchpriority="high" decoding="sync" class="profile" />
-
-    </section>
-
-    <section class="about-me">
-
-        <div class="about-me-content">
+            <div class="content">
+                <h1>Hello!</h1>
+                <p>
+                    I'm Mahesh and welcome to my personal portfolio! Here you can find stuff about me and what I like. Enjoy your time here :)
+                </p>
+            </div>
             
-            <h1>About Me</h1>
-            <p>
-                I'm an aspiring Computer Science Engineer based in UAE, trying to specialize in web technologies focusing on front-end design and development. Currently exploring CSS and learning various front-end frameworks.
-            </p>
-            <h2>My Socials</h2>
-            <div class="socials">
-                <a href="https://www.linkedin.com/in/maheshwar-rathakrishnan" aria-label="Linkedin link" target="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/minepax" aria-label="Github link" target="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/maheee.____" aria-label="Instagram link" target="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                    </svg>
-                </a>
-            </div>
+            <Image src={Profile} alt="My Profile" loading="eager" fetchpriority="high" decoding="sync" class="profile" />
+            
         </div>
-
-        <div class="about-me-grid">
-
-            <div class="about-me-tile">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"  xml:space="preserve">
-                    <g>
-                        <path d="M378.4,0H133.582C86.234,0,47.7,38.542,47.7,85.899v340.22C47.7,473.476,86.234,512,133.582,512h205.695
-                        h13.174l9.319-9.301l93.229-93.229l9.301-9.31v-13.174V85.899C464.3,38.542,425.766,0,378.4,0z M207.957,174.942
-                        c-1.425-9.675-3.378-28.806,1.684-38.403c0,0-3.465-6.254-3.465-14.555c14.546,2.076,60.965-27.714,74.818-3.457
-                        c20.086-2.084,32.09,26.253,22.978,56.415c0,0,11.256-0.521,6.757,15.242c-4.221,14.816-7.608,18.203-13.531,20.314
-                        c-2.536,14.39-6.808,27.087-12.436,33.34c0,7.495,0,12.966,0,17.343c0,0.443,0.078,0.912,0.208,1.389l-19.696,9.476v13.921h-18.542
-                        v-13.921l-19.705-9.484c0.13-0.478,0.208-0.938,0.208-1.381c0-4.377,0-9.848,0-17.343c-5.628-6.253-9.883-18.95-12.427-33.34
-                        c-5.932-2.11-9.31-5.498-13.54-20.314C196.936,175.046,207.122,174.942,207.957,174.942z M256.008,358.57
-                        c-66.515,0-112.231-8.632-112.943-16.944c-2.883-34.652,41.999-53.141,60.271-59.576c1.798-0.643,3.883-1.624,6.028-2.823
-                        l34.894,48.225l2.475-31.594h18.542l2.484,31.594l34.886-48.225c2.093,1.138,4.134,2.119,6.028,2.823
-                        c18.142,6.782,63.154,24.898,60.262,59.576C368.239,349.937,322.515,358.57,256.008,358.57z M339.276,480.197v-48.139
-                        c0-24.89,20.192-45.073,45.073-45.073h48.148L339.276,480.197z"/>
-                    </g>
-                </svg>
-                <h3>Background</h3>
-                <p>
-                    I'm from a small village called <a class="link" href="https://en.wikipedia.org/wiki/Melur,_Nilgiris" target="#">Melur</a> in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is <a class="link" href="https://en.wikipedia.org/wiki/Badagas" target="#">Badaga</a>. I currently live in Sharjah, UAE.
-                </p>
-            </div>
-
-            <div class="about-me-tile">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path d="M0 192c0-35.3 28.7-64 64-64l64 0 127.9-115.1c18.3-16.4 46-16.4 64.2 0L448 128 512 128c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 192zM224 376l0 88 128 0 0-88c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zm-112 8c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0zm16-144l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16zM496 384c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0zm16-144l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16zM288 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"/>
-                </svg>
-                <h3>School</h3>
-                <p>
-                    I studied upto middle school in Kindergarten Starters (KGS) now renamed to <a class="link" href="https://www.gemslegacyschool-dubai.com" target="#">GEMS Legacy School</a>. I completed my high school in Our Own High School, Alwarqa <a class="link" href="https://www.gemsoo-alwarqa.com" target="#">(OOW)</a>.
-                </p>
-            </div>
-
-            <div class="about-me-tile">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M271.9 20.2c-9.8-5.6-21.9-5.6-31.8 0l-224 128c-12.6 7.2-18.8 22-15.1 36S17.5 208 32 208l32 0 0 208 0 0-51.2 38.4C4.7 460.4 0 469.9 0 480 0 497.7 14.3 512 32 512l448 0c17.7 0 32-14.3 32-32 0-10.1-4.7-19.6-12.8-25.6l-51.2-38.4 0-208 32 0c14.5 0 27.2-9.8 30.9-23.8s-2.5-28.8-15.1-36l-224-128zM400 208l0 208-64 0 0-208 64 0zm-112 0l0 208-64 0 0-208 64 0zm-112 0l0 208-64 0 0-208 64 0zM256 96a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
-                </svg>
-                <h3>University</h3>
-                <p>
-                    I am currently studying my bachelors degree in Computer Science Engineering at BITS Pilani Dubai Campus <a class="link" href="https://www.bits-pilani.ac.in/dubai" target="#">(BPDC)</a>.
-                </p>
-            </div>
-
-            <div class="about-me-tile">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 64 64">
-                    <path d="M39.208,19.612V17.66h10.34v1.952c0,1.563,1.271,2.835,2.835,2.835h5.434c1.563,0,2.836-1.271,2.836-2.835V9.128  c0-1.563-1.272-2.835-2.836-2.835h-5.434c-1.563,0-2.835,1.271-2.835,2.835v1.952h-10.34V9.128c0-1.563-1.271-2.835-2.835-2.835  h-5.435c-1.563,0-2.835,1.271-2.835,2.835v10.484c0,1.563,1.271,2.835,2.835,2.835h5.435C37.937,22.447,39.208,21.176,39.208,19.612  z M49.548,13.08v2.58h-10.34v-2.58H49.548z M60.73,48.169V28.53c0-0.553-0.447-1-1-1H43.13c-3.265,0-5.92,2.655-5.92,5.92v19.227  c0,0.013-0.002,0.026-0.002,0.039c0,3.054,2.484,5.538,5.538,5.538h16.986c0.553,0,1-0.447,1-1v-9.075  C60.732,48.175,60.731,48.172,60.73,48.169z M58.732,56.254H42.746c-1.948,0-3.532-1.582-3.537-3.529  c0-0.002,0.001-0.003,0.001-0.005v-0.023c0.011-1.941,1.592-3.518,3.536-3.518h15.986V56.254z M28.38,38.251V37.35  c0-1.517-1.229-2.75-2.74-2.75H23.1c-1.511,0-2.739,1.233-2.739,2.75v0.787H15.77V37.35c0-1.517-1.229-2.75-2.739-2.75h-2.54  c-1.511,0-2.74,1.233-2.74,2.75v0.901c-1.997,0.434-3.553,2.143-3.704,4.252L3.28,53.13c-0.096,1.319,0.366,2.631,1.268,3.6  s2.177,1.524,3.5,1.524c1.497,0,2.927-0.715,3.824-1.913l2.512-3.349c0.446-0.595,1.157-0.95,1.9-0.95h3.561  c0.744,0,1.454,0.354,1.9,0.949l2.513,3.35c0.897,1.198,2.327,1.913,3.823,1.913c1.323,0,2.599-0.556,3.5-1.524  s1.363-2.28,1.268-3.6l-0.766-10.627C31.932,40.394,30.377,38.686,28.38,38.251z M30.117,55.367  c-0.532,0.572-1.255,0.887-2.036,0.887c-0.87,0-1.701-0.416-2.224-1.112l-2.513-3.35c-0.82-1.096-2.129-1.75-3.5-1.75h-3.561  c-1.369,0-2.678,0.654-3.5,1.75l-2.512,3.35c-0.522,0.696-1.354,1.112-2.225,1.112c-0.781,0-1.504-0.314-2.036-0.887  c-0.531-0.571-0.793-1.314-0.737-2.093L6.04,42.647c0.102-1.408,1.287-2.511,2.699-2.511h18.65c1.412,0,2.598,1.103,2.699,2.511  l0.766,10.627C30.91,54.053,30.648,54.796,30.117,55.367z M14.872,45.399c0,1.894-1.54,3.434-3.434,3.434  c-1.893,0-3.433-1.54-3.433-3.434c0-1.893,1.54-3.433,3.433-3.433C13.332,41.967,14.872,43.507,14.872,45.399z M28.123,45.399  c0,1.894-1.54,3.434-3.433,3.434c-1.894,0-3.434-1.54-3.434-3.434c0-1.893,1.54-3.433,3.434-3.433  C26.583,41.967,28.123,43.507,28.123,45.399z M8.739,13.335c0.854,0.381,1.768,0.567,2.681,0.567c0.801,0,1.595-0.161,2.353-0.444  v3.751H6.583c-0.298,0-0.58,0.133-0.77,0.361c-0.19,0.229-0.269,0.531-0.213,0.824l1.682,8.923c0.336,1.79,1.903,3.089,3.725,3.089  h7.531c1.821,0,3.388-1.299,3.726-3.088l1.682-8.924c0.056-0.293-0.022-0.595-0.213-0.824c-0.189-0.229-0.472-0.361-0.77-0.361  h-7.19v-3.75c0.757,0.283,1.551,0.443,2.352,0.443c0.913,0,1.827-0.187,2.681-0.567c2.149-0.959,3.643-3.025,3.898-5.393  c0.039-0.357-0.118-0.709-0.41-0.919c-1.932-1.394-4.47-1.662-6.617-0.703c-1.218,0.543-2.214,1.45-2.904,2.557  c-0.691-1.108-1.686-2.014-2.904-2.557C9.716,5.36,7.182,5.631,5.25,7.023c-0.292,0.21-0.449,0.562-0.41,0.919  C5.096,10.311,6.59,12.377,8.739,13.335z M20.299,26.948c-0.16,0.846-0.9,1.459-1.761,1.459h-7.531c-0.86,0-1.601-0.613-1.76-1.459  L7.789,19.21h13.968L20.299,26.948z"/>
-                </svg>
-                <h3>Hobbies</h3>
-                <p>
-                    My favourite hobbies and interests include: badminton, <a class="link" href="https://en.wikipedia.org/wiki/Speedcubing" target="#">speedcubing</a>, gaming, consumer tech and cinema. You can find articles related to some of my interests in the navigation!
-                </p>
-            </div>
-
-        </div>
-
     </section>
 
-    <section class="my-family">
-        
-        <h1>My Family</h1>
+    <div class="wrapper">
 
-        <div class="card-wrapper swiper mySwiper">
-            <ul class="card-list swiper-wrapper">
+        <section class="about-me">
 
-                <li class="card-item swiper-slide">
-                    <Image src={Rathakrishnan} alt="" class="card-image" />
-                    <ul class="card-info">
-                        <li><h3>DAD</h3></li>
-                        <li>Name: Rathakrishnan</li>
-                        <li>Born: Mar 8, 1969</li>
-                        <li>Birth Place: Coonoor, Tamil Nadu</li>
-                        <li>University: TN Agricultural University</li>
-                        <li>Degree: B.E Agriculture</li>
-                        <li>Occupation: Irrigation Design</li>
-                    </ul>
-                </li>
-
-                <li class="card-item swiper-slide">
-                    <Image src={Sreedevi} alt="" class="card-image" />
-                    <ul class="card-info">
-                        <li><h3>MOM</h3></li>
-                        <li>Name: Sreedevi</li>
-                        <li>Born: May 7, 1975</li>
-                        <li>Birth Place: Ooty, Tamil Nadu</li>
-                        <li>University: Bharathiar University</li>
-                        <li>Degree: M.SC Zoology</li>
-                        <li>Occupation: House Wife</li>
-                    </ul>
-                </li>
+            <div class="about-me-content">
                 
-                <li class="card-item swiper-slide">
-                    <Image src={Deepthi} alt="" class="card-image" />
-                    <ul class="card-info">
-                        <li><h3>SISTER</h3></li>
-                        <li>Name: Deepthi</li>
-                        <li>Born: Mar 24, 2000</li>
-                        <li>Birth Place: Ooty, Tamil Nadu</li>
-                        <li>University: BITS Pilani Dubai Campus</li>
-                        <li>Degree: B.E Computer Science</li>
-                        <li>Occupation: Working</li>
-                    </ul>
-                </li>
-
-                <li class="card-item swiper-slide">
-                    <Image src={Maheshwar} alt="" class="card-image" />
-                    <ul class="card-info">
-                        <li><h3>MYSELF</h3></li>
-                        <li>Name: Maheshwar</li>
-                        <li>Born: Dec 3, 2004</li>
-                        <li>Birth Place: Sharjah, UAE</li>
-                        <li>University: BITS Pilani Dubai Campus</li>
-                        <li>Degree: B.E Computer Science</li>
-                        <li>Occupation: Student</li>
-                    </ul>
-                </li>
-
-            </ul>
-
-            <div class="swiper-pagination"></div>
-
-            <div class="custom-navigation">
-                <div class="swiper-button-prev"><span>&lt;</span></div>
-                <div class="swiper-button-next"><span>&gt;</span></div>
+                <h1>About Me</h1>
+                <p>
+                    I'm an aspiring Computer Science Engineer based in UAE, trying to specialize in web technologies focusing on front-end design and development. Currently exploring CSS and learning various front-end frameworks.
+                </p>
+                <h2>My Socials</h2>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/maheshwar-rathakrishnan" aria-label="Linkedin link" target="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/minepax" aria-label="Github link" target="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/maheee.____" aria-label="Instagram link" target="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
+
+            <div class="about-me-grid">
+
+                <div class="about-me-tile">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"  xml:space="preserve">
+                        <g>
+                            <path d="M378.4,0H133.582C86.234,0,47.7,38.542,47.7,85.899v340.22C47.7,473.476,86.234,512,133.582,512h205.695
+                            h13.174l9.319-9.301l93.229-93.229l9.301-9.31v-13.174V85.899C464.3,38.542,425.766,0,378.4,0z M207.957,174.942
+                            c-1.425-9.675-3.378-28.806,1.684-38.403c0,0-3.465-6.254-3.465-14.555c14.546,2.076,60.965-27.714,74.818-3.457
+                            c20.086-2.084,32.09,26.253,22.978,56.415c0,0,11.256-0.521,6.757,15.242c-4.221,14.816-7.608,18.203-13.531,20.314
+                            c-2.536,14.39-6.808,27.087-12.436,33.34c0,7.495,0,12.966,0,17.343c0,0.443,0.078,0.912,0.208,1.389l-19.696,9.476v13.921h-18.542
+                            v-13.921l-19.705-9.484c0.13-0.478,0.208-0.938,0.208-1.381c0-4.377,0-9.848,0-17.343c-5.628-6.253-9.883-18.95-12.427-33.34
+                            c-5.932-2.11-9.31-5.498-13.54-20.314C196.936,175.046,207.122,174.942,207.957,174.942z M256.008,358.57
+                            c-66.515,0-112.231-8.632-112.943-16.944c-2.883-34.652,41.999-53.141,60.271-59.576c1.798-0.643,3.883-1.624,6.028-2.823
+                            l34.894,48.225l2.475-31.594h18.542l2.484,31.594l34.886-48.225c2.093,1.138,4.134,2.119,6.028,2.823
+                            c18.142,6.782,63.154,24.898,60.262,59.576C368.239,349.937,322.515,358.57,256.008,358.57z M339.276,480.197v-48.139
+                            c0-24.89,20.192-45.073,45.073-45.073h48.148L339.276,480.197z"/>
+                        </g>
+                    </svg>
+                    <h3>Background</h3>
+                    <p>
+                        I'm from a small village called <a class="link" href="https://en.wikipedia.org/wiki/Melur,_Nilgiris" target="#">Melur</a> in the Nilgiris district of Tamil Nadu, India. The language spoken there as well as my mother tongue is <a class="link" href="https://en.wikipedia.org/wiki/Badagas" target="#">Badaga</a>. I currently live in Sharjah, UAE.
+                    </p>
+                </div>
+
+                <div class="about-me-tile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path d="M0 192c0-35.3 28.7-64 64-64l64 0 127.9-115.1c18.3-16.4 46-16.4 64.2 0L448 128 512 128c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 192zM224 376l0 88 128 0 0-88c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zm-112 8c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0zm16-144l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16zM496 384c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0zm16-144l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16zM288 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"/>
+                    </svg>
+                    <h3>School</h3>
+                    <p>
+                        I studied upto middle school in Kindergarten Starters (KGS) now renamed to <a class="link" href="https://www.gemslegacyschool-dubai.com" target="#">GEMS Legacy School</a>. I completed my high school in Our Own High School, Alwarqa <a class="link" href="https://www.gemsoo-alwarqa.com" target="#">(OOW)</a>.
+                    </p>
+                </div>
+
+                <div class="about-me-tile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M271.9 20.2c-9.8-5.6-21.9-5.6-31.8 0l-224 128c-12.6 7.2-18.8 22-15.1 36S17.5 208 32 208l32 0 0 208 0 0-51.2 38.4C4.7 460.4 0 469.9 0 480 0 497.7 14.3 512 32 512l448 0c17.7 0 32-14.3 32-32 0-10.1-4.7-19.6-12.8-25.6l-51.2-38.4 0-208 32 0c14.5 0 27.2-9.8 30.9-23.8s-2.5-28.8-15.1-36l-224-128zM400 208l0 208-64 0 0-208 64 0zm-112 0l0 208-64 0 0-208 64 0zm-112 0l0 208-64 0 0-208 64 0zM256 96a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+                    </svg>
+                    <h3>University</h3>
+                    <p>
+                        I am currently studying my bachelors degree in Computer Science Engineering at BITS Pilani Dubai Campus <a class="link" href="https://www.bits-pilani.ac.in/dubai" target="#">(BPDC)</a>.
+                    </p>
+                </div>
+
+                <div class="about-me-tile">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 64 64">
+                        <path d="M39.208,19.612V17.66h10.34v1.952c0,1.563,1.271,2.835,2.835,2.835h5.434c1.563,0,2.836-1.271,2.836-2.835V9.128  c0-1.563-1.272-2.835-2.836-2.835h-5.434c-1.563,0-2.835,1.271-2.835,2.835v1.952h-10.34V9.128c0-1.563-1.271-2.835-2.835-2.835  h-5.435c-1.563,0-2.835,1.271-2.835,2.835v10.484c0,1.563,1.271,2.835,2.835,2.835h5.435C37.937,22.447,39.208,21.176,39.208,19.612  z M49.548,13.08v2.58h-10.34v-2.58H49.548z M60.73,48.169V28.53c0-0.553-0.447-1-1-1H43.13c-3.265,0-5.92,2.655-5.92,5.92v19.227  c0,0.013-0.002,0.026-0.002,0.039c0,3.054,2.484,5.538,5.538,5.538h16.986c0.553,0,1-0.447,1-1v-9.075  C60.732,48.175,60.731,48.172,60.73,48.169z M58.732,56.254H42.746c-1.948,0-3.532-1.582-3.537-3.529  c0-0.002,0.001-0.003,0.001-0.005v-0.023c0.011-1.941,1.592-3.518,3.536-3.518h15.986V56.254z M28.38,38.251V37.35  c0-1.517-1.229-2.75-2.74-2.75H23.1c-1.511,0-2.739,1.233-2.739,2.75v0.787H15.77V37.35c0-1.517-1.229-2.75-2.739-2.75h-2.54  c-1.511,0-2.74,1.233-2.74,2.75v0.901c-1.997,0.434-3.553,2.143-3.704,4.252L3.28,53.13c-0.096,1.319,0.366,2.631,1.268,3.6  s2.177,1.524,3.5,1.524c1.497,0,2.927-0.715,3.824-1.913l2.512-3.349c0.446-0.595,1.157-0.95,1.9-0.95h3.561  c0.744,0,1.454,0.354,1.9,0.949l2.513,3.35c0.897,1.198,2.327,1.913,3.823,1.913c1.323,0,2.599-0.556,3.5-1.524  s1.363-2.28,1.268-3.6l-0.766-10.627C31.932,40.394,30.377,38.686,28.38,38.251z M30.117,55.367  c-0.532,0.572-1.255,0.887-2.036,0.887c-0.87,0-1.701-0.416-2.224-1.112l-2.513-3.35c-0.82-1.096-2.129-1.75-3.5-1.75h-3.561  c-1.369,0-2.678,0.654-3.5,1.75l-2.512,3.35c-0.522,0.696-1.354,1.112-2.225,1.112c-0.781,0-1.504-0.314-2.036-0.887  c-0.531-0.571-0.793-1.314-0.737-2.093L6.04,42.647c0.102-1.408,1.287-2.511,2.699-2.511h18.65c1.412,0,2.598,1.103,2.699,2.511  l0.766,10.627C30.91,54.053,30.648,54.796,30.117,55.367z M14.872,45.399c0,1.894-1.54,3.434-3.434,3.434  c-1.893,0-3.433-1.54-3.433-3.434c0-1.893,1.54-3.433,3.433-3.433C13.332,41.967,14.872,43.507,14.872,45.399z M28.123,45.399  c0,1.894-1.54,3.434-3.433,3.434c-1.894,0-3.434-1.54-3.434-3.434c0-1.893,1.54-3.433,3.434-3.433  C26.583,41.967,28.123,43.507,28.123,45.399z M8.739,13.335c0.854,0.381,1.768,0.567,2.681,0.567c0.801,0,1.595-0.161,2.353-0.444  v3.751H6.583c-0.298,0-0.58,0.133-0.77,0.361c-0.19,0.229-0.269,0.531-0.213,0.824l1.682,8.923c0.336,1.79,1.903,3.089,3.725,3.089  h7.531c1.821,0,3.388-1.299,3.726-3.088l1.682-8.924c0.056-0.293-0.022-0.595-0.213-0.824c-0.189-0.229-0.472-0.361-0.77-0.361  h-7.19v-3.75c0.757,0.283,1.551,0.443,2.352,0.443c0.913,0,1.827-0.187,2.681-0.567c2.149-0.959,3.643-3.025,3.898-5.393  c0.039-0.357-0.118-0.709-0.41-0.919c-1.932-1.394-4.47-1.662-6.617-0.703c-1.218,0.543-2.214,1.45-2.904,2.557  c-0.691-1.108-1.686-2.014-2.904-2.557C9.716,5.36,7.182,5.631,5.25,7.023c-0.292,0.21-0.449,0.562-0.41,0.919  C5.096,10.311,6.59,12.377,8.739,13.335z M20.299,26.948c-0.16,0.846-0.9,1.459-1.761,1.459h-7.531c-0.86,0-1.601-0.613-1.76-1.459  L7.789,19.21h13.968L20.299,26.948z"/>
+                    </svg>
+                    <h3>Hobbies</h3>
+                    <p>
+                        My favourite hobbies and interests include: badminton, <a class="link" href="https://en.wikipedia.org/wiki/Speedcubing" target="#">speedcubing</a>, gaming, consumer tech and cinema. You can find articles related to some of my interests in the navigation!
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="my-family">
             
-        </div>
+            <h1>My Family</h1>
 
-        <p class="hint">Swipe over the cards to slide through them!</p>
+            <div class="card-wrapper swiper mySwiper">
+                <ul class="card-list swiper-wrapper">
 
-    </section>
+                    <li class="card-item swiper-slide">
+                        <Image src={Rathakrishnan} alt="" class="card-image" />
+                        <ul class="card-info">
+                            <li><h3>DAD</h3></li>
+                            <li>Name: Rathakrishnan</li>
+                            <li>Born: Mar 8, 1969</li>
+                            <li>Birth Place: Coonoor, Tamil Nadu</li>
+                            <li>University: TN Agricultural University</li>
+                            <li>Degree: B.E Agriculture</li>
+                            <li>Occupation: Irrigation Design</li>
+                        </ul>
+                    </li>
 
+                    <li class="card-item swiper-slide">
+                        <Image src={Sreedevi} alt="" class="card-image" />
+                        <ul class="card-info">
+                            <li><h3>MOM</h3></li>
+                            <li>Name: Sreedevi</li>
+                            <li>Born: May 7, 1975</li>
+                            <li>Birth Place: Ooty, Tamil Nadu</li>
+                            <li>University: Bharathiar University</li>
+                            <li>Degree: M.SC Zoology</li>
+                            <li>Occupation: House Wife</li>
+                        </ul>
+                    </li>
+                    
+                    <li class="card-item swiper-slide">
+                        <Image src={Deepthi} alt="" class="card-image" />
+                        <ul class="card-info">
+                            <li><h3>SISTER</h3></li>
+                            <li>Name: Deepthi</li>
+                            <li>Born: Mar 24, 2000</li>
+                            <li>Birth Place: Ooty, Tamil Nadu</li>
+                            <li>University: BITS Pilani Dubai Campus</li>
+                            <li>Degree: B.E Computer Science</li>
+                            <li>Occupation: Working</li>
+                        </ul>
+                    </li>
+
+                    <li class="card-item swiper-slide">
+                        <Image src={Maheshwar} alt="" class="card-image" />
+                        <ul class="card-info">
+                            <li><h3>MYSELF</h3></li>
+                            <li>Name: Maheshwar</li>
+                            <li>Born: Dec 3, 2004</li>
+                            <li>Birth Place: Sharjah, UAE</li>
+                            <li>University: BITS Pilani Dubai Campus</li>
+                            <li>Degree: B.E Computer Science</li>
+                            <li>Occupation: Student</li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="swiper-pagination"></div>
+
+                <div class="custom-navigation">
+                    <div class="swiper-button-prev"><span>&lt;</span></div>
+                    <div class="swiper-button-next"><span>&gt;</span></div>
+                </div>
+                
+            </div>
+
+            <p class="hint">Swipe over the cards to slide through them!</p>
+
+        </section>
+
+    </div>
 </main>
 
 <!-- Importing Swiper JS -->
