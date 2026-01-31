@@ -39,14 +39,14 @@
                 <span class="sidebar-link">HOBBIES</span>
                 <div class="arrow-down"></div>
             </button>
-            <ul class="sidebar-sub" id="sidebar-sub">
-                <div>
+            <div class="sidebar-sub" id="sidebar-sub">
+                <ul>
                     <li><a class="sidebar-sub-link" href="/Portfolio/badminton">BADMINTON</a></li>
                     <li><a class="sidebar-sub-link" href="/Portfolio">CUBING</a></li>
                     <li><a class="sidebar-sub-link" href="/Portfolio">MINECRAFT</a></li>
                     <li><a class="sidebar-sub-link" href="/Portfolio">CONSUMER TECH</a></li>
-                </div>
-            </ul>
+                </ul>
+            </div>
         </li>
         <li><a class="sidebar-link" href="#"><span>CONTACT</span></a></li>
     </ul>
@@ -291,16 +291,21 @@
 }
 
 .sidebar-sub {
+    height: 0;
     visibility: hidden;
-    display: grid;
-    grid-template-rows: 0fr;
+    overflow: clip;
+    interpolate-size: allow-keywords;
     border-radius: 1rem;
     background-color: var(--clr-tertiary);
-    transition: grid-template-rows 0.3s ease-out, visibility 0.3s ease-out;
+    transition: height 0.3s ease-out, visibility 0.3s ease-out;
 
-    &[data-visible] {grid-template-rows: 1fr; visibility: visible;}
+    &[data-visible] {height: auto; visibility: visible;}
 
-    div {overflow: hidden;}
+    ul {
+        list-style-type: none;
+        display: grid;
+        gap: 0;
+    }
 
     .sidebar-sub-link {
         padding: 1.5rem;
